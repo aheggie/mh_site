@@ -92,15 +92,58 @@ nav a {
   width: 80%;
   height: 100%;
   display: grid;
-  grid-template-columns: [first] 33.3% [line2] 16.6% [line3] 33.3% [line4] 16.6% [end];
-  grid-template-rows: [row-first] 15% [row-line2] 30% [row-line3] 20% [row-line4] 20% [row-end];
+
+  grid-template-columns: [first] 29% [line2] 6.5% [line3] 14.5% [line4] 14.5% [line5] 6.5% [line6] 29% [end];
+  grid-template-rows: [row-first] 15% [row-line2] 30% [row-line3] 2% [row-line4] 20% [row-line5] 20% [row-end];
 }
 
 h1#announce {
   font-size: 2.7em;
   font-weight: normal;
+  width: 450px;
 
   grid-column-start: first;
-  grid-column-end: line3;
+  grid-column-end: line4;
   grid-row-start: row-line2;
   grid-row-end: row-line3;
+}
+
+button.home {
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: yellow;
+  text-align: center;
+  border-radius: 20px;
+  margin: 5em 3em;
+  display: inline-block;
+}
+
+button#seek {
+  background-color: #dec3fa;
+  border: 1px solid #c3abdc;
+
+  grid-column-start: first;
+  grid-column-end: line2;
+  grid-row-start: row-line4;
+  grid-row-end: row-line5;
+}
+
+button#offer {
+  background-color: #dec3fa;
+  border: 1px solid #c3abdc;
+
+  grid-column-start: line6;
+  grid-column-end: end;
+  grid-row-start: row-line4;
+  grid-row-end: row-line5;
+}
+
+button#newsletter {
+  background-color: #f2c944;
+  border: 1px solid #d5b13c;
+
+  grid-column-start: line3;
+  grid-column-end: line5;
+  grid-row-start: row-line5;
+  grid-row-end: row-end;
+}
