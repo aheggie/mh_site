@@ -25,7 +25,6 @@ header {
 }
 
 nav {
-  background-color: yellow;
   overflow: hidden;
   height: 3.5rem;
   background-color: #5a2a88;
@@ -50,7 +49,6 @@ nav ul {
   display: -webkit-flex;
   display: flex;
 
-  display: flex;
   justify-content: flex-end;
   align-content: stretch;
 }
@@ -147,4 +145,49 @@ button#newsletter {
   grid-column-end: line5;
   grid-row-start: row-line5;
   grid-row-end: row-end;
+}
+
+.footer-nav {
+  list-style: none;
+  margin: 0;
+  font-size: 14px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  justify-content: center;
+}
+
+.footer-nav a {
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 1.5em;
+}
+
+.footer-social {
+  list-style: none;
+  margin: 0;
+  font-size: 12px;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  display: flex;
+  justify-content: center;
+}
+
+.footer-social a {
+  font-size: 12px;
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 1.5em;
 }
