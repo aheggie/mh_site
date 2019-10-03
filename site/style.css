@@ -41,7 +41,7 @@ nav ul {
   grid-area: links;
   list-style: none;
   margin: 0;
-  font-size: 14px;
+  font-size: 13px;
 
   display: -webkit-box;
   display: -moz-box;
@@ -57,6 +57,7 @@ nav a {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.05rem;
   display: block;
   padding: 1.5em;
 }
@@ -88,6 +89,7 @@ nav a {
 
 .wrapper.home {
   width: 80%;
+  max-width: 1366px;
   height: 100%;
   display: grid;
 
@@ -110,19 +112,41 @@ button.home {
   text-transform: uppercase;
   font-weight: 500;
   width: 250px;
+  height: 50px;
   padding: 1.2rem 2rem 2rem 2rem;
   font-size: 0.8rem;
   background-color: yellow;
   text-align: center;
   border-radius: 25px;
-  margin: 5em 3em;
+  margin: auto;
   display: inline-block;
 }
 
-button#seek {
+button.purple {
   background-color: #dec3fa;
   border: 1px solid #c3abdc;
+}
 
+button.purple:hover,
+button.purple:focus {
+  background-color: #c3abdc;
+}
+
+button.purple:focus {
+
+}
+
+button.yellow {
+  background-color: #f2c944;
+  border: 1px solid #d5b13c;
+}
+
+button.yellow:hover,
+button.yellow:focus {
+  background-color: #d5b13c;
+}
+
+button#seek {
   grid-column-start: first;
   grid-column-end: line2;
   grid-row-start: row-line4;
@@ -130,9 +154,6 @@ button#seek {
 }
 
 button#offer {
-  background-color: #dec3fa;
-  border: 1px solid #c3abdc;
-
   grid-column-start: line6;
   grid-column-end: end;
   grid-row-start: row-line4;
@@ -140,9 +161,6 @@ button#offer {
 }
 
 button#newsletter {
-  background-color: #f2c944;
-  border: 1px solid #d5b13c;
-
   grid-column-start: line3;
   grid-column-end: line5;
   grid-row-start: row-line5;
