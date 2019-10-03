@@ -78,7 +78,7 @@ nav a {
 
 .main-head {
   width: 100%;
-  height: 50em;
+  height: 45em;
   background: url("img/header.jpg") no-repeat top center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -92,7 +92,7 @@ nav a {
   display: grid;
 
   grid-template-columns: [first] 29% [line2] 6.5% [line3] 14.5% [line4] 14.5% [line5] 6.5% [line6] 29% [end];
-  grid-template-rows: [row-first] 15% [row-line2] 30% [row-line3] 2% [row-line4] 20% [row-line5] 20% [row-end];
+  grid-template-rows: [row-first] 15% [row-line2] 30% [row-line3] 2% [row-line4] 23% [row-line5] 23% [row-end];
 }
 
 h1#announce {
@@ -110,9 +110,11 @@ button.home {
   text-transform: uppercase;
   font-weight: 500;
   width: 250px;
+  padding: 1.2rem 2rem 2rem 2rem;
+  font-size: 0.8rem;
   background-color: yellow;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 25px;
   margin: 5em 3em;
   display: inline-block;
 }
@@ -147,7 +149,11 @@ button#newsletter {
   grid-row-end: row-end;
 }
 
-.footer-nav {
+.main-foot {
+  border-top: 2px solid lightgrey;
+}
+
+ul.footer-nav {
   list-style: none;
   margin: 0;
   font-size: 14px;
@@ -166,12 +172,12 @@ button#newsletter {
   color: black;
   text-decoration: none;
   display: block;
-  padding: 1.5em;
+  padding: 3em 4em;
 }
 
 .footer-social {
   list-style: none;
-  margin: 0;
+  margin-top: 1em;
   font-size: 12px;
 
   display: -webkit-box;
@@ -184,10 +190,26 @@ button#newsletter {
   justify-content: center;
 }
 
-.footer-social a {
+ul.footer-social a {
   font-size: 12px;
   color: black;
   text-decoration: none;
   display: block;
   padding: 1.5em;
+  margin-top: 2em;
+}
+
+a#email {
+  padding-top: 1.8em;
+}
+
+a#fb {
+  color: #f2c944;
+}
+
+div.copyright {
+  font-size: 11px;
+  text-align: center;
+  padding: 2em;
+  margin-top: 4em;
 }
