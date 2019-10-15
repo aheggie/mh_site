@@ -12,11 +12,10 @@ html {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
+
+
 .wrapper {
   margin: 0 auto;
-  width: 90%;
-  max-width: 1600px;
-  display: grid;
 }
 
 header {
@@ -32,12 +31,17 @@ nav {
   padding-right: 2em;
 
   display: grid;
-  grid-template-columns: 100px 1fr 100px;
+  grid-template-columns: 100px 1fr 150px;
   grid-template-areas:
     "logo links lang"
 }
 
-nav ul {
+.sticky {
+  position: fixed;
+  width: 100%;
+}
+
+ul#nav-links {
   grid-area: links;
   list-style: none;
   margin: 0;
@@ -53,29 +57,62 @@ nav ul {
   align-content: stretch;
 }
 
-nav a {
-  color: white;
+#nav-links a {
+  color: #fff;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
-  display: block;
+  position: relative;
+  display: inline-block;
   padding: 1.5em;
+  transition: background-color 0.7s ease;
+  -webkit-transition: all 0.7s ease;
 }
 
+#nav-links a:hover {
+  background-color: #6c4097;
+}
+
+#nav-links a:active {
+  background-color: #dec3fa;
+}
 
 #logo {
   grid-area: logo;
   height: 90%;
   width: auto;
+  padding-top: 0.1em;
 }
 
-#nav-lang {
+#nav-lang{
   grid-area: lang;
-  color: white;
-  font-size: 18px;
-  padding: 1em;
-  text-align: right;
+  text-align: center;
 }
+
+#nav-lang a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #dec3fa;
+  font-size: 18px;
+  display: inline-block;
+  position: relative;
+  margin: 1em 3em 0.7em 0.9em;
+  border-bottom: 1px solid #5a2a88;
+
+  transition: color;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+}
+
+#nav-lang a:hover {
+  border-bottom: 2px solid #774da1;
+  color: #fff;
+}
+
+#nav-lang a:active {
+  border-bottom: 2px solid #fff;
+}
+
 
 .main-head {
   width: 100%;
@@ -89,7 +126,7 @@ nav a {
 
 .wrapper.home {
   width: 80%;
-  max-width: 1366px;
+  max-width: 1200px;
   height: 100%;
   display: grid;
 
@@ -120,6 +157,10 @@ button.home {
   border-radius: 25px;
   margin: auto;
   display: inline-block;
+
+  transition: background-color;
+  -webkit-transition: all 0.2s ease;
+          transition: all 0.2s ease;
 }
 
 button.purple {
@@ -129,11 +170,7 @@ button.purple {
 
 button.purple:hover,
 button.purple:focus {
-  background-color: #c3abdc;
-}
-
-button.purple:focus {
-
+  background-color: #d0b2ef;
 }
 
 button.yellow {
@@ -143,7 +180,7 @@ button.yellow {
 
 button.yellow:hover,
 button.yellow:focus {
-  background-color: #d5b13c;
+  background-color: #e9c03c;
 }
 
 button#seek {
@@ -171,6 +208,28 @@ button#newsletter {
   border-top: 2px solid lightgrey;
 }
 
+.footer-nav {
+  --linkColor: #dec3fa;
+}
+
+.footer-nav a {
+  background:
+     linear-gradient(
+       to bottom, var(--linkColor) 0%,
+       var(--linkColor) 100%
+     );
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 2px;
+  color: #000;
+  text-decoration: none;
+  transition: background-size .2s;
+}
+
+a:hover {
+  background-size: 4px 50px;
+}
+
 ul.footer-nav {
   list-style: none;
   margin: 0;
@@ -190,7 +249,7 @@ ul.footer-nav {
   color: black;
   text-decoration: none;
   display: block;
-  padding: 3em 4em;
+  margin: 3em 4em;
 }
 
 .footer-social {
