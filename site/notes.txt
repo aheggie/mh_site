@@ -1,0 +1,1 @@
+removed "HOME" from top nav to save space

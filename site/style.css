@@ -31,9 +31,9 @@ nav {
   padding-right: 2em;
 
   display: grid;
-  grid-template-columns: 100px 1fr 150px;
+  grid-template-columns: 100px 1fr;
   grid-template-areas:
-    "logo links lang"
+    "logo links"
 }
 
 .sticky {
@@ -64,7 +64,7 @@ ul#nav-links {
   letter-spacing: 0.05rem;
   position: relative;
   display: inline-block;
-  padding: 1.5em;
+  padding: 1.5em 1.2em;
   transition: background-color 0.7s ease;
   -webkit-transition: all 0.7s ease;
 }
@@ -79,13 +79,12 @@ ul#nav-links {
 
 #logo {
   grid-area: logo;
-  height: 90%;
+  height: 3em;
   width: auto;
   padding-top: 0.1em;
 }
 
 #nav-lang{
-  grid-area: lang;
   text-align: center;
 }
 
@@ -93,10 +92,10 @@ ul#nav-links {
   text-decoration: none;
   text-transform: uppercase;
   color: #dec3fa;
-  font-size: 18px;
+  font-size: 16px;
   display: inline-block;
   position: relative;
-  margin: 1em 3em 0.7em 0.9em;
+  margin: -0.3em 3em 0.7em 0.9em;
   border-bottom: 1px solid #5a2a88;
 
   transition: color;
@@ -106,11 +105,13 @@ ul#nav-links {
 
 #nav-lang a:hover {
   border-bottom: 2px solid #774da1;
+  background-color: #5a2a88;
   color: #fff;
 }
 
 #nav-lang a:active {
   border-bottom: 2px solid #fff;
+  background-color: #5a2a88;
 }
 
 
@@ -206,7 +207,6 @@ button#newsletter {
 
 .main-foot {
   border-top: 2px solid lightgrey;
-  background-color: yellow;
   height: calc(100vh - 48.5em);
 }
 
@@ -290,4 +290,78 @@ div.copyright {
   padding: 2em;
   margin-top: 4em;
   align-self: flex-end;
+}
+
+/********* RESPONSIVE **********/
+
+@media screen and (min-width: 1400px) {
+
+  #nav-links a {
+    padding: 1.5em 1.5em;
+  }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+  nav {
+    display: flex;
+    overflow: hidden;
+    height: auto;
+    background-color: #5a2a88;
+    padding: 0;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-content: stretch; */
+  }
+
+  #logo {
+    text-align: center;
+    margin: auto;
+    height: 4em;
+    width: auto;
+    padding: 0.1em 0;
+  }
+
+  ul#nav-links {
+    text-align: center;
+    padding-right: 5.5em;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-content: stretch;
+  }
+
+  #nav-links a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    transition: background-color 0.7s ease;
+    -webkit-transition: all 0.7s ease;
+  }
+
+  #nav-lang a {
+    color: #dec3fa;
+    font-size: 12px;
+    margin: 0;
+    border-bottom: 1px solid #5a2a88;
+  }
+
 }
