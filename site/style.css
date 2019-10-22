@@ -12,10 +12,34 @@ html {
   font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
-
-
 .wrapper {
   margin: 0 auto;
+}
+
+
+.wrapper.services {
+  display: grid;
+  grid-template-rows: 3.5rem auto auto;
+  grid-template-areas:
+    "nav"
+    "content"
+    "footer";
+}
+
+.content {
+  grid-area: content;
+  height: 100%;
+  margin: 2em;
+}
+
+.wrapper.offering {
+  width: 80%;
+  max-width: 1200px;
+  display: grid;
+}
+
+h1.page-title {
+  font-size: 2.7em;
 }
 
 header {
@@ -24,6 +48,7 @@ header {
 }
 
 nav {
+  grid-area: nav;
   overflow: hidden;
   height: 3.5rem;
   background-color: #5a2a88;
@@ -206,8 +231,9 @@ button#newsletter {
 }
 
 .main-foot {
+  grid-area: footer;
   border-top: 2px solid lightgrey;
-  height: calc(100vh - 48.5em);
+  /* height: calc(100vh - 48.5em); */
 }
 
 .footer-nav {
@@ -292,7 +318,7 @@ div.copyright {
   align-self: flex-end;
 }
 
-/********* RESPONSIVE **********/
+/********* MEDIA QUERIES **********/
 
 @media screen and (min-width: 1400px) {
 
