@@ -446,9 +446,17 @@ div.copyright {
 
 @media screen and (max-width: 640px) {
 
-  .wrapper.offering {
+  .wrapper.page-content {
     width: 95%;
     margin-top: 0.5em;
+  }
+
+  .seek-category {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .wrapper.offering {
     display: grid;
 
     grid-template-columns: 1fr;
