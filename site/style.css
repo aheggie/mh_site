@@ -32,10 +32,13 @@ html {
   margin: 2em;
 }
 
-.wrapper.offering {
+.wrapper.page-content {
   width: 80%;
   max-width: 1200px;
   margin-top: 1em;
+}
+
+.wrapper.offering {
   display: grid;
 
   grid-template-columns: 1fr 7em 1fr;
@@ -62,14 +65,60 @@ html {
   grid-area: french;
 }
 
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2em;
+}
+
+.seek-category {
+  width: 47%;
+  margin-bottom: 1em;
+}
+
+.category-description {
+  border: 1px solid grey;
+  padding: 0 1em;
+}
+
+.fa-arrow-right {
+  color: #f2c944;
+  font-size: 1.2em;
+}
+
+.category-description > h3 {
+  font-weight: normal;
+}
+
+h5.search-category {
+  font-weight: normal;
+  text-align: right;
+  padding-right: 3em;
+  -webkit-transition: padding-right .2s ease-in;
+  transition: padding-right .2s ease-in;
+}
+
+.seek-category > a {
+  text-decoration: none;
+  color: black;
+}
+
+h5.search-category:hover, h5.search-category:focus {
+  padding-right: 2.7em;
+}
+
+h5.search-category:active {
+  padding-right: 2em;
+}
+
 h1.page-title {
   font-size: 2.7em;
 }
 
-header {
-  width: 100%;
-  height: auto;
-}
+
+
+/************ FULL WIDTH NAV **********/
 
 nav {
   grid-area: nav;
@@ -162,7 +211,11 @@ ul#nav-links {
   border-bottom: 2px solid #fff;
   background-color: #5a2a88;
 }
-
+/************ HOMEPAGE ***********/
+header {
+  width: 100%;
+  height: auto;
+}
 
 .main-head {
   width: 100%;
@@ -252,6 +305,8 @@ button#newsletter {
   grid-row-start: home-row-line5;
   grid-row-end: home-row-end;
 }
+
+/************ FOOTER **************/
 
 .main-foot {
   grid-area: footer;
