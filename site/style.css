@@ -113,8 +113,8 @@ h4 {
 
 h5 {
   font-size: .83em;
-  margin-top: 1.67em;
-  margin-bottom: 1.67em;
+  /* margin-top: 1.67em;
+  margin-bottom: 1.67em; */
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
@@ -267,31 +267,40 @@ a.clear-style:hover {
   margin-bottom: 0;
 }
 
+div.search-category {
+  padding: 0;
+  margin-top: 0.5em;
+  margin-bottom: 2.5em;
+  text-align: right;
+  height: 2em;
+  line-height: 2em;
+  width: 100%;
+}
+
 h5.search-category {
   font-weight: normal;
-  text-align: right;
-  padding-right: 3em;
-  margin-top: 1em;
-  margin-bottom: 2em;
+  display: inline-block;
+  line-height: 2em;
+  vertical-align: top;
+  padding-top: 2px;
+}
+
+div.search-category > a {
+  padding-right: 2em;
   -webkit-transition: padding-right .2s ease-in;
   transition: padding-right .2s ease-in;
 }
 
-h5.search-category > i, h6.view-profile > i {
-  padding-left: 0.3em;
+h5.search-category {
+  padding-right: 0.7em;
 }
 
-.seek-category > a {
-  text-decoration: none;
-  color: black;
+div.search-category > a:hover, div.search-category > a:focus {
+  padding-right: 1em;
 }
 
-h5.search-category:hover, h5.search-category:focus {
-  padding-right: 2.7em;
-}
-
-h5.search-category:active {
-  padding-right: 2em;
+h5.search-category > a:active {
+  padding-right: 0;
 }
 
 h1.page-title {
@@ -358,6 +367,8 @@ div.view-profile {
   text-align: right;
   padding-top: 0.7em;
   letter-spacing: 0.05em;
+  height: 2em;
+  line-height: 2em;
 }
 
 div.view-profile > a {
@@ -376,6 +387,9 @@ h6.view-profile {
   font-size: 12px;
   font-weight: normal;
   text-align: right;
+  line-height: 2em;
+  vertical-align: top;
+  padding-top: 2px;
 }
 
 div.view-profile > a:hover, div.viewprofile > a:focus {
@@ -739,6 +753,10 @@ div.copyright {
     font-size: 14px;
   }
 
+  div.view-profile {
+    padding-top: 0.3em;
+  }
+
 }
 
 @media screen and (max-width: 1115px) {
@@ -845,7 +863,7 @@ div.copyright {
   }
 
   div.view-profile {
-    padding-top: 0;
+    padding-top: 0.3em;
   }
 
   h6.view-profile {
@@ -911,11 +929,15 @@ div.copyright {
   }
 
   .fa-arrow-right {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 
   .fa-plus-square {
     font-size: 1.2em;
+  }
+
+  div.view-profile {
+    padding-top: 0;
   }
 
 }
