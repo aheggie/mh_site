@@ -239,13 +239,20 @@ a.clear-style:hover {
 .category-description {
   border: 1px solid grey;
   padding: 1em;
+  height: 105px;
   background-color: #fff;
-  -webkit-transition: background-color .2s ease-in;
-  transition: background-color .2s ease-in;
+  overflow :hidden;
+
+  -webkit-transition: height 0.5s ease, background-color 0.5s ease;
+  transition: height 0.5s ease, background-color 0.5s ease;
 }
 
 .category-description:hover, .category-description:focus {
-  background-color: var(--linkColor);
+  background-color: #f3e9fd;
+  height: 130px;
+
+  -webkit-transition: height 0.5s ease, background-color 0.5s ease;
+  transition: height 0.5s ease, background-color 0.5s ease;
 }
 
 .fa-arrow-right {
@@ -270,7 +277,7 @@ a.clear-style:hover {
 div.search-category {
   padding: 0;
   margin-top: 0.5em;
-  margin-bottom: 2.5em;
+  margin-bottom: 1.5em;
   text-align: right;
   height: 2em;
   line-height: 2em;
@@ -296,7 +303,7 @@ h5.search-category {
 }
 
 div.search-category > a:hover, div.search-category > a:focus {
-  padding-right: 1em;
+  padding-right: 1.7em;
 }
 
 h5.search-category > a:active {
@@ -353,7 +360,7 @@ div.snippet-details {
 
 p.snippet-details {
   margin: 0;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .bio-icons {
@@ -365,7 +372,7 @@ div.view-profile {
   grid-area: profile;
   align-content: right;
   text-align: right;
-  padding-top: 0.7em;
+  padding-top: 0.5em;
   letter-spacing: 0.05em;
   height: 2em;
   line-height: 2em;
@@ -393,7 +400,7 @@ h6.view-profile {
 }
 
 div.view-profile > a:hover, div.viewprofile > a:focus {
-  padding-right: 1.2em;
+  padding-right: 1.4em;
 }
 
 /************ FULL WIDTH NAV **********/
@@ -410,6 +417,10 @@ nav {
   grid-template-columns: 100px 1fr;
   grid-template-areas:
     "logo links"
+}
+
+nav.mobile-nav {
+  display: none;
 }
 
 .sticky {
@@ -445,7 +456,7 @@ ul#nav-links {
   -webkit-transition: all 0.7s ease;
 }
 
-#nav-links a:hover {
+#nav-links a:hover, #nav-links a:focus {
   background-color: #6c4097;
 }
 
@@ -457,7 +468,7 @@ ul#nav-links {
   grid-area: logo;
   height: 3em;
   width: auto;
-  padding-top: 0.1em;
+  padding-top: 0.3em;
 }
 
 #nav-lang{
@@ -471,7 +482,7 @@ ul#nav-links {
   font-size: 16px;
   display: inline-block;
   position: relative;
-  margin: -0.3em 0 0.7em 0.9em;
+  margin: -0.5em 0 0.7em 0.9em;
   border-bottom: 1px solid #5a2a88;
 
   transition: color;
@@ -759,13 +770,28 @@ div.copyright {
 
 }
 
-@media screen and (max-width: 1115px) {
+@media screen and (max-width: 1048px) {
 
   .wrapper.services {
     grid-template-rows: auto;
   }
 
-  nav {
+  nav.mobile-nav {
+    display: block;
+  }
+
+  nav.main-nav {
+    display: none;
+  }
+
+  .fa-bars {
+    font-size: 1.5em;
+    color: #fff;
+    padding: 1rem;
+    float: right;
+  }
+
+  /* nav {
     display: flex;
     overflow: hidden;
     height: auto;
@@ -790,7 +816,7 @@ div.copyright {
 
   ul#nav-links {
     text-align: center;
-    padding-right: 5.5em;
+    padding: 0;
 
     display: -webkit-box;
     display: -moz-box;
@@ -823,7 +849,7 @@ div.copyright {
     font-size: 12px;
     margin: 0;
     border-bottom: 1px solid #5a2a88;
-  }
+  } */
 
 }
 
@@ -870,9 +896,17 @@ div.copyright {
     font-size: 12px;
   }
 
+  .bio-name {
+    font-size: 1.8em;
+  }
+
 }
 
 @media screen and (max-width: 640px) {
+
+  nav.mobile-nav {
+    padding: 0;
+  }
 
   .wrapper.page-content {
     width: 95%;
@@ -940,13 +974,66 @@ div.copyright {
     padding-top: 0;
   }
 
+  p.snippet-details {
+    font-size: 12px;
+  }
+
 }
 
+@media screen and (max-width: 480px) {
+
+  ul#nav-links {
+    padding: 0;
+  }
+
+}
 
 @media screen and (max-width: 375px) {
 
+  .content {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .wrapper.page-content {
+    width: 100%;
+  }
+
+  .page-intro {
+    padding: 1em;
+  }
+
+  .category-container {
+    margin-top: 1em;
+  }
+
  .bio-name {
-   font-size: 10px;
+   font-size: 1em;
  }
+
+ .footer-nav a {
+   margin: 1em 6em;
+ }
+
+ ul.footer-social {
+   margin-top: 0;
+   margin-bottom: 1em;
+ }
+
+ h5.search-category {
+   display: none;
+ }
+
+ .wrapper.offering > .button {
+   width: 90%;
+   padding-left: 0;
+   padding-right: 0;
+  }
+
+ #eng, #fr {
+   margin-top: 0;
+ }
+
 
 }
