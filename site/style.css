@@ -436,6 +436,7 @@ border: 1px solid yellow;
 	margin-top: 3em;
 	display: grid;
 	grid-column-gap: 8%;
+	grid-row-gap: 2.5em;
 
 	grid-template-columns: 46% 46%;
 	grid-template-areas:
@@ -443,7 +444,7 @@ border: 1px solid yellow;
 		"bio-about bio-sidebar"
 		"bio-payment bio-payment"
 		"bio-map bio-map"
-		"bio-extra bio-extra"
+		"bio-extra bio-extra";
 }
 
 div.bio-head {
@@ -464,7 +465,7 @@ h2.bio-title{
 }
 
 .bio.about {
-	margin-top: 2.5em;
+
 }
 
 .bio > h2 {
@@ -477,11 +478,14 @@ h2.bio-title{
 
 div.bio-sidebar {
 	grid-area: bio-sidebar;
-	margin-top: 5em;
+	margin-top: 4em;
 }
 
-.bio-sidebar-box {
+.bio-box{
 	border: 1px solid grey;
+}
+
+.sidebar-box {
 	padding: 1em 1em 0.5em 1em;
 }
 
@@ -491,7 +495,7 @@ div.bio-sidebar {
 }
 
 .bio.contact {
-	margin-bottom: 6em;
+	margin-bottom: 7em;
 }
 
 ul.contact-details > li {
@@ -607,14 +611,69 @@ div.expand {
 .bio.payment {
 	grid-area: bio-payment;
 
+	display: grid;
+	grid-column-gap: 4%;
+	grid-template-columns: [payment-col-start] 48% [payment-col-center] 48% [payment-col-end];
+	grid-template-rows: auto;
+
+}
+
+.bio.payment, .bio.qualifications {
+	width: 96%;
+	height: auto;
+	padding: 1% 2%;
+}
+
+.bio.payment > h2, .bio.qualifications > h2 {
+	width: inherit;
+	text-align: center;
+	margin: 0.5em auto 1em auto;
+}
+
+.bio.payment > h2, ul.accessibility-icons {
+	grid-column-start: payment-col-start;
+	grid-column-end: payment-col-end;
+}
+
+.bio.payment > ul, .bio.qualifications > ul {
+	margin: 0 auto 1em auto;
+}
+
+.bio.payment > ul > li, .bio.qualifications > ul > li {
+	padding: 0.5em;
+}
+
+ul.payment-rates {
+	grid-column-start: payment-col-start;
+	grid-column-end: payment-col-center;
+}
+
+ul.payment-methods {
+	grid-column-start: payment-col-center;
+	grid-column-end: payment-col-end;
+}
+
+ul.accessibility-icons {
+	display: flex;
+	margin: 0 auto;
+	font-size: 2em;
+	color: #5a2a88;
+}
+
+ul.accessibility-icons > li {
+	margin: 0 0.3em;
 }
 
 .bio.map {
 	grid-area: bio-map;
+	height: 25em;
 }
 
 .bio-qualifications {
 	grid-area: bio-extra;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
 }
 
 
