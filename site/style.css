@@ -205,7 +205,7 @@ a.clear-style:hover {
 .content {
   grid-area: content;
   height: 100%;
-  margin: 2em;
+  margin: 5em 2em 2em 2em;
 }
 
 .wrapper.page-content {
@@ -437,11 +437,11 @@ div.view-profile > a:hover, div.viewprofile > a:focus {
 	display: grid;
 	grid-column-gap: 8%;
 
-	grid-template-columns: 46% 46%;
+	grid-template-columns: 53% 39%;
 	grid-template-rows: auto auto 1.5em auto auto auto auto;
 	grid-template-areas:
 		"bio-head bio-head"
-		"bio-thumbnail bio-contact"
+		"bio-photo bio-contact"
 		". ."
 		"bio-about bio-sidebar"
 		"bio-payment bio-payment"
@@ -461,8 +461,38 @@ h2.bio-title{
 	margin: 0 0 0.5em 0;
 }
 
+.bio-photo {
+	grid-area: bio-photo;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul.bio-icons {
+	margin-left: 0.5em;
+	display: flex;
+}
+
+ul.bio-icons > li {
+	padding: 0.5em;
+}
+
+.fas.bio.fa-plus-square {
+	font-size: 1.2em;
+}
+
+.fas.bio.fa-heart, .fas.bio.fa-check-circle {
+	font-size: 0.9em;
+}
+
+.fa-heart {
+	color: #19FFB8;
+}
+
+.fa-check-circle {
+	color: #7F09EB;
+}
+
 .bio-thumbnail {
-	grid-area: bio-thumbnail;
 	width: 15.5em;
 	height: auto;
 }
@@ -473,6 +503,10 @@ h2.bio-title{
 
 .bio.contact > h2 {
 	margin-top: 0;
+}
+
+.bio.mobile-contact-title {
+	display: none;
 }
 
 .bio.about {
@@ -598,18 +632,6 @@ div.expand {
 	transition: padding-top .2s ease;
 }
 
-.bio.specializations {
-
-}
-
-.bio.issues {
-
-}
-
-.bio.approach {
-
-}
-
 .bio.payment {
 	grid-area: bio-payment;
 
@@ -617,7 +639,6 @@ div.expand {
 	grid-column-gap: 4%;
 	grid-template-columns: [payment-col-start] 48% [payment-col-center] 48% [payment-col-end];
 	grid-template-rows: auto;
-
 }
 
 .bio.payment, .bio.qualifications {
@@ -724,7 +745,7 @@ nav.mobile-nav {
 
 .sticky {
   position: fixed;
-  width: 100%;
+  width: 96%;
 }
 
 ul#nav-links {
@@ -1069,6 +1090,17 @@ div.copyright {
 
 }
 
+@media screen and (max-width: 1175px) {
+
+	.email, .phone {
+    font-size: 1.1em;
+	}
+
+	.address, .speaks-langs {
+		font-size: 0.8em;
+	}
+}
+
 @media screen and (max-width: 1048px) {
 
 	.button {
@@ -1135,12 +1167,20 @@ div.copyright {
     display: none;
   }
 
+	.content {
+		margin-top: 0;
+	}
+
   .fa-bars {
     font-size: 1.5em;
     color: #fff;
     padding: 1rem;
     float: right;
   }
+
+	.wrapper.bio-page {
+		grid-template-columns: 46% 46%;
+	}
 
   /* nav {
     display: flex;
@@ -1206,7 +1246,50 @@ div.copyright {
 
 @media screen and (max-width: 864px) {
 
-  .wrapper.offering {
+	.wrapper.bio-page {
+		width: 90%;
+		display: grid;
+		grid-column-gap: 8%;
+
+		grid-template-columns: 46% 46%;
+		grid-template-rows: auto auto 1.5em auto auto auto auto;
+		grid-template-areas:
+			"bio-head bio-head"
+			"bio-photo bio-contact"
+			". ."
+			"bio-about bio-about"
+			"bio-sidebar bio-sidebar"
+			"bio-payment bio-payment"
+			"bio-map bio-map"
+			"bio-extra bio-extra";
+	}
+
+	.bio-box > ul, .bio-box > p {
+		font-size: 0.9em;
+	}
+
+	.bio.payment {
+    grid-area: bio-payment;
+    display: grid;
+    grid-column-gap: 6%;
+    grid-template-columns: [payment-col-start] 52% [payment-col-center] 40% [payment-col-end];
+    grid-template-rows: auto;
+}
+
+	ul.contact-details > li {
+		padding: 0.4rem;
+	}
+
+	.email, .phone {
+    font-size: 1em;
+
+	}
+
+	.address, .speaks-langs {
+		font-size: 0.75em;
+	}
+
+	.wrapper.offering {
     width: 95%;
     margin-top: 0.5em;
     margin-bottom: 3em;
@@ -1329,6 +1412,15 @@ div.copyright {
     margin-top: 0.5em;
   }
 
+	.wrapper.bio-page {
+		margin-top: 2em;
+	}
+
+	.bio.contact > h2 {
+		font-size: 1.2em;
+		margin-top: 2em;
+	}
+
   .seek-category {
     width: 100%;
     margin-bottom: 1em;
@@ -1366,6 +1458,16 @@ div.copyright {
     margin-bottom: 3em;
   }
 
+	.bio.payment {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+	}
+
+	.bio.payment > ul {
+		max-width: 16em;
+	}
+
   .seek-category, .bio-snippet {
     min-width: 320px;
   }
@@ -1396,6 +1498,46 @@ div.copyright {
 
 }
 
+@media screen and (max-width: 560px) {
+
+	.content {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+		padding-right: 3em;
+		padding-left: 3em;
+  }
+
+	.wrapper.page-content {
+		width: 100%;
+	}
+
+	.wrapper.bio-page {
+		margin-top: 2em;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.bio.contact > h2 {
+		margin-top: 1em;
+	}
+
+	.bio.contact {
+		width: 100%;
+		margin: 1.5em auto 1.5em auto;
+		background-color: #f3e9fd;
+	}
+
+	.bio.full-width-contact-title {
+		display: none;
+	}
+
+	.bio.mobile-contact-title {
+		display: block;
+		margin-top: 0;
+	}
+}
+
 @media screen and (max-width: 480px) {
 
   ul#nav-links {
@@ -1421,6 +1563,10 @@ div.copyright {
 		border-radius: 28px;
 	}
 
+	.fas.access-icon {
+		font-size: 1em;
+	}
+
 }
 
 @media screen and (max-width: 375px) {
@@ -1443,6 +1589,7 @@ div.copyright {
 
   .content {
     height: 100%;
+		padding: 0.5em;
     margin: 0;
     overflow: hidden;
   }
@@ -1450,6 +1597,14 @@ div.copyright {
   .wrapper.page-content {
     width: 100%;
   }
+
+	.bio.payment > ul.accessibility-icons > li {
+		padding: 0.2em;
+	}
+
+	.fas.access-icon {
+		font-size: 0.7em;
+	}
 
   .page-intro {
     padding: 1em;
