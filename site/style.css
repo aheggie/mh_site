@@ -3,7 +3,97 @@
 
 */
 
-/********** MATERIAL ICONS RULES **********/
+
+/* Document
+   ========================================================================== */
+
+/**
+ * set document level css variables
+ */
+
+html, body {
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+    --linkColor: #ffe17e;
+}
+
+/**
+ * styling for block level elements
+ */
+
+p {
+  font-size: 1em;
+	margin: 1em 0;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 2.7em;
+	margin: 1.2em 0;
+}
+
+h2 {
+  font-size: 1.5em;
+	margin: 0.83em 0;
+}
+
+h3 {
+  font-size: 1.17em;
+	margin: 1em 0;
+}
+
+h4 {
+  font-size: 1em;
+	margin: 1.33em 0;
+}
+
+h5 {
+  font-size: .83em;
+	margin: 1.67em 0;
+}
+
+h6 {
+ font-size: .67em;
+ margin: 2.33em 0;
+}
+
+ul {
+	list-style: none;
+}
+
+/**
+ * links
+ */
+
+ a {
+   background:
+      linear-gradient(
+        to bottom, var(--linkColor) 0%,
+        var(--linkColor) 100%
+      );
+     background-position: 0 100%;
+     background-repeat: repeat-x;
+     background-size: 4px 2px;
+   color: #000;
+   text-decoration: none;
+   transition: background-size .5s;
+ }
+
+
+ a:hover {
+   background-size: 4px 50px;
+ }
+
+ a.clear-style {
+   background: none;
+ }
+
+ a.clear-style:hover {
+   background-size: 0;
+ }
+
+ /* Material icons
+    ========================================================================== */
 
 .material-icons {
   font-family: 'Material Icons';
@@ -30,110 +120,14 @@
   font-feature-settings: 'liga';
 }
 
-/*********** SET CORE STYLES **************/
-
-html, body {
-    --linkColor: #ffe17e;
-}
-
-h1, h2, h3 ,h4 ,h5, h6, p {
-  display: block;
-	font-weight: normal;
-}
-
-p {
-  font-size: 1em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
-  line-height: 1.6;
-}
-
-h1 {
-  font-size: 2.7em;
-  margin-top: 1.2em;
-  margin-bottom: 1.2em;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-h2 {
-  font-size: 1.5em;
-  margin-top: 0.83em;
-  margin-bottom: 0.83em;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-h3 {
-  font-size: 1.17em;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-h4 {
-  font-size: 1em;
-  margin-top: 1.33em;
-  margin-bottom: 1.33em;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-h5 {
-  font-size: .83em;
-  /* margin-top: 1.67em;
-  margin-bottom: 1.67em; */
-  margin-left: 0;
-  margin-right: 0;
-}
-
-h6 {
- font-size: .67em;
- margin-top: 2.33em;
- margin-bottom: 2.33em;
- margin-left: 0;
- margin-right: 0;
-}
-
-ul {
-	list-style: none;
-}
-
-a {
-  background:
-     linear-gradient(
-       to bottom, var(--linkColor) 0%,
-       var(--linkColor) 100%
-     );
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 4px 2px;
-  color: #000;
-  text-decoration: none;
-  transition: background-size .5s;
-}
-
-
-a:hover {
-  background-size: 4px 50px;
-}
-
-a.clear-style {
-  background: none;
-}
-
-a.clear-style:hover {
-  background-size: 0;
-}
+/* Layout
+	 ========================================================================== */
 
 .wrapper {
   margin: 0 auto;
 }
 
-.wrapper.services {
+.services {
   display: grid;
   grid-template-areas:
     "nav"
@@ -141,7 +135,7 @@ a.clear-style:hover {
     "footer";
 }
 
-.wrapper.homepage {
+.homepage {
   display: grid;
   grid-template-areas:
     "nav"
@@ -152,13 +146,40 @@ a.clear-style:hover {
 .content {
   grid-area: content;
   height: 100%;
-  margin: 5em 2em 2em 2em;
+  margin: 5em 2em;
 }
 
-.wrapper.page-content {
+.inner {
   width: 80%;
   max-width: 1200px;
-  margin-top: 1em;
+  margin: 0 auto;
+	padding-top: 3em;
+}
+
+header {
+  grid-area: header;
+  width: 100%;
+  height: auto;
+}
+
+.main-head {
+  width: 100%;
+  height: 50em;
+  background: url("img/header.jpg") no-repeat top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.home {
+  height: 100%;
+	margin-top: 5.5em;
+  display: grid;
+	grid-column-gap: 6%;
+
+  grid-template-columns: [home-first] 29% [home-line2] 29% [home-line3] 29% [home-end];
+  grid-template-rows: [home-row-first] 32% [home-row-line2] 19% [home-row-line3] 19% [home-row-line4] 5em [home-row-end];
 }
 
 
@@ -167,24 +188,21 @@ a.clear-style:hover {
 
 /***** END CUSTOM SELECT BOX STYLING ******/
 
-.wrapper.offering {
+.offering {
   display: grid;
   margin-bottom: 10em;
 
-  grid-template-columns: 1fr 7em 1fr;
+  grid-template-columns: 1fr 1fr;
+	grid-column-gap: 5%;
   grid-template-rows: auto 5em auto;
   grid-template-areas:
-  "intro intro intro"
-  ". . ."
-  "english . french";
+  "intro intro"
+  ". . "
+  "english french";
 }
 
-.wrapper.offering > div.page-intro {
+.page-intro {
   grid-area: intro;
-}
-
-.wrapper.offering > .button {
-  margin-bottom: 2em;
 }
 
 #eng {
@@ -203,7 +221,8 @@ a.clear-style:hover {
   margin-bottom: 4em;
 }
 
-.seek-category, .bio-snippet {
+.seek-category,
+.bio-snippet {
   width: 47.5%;
   min-width: 380px;
   margin-bottom: 0.7em;
@@ -220,7 +239,8 @@ a.clear-style:hover {
   transition: height 0.5s ease, background-color 0.5s ease;
 }
 
-.category-description:hover, .category-description:focus {
+.category-description:hover,
+.category-description:focus {
   background-color: #f3e9fd;
   height: 130px;
 
@@ -281,10 +301,6 @@ div.search-category > a:hover, div.search-category > a:focus {
 
 h5.search-category > a:active {
   padding-right: 0;
-}
-
-h1.page-title {
-  font-size: 2.7em;
 }
 
 /*********** Professional Filter ***********/
@@ -768,32 +784,7 @@ ul#nav-links {
   background-color: #5a2a88;
 }
 /************ HOMEPAGE ***********/
-header {
-  grid-area: header;
-  width: 100%;
-  height: auto;
-}
 
-.main-head {
-  width: 100%;
-  height: 45em;
-  background: url("img/header.jpg") no-repeat top center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.wrapper.home {
-  width: 80%;
-  max-width: 1200px;
-  height: 100%;
-  display: grid;
-	grid-column-gap: 6%;
-
-  grid-template-columns: [home-first] 29% [home-line2] 29% [home-line3] 29% [home-end];
-  grid-template-rows: [home-row-first] 15% [home-row-line2] 30% [home-row-line3] 2% [home-row-line4] 23% [home-row-line5] 23% [home-row-end];
-}
 
 h1#announce {
   font-size: 2.7em;
@@ -802,8 +793,8 @@ h1#announce {
 
   grid-column-start: home-first;
   grid-column-end: home-line3;
-  grid-row-start: home-row-line2;
-  grid-row-end: home-row-line3;
+  grid-row-start: home-row-first;
+  grid-row-end: home-row-line2;
 }
 
 .button {
@@ -863,22 +854,22 @@ button.yellow:hover, button.yellow:focus,
 #seek {
   grid-column-start: home-first;
   grid-column-end: home-line2;
-  grid-row-start: home-row-line4;
-  grid-row-end: home-row-line5;
+  grid-row-start: home-row-line2;
+  grid-row-end: home-row-line3;
 }
 
 #offer {
   grid-column-start: home-line3;
   grid-column-end: home-end;
-  grid-row-start: home-row-line4;
-  grid-row-end: home-row-line5;
+  grid-row-start: home-row-line2;
+  grid-row-end: home-row-line3;
 }
 
 #newsletter {
   grid-column-start: home-line2;
   grid-column-end: home-line3;
-  grid-row-start: home-row-line5;
-  grid-row-end: home-row-end;
+  grid-row-start: home-row-line3;
+  grid-row-end: home-row-line4;
 }
 
 /************ FOOTER **************/
@@ -1067,7 +1058,7 @@ div.copyright {
 		grid-column-gap: 6%;
 
 		grid-template-columns: [home-first] 47% [home-line2] 47% [home-end];
-		grid-template-rows: [home-row-first] 8% [home-row-line2] 35% [home-row-line3] 23% [home-row-line4] 23% [home-row-end];
+		grid-template-rows: [home-row-first] 35% [home-row-line2] 23% [home-row-line3] 23% [home-row-line4];
 	}
 
 	h1#announce {
@@ -1077,29 +1068,29 @@ div.copyright {
 
 		grid-column-start: home-first;
 		grid-column-end: home-end;
-		grid-row-start: home-row-line2;
-		grid-row-end: home-row-line3;
+		grid-row-start: home-row-first;
+		grid-row-end: home-row-line2;
 	}
 
 	#seek {
 		grid-column-start: home-first;
 		grid-column-end: home-line2;
-		grid-row-start: home-row-line3;
-		grid-row-end: home-row-line4;
+		grid-row-start: home-row-line2;
+		grid-row-end: home-row-line3;
 	}
 
 	#offer {
 		grid-column-start: home-line2;
 		grid-column-end: home-end;
-		grid-row-start: home-row-line3;
-		grid-row-end: home-row-line4;
+		grid-row-start: home-row-line2;
+		grid-row-end: home-row-line3;
 	}
 
 	#newsletter {
 		grid-column-start: home-first;
 		grid-column-end: home-end;
-		grid-row-start: home-row-line4;
-		grid-row-end: home-row-end;
+		grid-row-start: home-row-line3;
+		grid-row-end: home-row-line4;
 	}
 
   .wrapper.services {
@@ -1297,7 +1288,7 @@ div.copyright {
 		grid-column-gap: 6%;
 
 		grid-template-columns: [home-first] 47% [home-line2] 47% [home-end];
-		grid-template-rows: [home-row-first] 4% [home-row-line2] 37% [home-row-line3] 22% [home-row-line4] 22% [home-row-end];
+		grid-template-rows: [home-row-first] 37% [home-row-line2] 22% [home-row-line3] 22% [home-row-line4];
 	}
 
 }
@@ -1336,22 +1327,22 @@ div.copyright {
 	#seek {
 		grid-column-start: home-first;
 		grid-column-end: home-line2;
-		grid-row-start: home-row-line3;
-		grid-row-end: home-row-line4;
+		grid-row-start: home-row-line2;
+		grid-row-end: home-row-line3;
 	}
 
 	#offer {
 		grid-column-start: home-line2;
 		grid-column-end: home-end;
-		grid-row-start: home-row-line3;
-		grid-row-end: home-row-line4;
+		grid-row-start: home-row-line2;
+		grid-row-end: home-row-line3;
 	}
 
 	#newsletter {
 		grid-column-start: home-first;
 		grid-column-end: home-end;
-		grid-row-start: home-row-line4;
-		grid-row-end: home-row-end;
+		grid-row-start: home-row-line3;
+		grid-row-end: home-row-line4;
 	}
 
   .wrapper.page-content {
