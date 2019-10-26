@@ -432,15 +432,17 @@ div.view-profile > a:hover, div.viewprofile > a:focus {
 /************* BIO PAGE *****************/
 
 .wrapper.bio-page {
-border: 1px solid yellow;
 	margin-top: 3em;
+	margin-bottom: 5em;
 	display: grid;
 	grid-column-gap: 8%;
-	grid-row-gap: 2.5em;
 
 	grid-template-columns: 46% 46%;
+	grid-template-rows: auto auto 1.5em auto auto auto auto;
 	grid-template-areas:
-		"bio-head bio-sidebar"
+		"bio-head bio-head"
+		"bio-thumbnail bio-contact"
+		". ."
 		"bio-about bio-sidebar"
 		"bio-payment bio-payment"
 		"bio-map bio-map"
@@ -460,12 +462,21 @@ h2.bio-title{
 }
 
 .bio-thumbnail {
+	grid-area: bio-thumbnail;
 	width: 15.5em;
 	height: auto;
 }
 
-.bio.about {
+.bio.contact {
+	grid-area: bio-contact;
+}
 
+.bio.contact > h2 {
+	margin-top: 0;
+}
+
+.bio.about {
+	grid-area: bio-about;
 }
 
 .bio > h2 {
@@ -478,7 +489,6 @@ h2.bio-title{
 
 div.bio-sidebar {
 	grid-area: bio-sidebar;
-	margin-top: 4em;
 }
 
 .bio-box{
@@ -492,10 +502,6 @@ div.bio-sidebar {
 .bio.contact > .bio-sidebar-box {
 	padding-bottom: 2em;
 	padding-top: 2em;
-}
-
-.bio.contact {
-	margin-bottom: 7em;
 }
 
 ul.contact-details > li {
@@ -592,10 +598,6 @@ div.expand {
 	transition: padding-top .2s ease;
 }
 
-.bio.contact {
-
-}
-
 .bio.specializations {
 
 }
@@ -619,9 +621,9 @@ div.expand {
 }
 
 .bio.payment, .bio.qualifications {
-	width: 96%;
+	width: 92%;
 	height: auto;
-	padding: 1% 2%;
+	padding: 1% 4%;
 }
 
 .bio.payment > h2, .bio.qualifications > h2 {
@@ -635,8 +637,12 @@ div.expand {
 	grid-column-end: payment-col-end;
 }
 
-.bio.payment > ul, .bio.qualifications > ul {
-	margin: 0 auto 1em auto;
+.bio.payment > ul {
+	margin: 1em auto;
+}
+
+.bio.qualifications > ul, .bio.qualifications > p {
+	margin: 1em 10%;
 }
 
 .bio.payment > ul > li, .bio.qualifications > ul > li {
@@ -653,7 +659,7 @@ ul.payment-methods {
 	grid-column-end: payment-col-end;
 }
 
-ul.accessibility-icons {
+.bio.payment > ul.accessibility-icons {
 	display: flex;
 	margin: 0 auto;
 	font-size: 2em;
@@ -667,13 +673,31 @@ ul.accessibility-icons > li {
 .bio.map {
 	grid-area: bio-map;
 	height: 25em;
+	border: 1px solid grey;
 }
 
-.bio-qualifications {
+.bio.qualifications {
 	grid-area: bio-extra;
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
+	padding-bottom: 2em;
+
+	display: grid;
+	grid-column-gap: 4%;
+	grid-template-columns: [qual-col-start] 48% [qual-col-center] 48% [qual-col-end];
+	grid-template-rows: auto;
+}
+
+.bio.qualifications > ul, .bio.qualifications > p {
+	grid-column-start: qual-col-start;
+	grid-column-end: qual-col-end;
+}
+
+.bio.qualifications > h2 {
+	grid-column-start: qual-col-start;
+	grid-column-end: qual-col-end;
+}
+
+.bio.payment, .bio.map, .bio.qualifications {
+	margin-top: 3.5em;
 }
 
 
@@ -797,8 +821,9 @@ header {
   max-width: 1200px;
   height: 100%;
   display: grid;
+	grid-column-gap: 6%;
 
-  grid-template-columns: [home-first] 29% [home-line2] 6.5% [home-line3] 14.5% [home-line4] 14.5% [home-line5] 6.5% [home-line6] 29% [home-end];
+  grid-template-columns: [home-first] 29% [home-line2] 29% [home-line3] 29% [home-end];
   grid-template-rows: [home-row-first] 15% [home-row-line2] 30% [home-row-line3] 2% [home-row-line4] 23% [home-row-line5] 23% [home-row-end];
 }
 
@@ -808,7 +833,7 @@ h1#announce {
   width: 450px;
 
   grid-column-start: home-first;
-  grid-column-end: home-line4;
+  grid-column-end: home-line3;
   grid-row-start: home-row-line2;
   grid-row-end: home-row-line3;
 }
@@ -816,14 +841,13 @@ h1#announce {
 .button {
   text-transform: uppercase;
   font-weight: 500;
-  width: 200px;
+  width: 175px;
   height: auto;
   margin: auto;
   padding: 1.2rem 2rem;
   font-size: 0.8rem;
   text-align: center;
-  border-radius: 25px;
-  margin: auto;
+  border-radius: 28px;
   display: inline-block;
 
   transition: background-color;
@@ -831,22 +855,22 @@ h1#announce {
           transition: all 0.2s ease;
 }
 
-button {
+/* button {
   text-transform: uppercase;
   font-weight: 500;
-  width: 250px;
+  width: 175px;
   height: 50px;
   padding: 1.2rem 2rem 2rem 2rem;
   font-size: 0.8rem;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 28px;
   margin: auto;
   display: inline-block;
 
   transition: background-color;
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
-}
+} */
 
 button.purple, .button.purple {
   background-color: #dec3fa;
@@ -876,15 +900,15 @@ button.yellow:hover, button.yellow:focus,
 }
 
 #offer {
-  grid-column-start: home-line6;
+  grid-column-start: home-line3;
   grid-column-end: home-end;
   grid-row-start: home-row-line4;
   grid-row-end: home-row-line5;
 }
 
 #newsletter {
-  grid-column-start: home-line3;
-  grid-column-end: home-line5;
+  grid-column-start: home-line2;
+  grid-column-end: home-line3;
   grid-row-start: home-row-line5;
   grid-row-end: home-row-end;
 }
@@ -1047,6 +1071,58 @@ div.copyright {
 
 @media screen and (max-width: 1048px) {
 
+	.button {
+		width: inherit;
+		max-width: 175px;
+		padding: 1.2rem 2rem;
+		font-size: 0.8rem;
+		border-radius: 28px;
+	}
+
+	.main-head {
+	  height: 35em;
+	}
+
+	.wrapper.home {
+		display: grid;
+		grid-column-gap: 6%;
+
+		grid-template-columns: [home-first] 47% [home-line2] 47% [home-end];
+		grid-template-rows: [home-row-first] 8% [home-row-line2] 35% [home-row-line3] 23% [home-row-line4] 23% [home-row-end];
+	}
+
+	h1#announce {
+		font-size: 2.4em;
+		font-weight: normal;
+		width: 400px;
+
+		grid-column-start: home-first;
+		grid-column-end: home-end;
+		grid-row-start: home-row-line2;
+		grid-row-end: home-row-line3;
+	}
+
+	#seek {
+		grid-column-start: home-first;
+		grid-column-end: home-line2;
+		grid-row-start: home-row-line3;
+		grid-row-end: home-row-line4;
+	}
+
+	#offer {
+		grid-column-start: home-line2;
+		grid-column-end: home-end;
+		grid-row-start: home-row-line3;
+		grid-row-end: home-row-line4;
+	}
+
+	#newsletter {
+		grid-column-start: home-first;
+		grid-column-end: home-end;
+		grid-row-start: home-row-line4;
+		grid-row-end: home-row-end;
+	}
+
   .wrapper.services {
     grid-template-rows: auto;
   }
@@ -1128,7 +1204,7 @@ div.copyright {
 
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 864px) {
 
   .wrapper.offering {
     width: 95%;
@@ -1177,11 +1253,76 @@ div.copyright {
 
 }
 
+@media screen and (max-width: 740px) {
+
+	.main-head {
+	  height: 30em;
+	}
+
+	.wrapper.home {
+		width: 80%;
+		max-width: 1200px;
+		height: 100%;
+		display: grid;
+		grid-column-gap: 6%;
+
+		grid-template-columns: [home-first] 47% [home-line2] 47% [home-end];
+		grid-template-rows: [home-row-first] 4% [home-row-line2] 37% [home-row-line3] 22% [home-row-line4] 22% [home-row-end];
+	}
+
+}
+
 @media screen and (max-width: 640px) {
 
   nav.mobile-nav {
     padding: 0;
   }
+
+	.main-head {
+		height: 29em;
+	}
+
+	.button {
+		width: inherit;
+		max-width: 300px;;
+		padding: 1.2rem 2rem;
+		margin: 0.5em 0;
+		font-size: 0.8rem;
+		border-radius: 28px;
+	}
+
+	.wrapper.home {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	h1#announce {
+		font-size: 2.4em;
+		font-weight: normal;
+		width: 400px;
+	}
+
+	#seek {
+		grid-column-start: home-first;
+		grid-column-end: home-line2;
+		grid-row-start: home-row-line3;
+		grid-row-end: home-row-line4;
+	}
+
+	#offer {
+		grid-column-start: home-line2;
+		grid-column-end: home-end;
+		grid-row-start: home-row-line3;
+		grid-row-end: home-row-line4;
+	}
+
+	#newsletter {
+		grid-column-start: home-first;
+		grid-column-end: home-end;
+		grid-row-start: home-row-line4;
+		grid-row-end: home-row-end;
+	}
 
   .wrapper.page-content {
     width: 95%;
@@ -1261,9 +1402,44 @@ div.copyright {
     padding: 0;
   }
 
+	.main-head {
+		height: 29em;
+	}
+
+	h1#announce {
+		font-size: 2em;
+		font-weight: normal;
+		width: auto;
+	}
+
+	.button {
+		width: auto;
+		max-width: 300px;;
+		padding: 1.2rem 2rem;
+		margin: 0.5em 0;
+		font-size: 0.8rem;
+		border-radius: 28px;
+	}
+
 }
 
 @media screen and (max-width: 375px) {
+
+	h1#announce {
+		font-size: 1.9em;
+		font-weight: normal;
+		width: auto;
+	}
+
+	.button {
+		width: auto;
+		max-width: 300px;
+		height: auto;
+		padding: 1rem 2rem;
+		margin: 0.5em 0;
+		font-size: 0.7rem;
+		border-radius: 28px;
+	}
 
   .content {
     height: 100%;
