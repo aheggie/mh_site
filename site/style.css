@@ -1536,6 +1536,11 @@ div.copyright {
 		display: block;
 		margin-top: 0;
 	}
+
+	.bio.qualifications {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 @media screen and (max-width: 480px) {
@@ -1598,8 +1603,17 @@ div.copyright {
     width: 100%;
   }
 
+	.bio-thumbnail {
+		width: 100%;
+	}
+
 	.bio.payment > ul.accessibility-icons > li {
 		padding: 0.2em;
+		margin-bottom: 1em;
+	}
+
+	.bio.payment > ul, .bio.qualifications > ul {
+		max-width: 100%;
 	}
 
 	.fas.access-icon {
