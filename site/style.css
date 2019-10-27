@@ -986,24 +986,12 @@ div.copyright {
 		  grid-template-rows: [home-row-first] 35% [home-row-line2] 19% [home-row-line3] 19% [home-row-line4] 5em [home-row-end];
 	}
 
-
- v
-
   .page-content {
     min-height: 600px;
   }
 
   .offering {
-    display: grid;
     margin-bottom: 4em;
-
-    grid-template-columns: 1fr 10em 1fr;
-    grid-template-rows: 4em 5em auto auto;
-    grid-template-areas:
-    "intro intro intro"
-    ". . ."
-    "english . french"
-    ". . .";
   }
 
 
@@ -1602,7 +1590,7 @@ div.copyright {
    margin: 1em 6em;
  }
 
- ul.footer-social {
+ .footer-social {
    margin-top: 0;
    margin-bottom: 1em;
  }
