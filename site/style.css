@@ -1055,28 +1055,32 @@ div.copyright {
 
 @media screen and (max-width: 1048px) {
 
-	.button {
-		width: inherit;
-		max-width: 175px;
-		padding: 1.2rem 2rem;
-		font-size: 0.8rem;
-		border-radius: 28px;
-	}
-
 	header {
 	  height: 35em;
 	}
 
 	.home {
+		margin-top: 0;
+
 		display: grid;
 		grid-column-gap: 6%;
 
 		grid-template-columns: [home-first] 47% [home-line2] 47% [home-end];
-		grid-template-rows: [home-row-first] 35% [home-row-line2] 23% [home-row-line3] 23% [home-row-line4];
+		grid-template-rows: [home-row-first] 35% [home-row-line2] 23% [home-row-line3] 23% [home-row-end];
 	}
+
+	.button {
+		width: inherit;
+		max-width: 200px;
+		padding: 1.2rem 2rem;
+		font-size: 0.8rem;
+		border-radius: 28px;
+	}
+
 
 	#announce {
 		width: 400px;
+		font-size: 2.4em;
 
 		grid-column-start: home-first;
 		grid-column-end: home-end;
@@ -1089,6 +1093,7 @@ div.copyright {
 		grid-column-end: home-line2;
 		grid-row-start: home-row-line2;
 		grid-row-end: home-row-line3;
+		border: 1px solid red;
 	}
 
 	#offer {
@@ -1102,7 +1107,7 @@ div.copyright {
 		grid-column-start: home-first;
 		grid-column-end: home-end;
 		grid-row-start: home-row-line3;
-		grid-row-end: home-row-line4;
+		grid-row-end: home-row-end;
 	}
 
   .services {
