@@ -30,31 +30,37 @@ p {
 h1 {
   font-size: 2.7em;
 	margin: 1.2em 0;
+	font-weight: normal;
 }
 
 h2 {
   font-size: 1.5em;
 	margin: 0.83em 0;
+	font-weight: normal;
 }
 
 h3 {
   font-size: 1.17em;
 	margin: 1em 0;
+	font-weight: normal;
 }
 
 h4 {
   font-size: 1em;
 	margin: 1.33em 0;
+	font-weight: normal;
 }
 
 h5 {
   font-size: .83em;
 	margin: 1.67em 0;
+	font-weight: normal;
 }
 
 h6 {
  font-size: .67em;
  margin: 2.33em 0;
+ font-weight: normal;
 }
 
 ul {
@@ -258,7 +264,6 @@ header {
 }
 
 .category-description > h3 {
-  font-weight: normal;
   margin-top: 0;
 }
 
@@ -277,7 +282,6 @@ header {
 }
 
 .search-link {
-  font-weight: normal;
   display: inline-block;
   line-height: 2em;
   vertical-align: top;
@@ -336,7 +340,6 @@ header {
 
 .snippet-name {
   grid-area: name;
-  font-weight: normal;
   font-size: 2em;
   margin: 0;
   padding-top: 0.5em;
@@ -377,11 +380,9 @@ div.view-profile > a {
 h6.view-profile {
   margin: 0;
   padding-right: 0.5em;
-  font-weight: normal;
   display: inline-block;
   color: #f2c944;
   font-size: 12px;
-  font-weight: normal;
   text-align: right;
   line-height: 2em;
   vertical-align: top;
@@ -787,7 +788,6 @@ ul#nav-links {
 
 
 #announce {
-  font-weight: normal;
   width: 500px;
 
   grid-column-start: home-first;
@@ -1076,7 +1076,6 @@ div.copyright {
 	}
 
 	#announce {
-		font-weight: normal;
 		width: 400px;
 
 		grid-column-start: home-first;
@@ -1331,11 +1330,6 @@ div.copyright {
 		justify-content: flex-start;
 	}
 
-	#announce {
-		font-weight: normal;
-		width: 400px;
-	}
-
 	#seek {
 		grid-column-start: home-first;
 		grid-column-end: home-line2;
@@ -1501,7 +1495,6 @@ div.copyright {
 
 	#announce {
 		font-size: 2em;
-		font-weight: normal;
 		width: auto;
 	}
 
@@ -1524,7 +1517,6 @@ div.copyright {
 
 	#announce {
 		font-size: 1.9em;
-		font-weight: normal;
 		width: auto;
 	}
 
