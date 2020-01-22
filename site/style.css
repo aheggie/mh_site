@@ -246,7 +246,7 @@ header {
 
 .category-description:hover,
 .category-description:focus {
-  background-color: #f3e9fd;
+  background-color: #fff;
   height: 130px;
 
   -webkit-transition: height 0.5s ease, background-color 0.5s ease;
