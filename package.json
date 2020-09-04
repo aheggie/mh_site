@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/aheggie/mh_site/issues"
   },
-  "homepage": "https://github.com/aheggie/mh_site#readme"
+  "homepage": "https://github.com/aheggie/mh_site#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6"
+  }
 }
