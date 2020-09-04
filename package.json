@@ -1,0 +1,19 @@
+{
+  "name": "healing-through-generations-mainsite",
+  "version": "0.0.9",
+  "description": "Mental health website for racialised practitioners and clientele",
+  "main": "src/static/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aheggie/mh_site.git"
+  },
+  "author": "CURE Concordia (Jodie-Ann Muckler, Alexandra Heggie, Cassie Smith)",
+  "license": "AGPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/aheggie/mh_site/issues"
+  },
+  "homepage": "https://github.com/aheggie/mh_site#readme"
+}
