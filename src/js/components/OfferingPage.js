@@ -1,7 +1,7 @@
 import React from "react";
 import HeaderFooter from "./HeaderFooter";
 
-const Offering = () => {
+const OfferingPage = () => {
   return (
     <HeaderFooter className="wrapper services main-wrapper">
       <article className="content">
@@ -32,4 +32,4 @@ const Offering = () => {
   );
 };
 
-export default Offering;
+export default OfferingPage;

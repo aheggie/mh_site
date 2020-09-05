@@ -1,13 +1,9 @@
 import React from "react";
-import Nav from "./Nav";
-import Footer from "./Footer";
+import HeaderFooter from "./HeaderFooter";
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <div className="wrapper homepage main-wrapper">
-      <Nav />
-
-      {/* <!-- Header --> */}
+    <HeaderFooter className="wrapper homepage main-wrapper">
       <header className="main-head">
         <div className="inner home">
           <h1 id="announce">
@@ -36,10 +32,8 @@ const Home = () => {
           </a>
         </div>
       </header>
-
-      <Footer />
-    </div>
+    </HeaderFooter>
   );
 };
 
-export default Home;
+export default HomePage;
