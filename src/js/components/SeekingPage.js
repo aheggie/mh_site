@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const toUrlCase = (title) => title.toLowerCase().split(" ").join("-");
 
-const ProfessionCard = ({ id, title, descriptionText, buttonText }) => {
+const ProfessionCard = ({ id, title, descriptionText }) => {
   return (
     <div className="seek-category" id={id}>
       <div className="category-description">
