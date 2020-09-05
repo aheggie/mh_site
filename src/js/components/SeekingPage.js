@@ -1,5 +1,31 @@
 import React from "react";
 import HeaderFooter from "./HeaderFooter";
+import { Link } from "react-router-dom";
+
+const toUrlCase = (title) => title.toLowerCase().split(" ").join("-");
+
+const ProfessionCard = ({ id, title, descriptionText, buttonText }) => {
+  return (
+    <div className="seek-category" id={id}>
+      <div className="category-description">
+        <h3>{title}</h3>
+        <p>{descriptionText}</p>
+      </div>
+      <div className="search-category">
+        <Link to={`filter-by/${toUrlCase(title)}`} className="clear-style">
+          <h5 className="search-link">{`SEARCH FOR ${title.toUpperCase()}`}</h5>
+          <i className="fas fa-arrow-right"></i>
+        </Link>
+      </div>
+    </div>
+  );
+};
+
+const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
+Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
+imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
+malesuada tortor nisi, id mollis ligula dapibus.`;
 
 const SeekingPage = () => {
   return (
@@ -22,156 +48,46 @@ const SeekingPage = () => {
             </p>
           </div>
           <div className="category-container">
-            <div className="seek-category" id="couple-family">
-              <div className="category-description">
-                <h3>Couple and family therapists</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-                  Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
-                  imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
-                  malesuada tortor nisi, id mollis ligula dapibus.
-                </p>
-              </div>
-              <div className="search-category">
-                <a href="professional-filter.html" className="clear-style">
-                  <h5 className="search-link">
-                    SEARCH FOR COUPLE AND FAMILY THERAPISTS
-                  </h5>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="seek-category" id="social-workers">
-              <div className="category-description">
-                <h3>Social workers</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-                  Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
-                  imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
-                  malesuada tortor nisi, id mollis ligula dapibus.{" "}
-                </p>
-              </div>
-              <div className="search-category">
-                <a href="professional-filter.html" className="clear-style">
-                  <h5 className="search-link">SEARCH FOR SOCIAL WORKERS</h5>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="seek-category" id="sexologists">
-              <div className="category-description">
-                <h3>Sexologists</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-                  Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
-                  imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
-                  malesuada tortor nisi, id mollis ligula dapibus.
-                </p>
-              </div>
-              <div className="search-category">
-                <a href="professional-filter.html" className="clear-style">
-                  <h5 className="search-link">SEARCH FOR SEXOLOGISTS</h5>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="seek-category" id="psychologists">
-              <div className="category-description">
-                <h3>Psychologists</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-                  Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
-                  imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
-                  malesuada tortor nisi, id mollis ligula dapibus.
-                </p>
-              </div>
-              <div className="search-category">
-                <a href="professional-filter.html" className="clear-style">
-                  <h5 className="search-link">SEARCH FOR PSYCHOLOGISTS</h5>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="seek-category" id="indigenous">
-              <div className="category-description">
-                <h3>Indigenous elders and healers</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-                  Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
-                  imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
-                  malesuada tortor nisi, id mollis ligula dapibus.
-                </p>
-              </div>
-              <div className="search-category">
-                <a href="professional-filter.html" className="clear-style">
-                  <h5 className="search-link">
-                    SEARCH FOR INDIGENOUS ELDERS AND HEALERS
-                  </h5>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="seek-category" id="psychotherapists">
-              <div className="category-description">
-                <h3>Psychotherapists</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-                  Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
-                  imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
-                  malesuada tortor nisi, id mollis ligula dapibus.
-                </p>
-              </div>
-              <div className="search-category">
-                <a href="professional-filter.html" className="clear-style">
-                  <h5 className="search-link">SEARCH FOR PSYCHOTHERAPISTS</h5>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="seek-category" id="other">
-              <div className="category-description">
-                <h3>Other mental health professionals</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-                  Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
-                  imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
-                  malesuada tortor nisi, id mollis ligula dapibus.
-                </p>
-              </div>
-              <div className="search-category">
-                <a href="professional-filter.html" className="clear-style">
-                  <h5 className="search-link">
-                    SEARCH FOR OTHER MENTAL HEALTH PROFESSIONALS
-                  </h5>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="seek-category" id="placeholder">
-              <div className="category-description">
-                <h3>Placeholder</h3>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-                  Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
-                  imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
-                  malesuada tortor nisi, id mollis ligula dapibus.
-                </p>
-              </div>
-              <div className="search-category">
-                <a href="professional-filter.html" className="clear-style">
-                  <h5 className="search-link">SEARCH FOR PLACEHOLDER</h5>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
+            <ProfessionCard
+              id="couple-family"
+              title="Couple and family therapists"
+              descriptionText={loremIpsum}
+            />
+            <ProfessionCard
+              id="social-workers"
+              title="Social workers"
+              descriptionText={loremIpsum}
+            />
+            <ProfessionCard
+              id="sexologists"
+              title="Sexologists"
+              descriptionText={loremIpsum}
+            />
+            <ProfessionCard
+              id="psychologists"
+              title="Psychologists"
+              descriptionText={loremIpsum}
+            />
+            <ProfessionCard
+              id="indigenous"
+              title="Indigenous elders and healers"
+              descriptionText={loremIpsum}
+            />
+            <ProfessionCard
+              id="psychotherapists"
+              title="Psychotherapists"
+              descriptionText={loremIpsum}
+            />
+            <ProfessionCard
+              id="other"
+              title="Other mental health professionals"
+              descriptionText={loremIpsum}
+            />
+            <ProfessionCard
+              id="placeholder"
+              title="Placeholder"
+              descriptionText={loremIpsum}
+            />
           </div>
         </div>
       </article>
