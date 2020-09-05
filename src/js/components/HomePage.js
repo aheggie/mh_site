@@ -1,5 +1,6 @@
 import React from "react";
 import HeaderFooter from "./HeaderFooter";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -9,25 +10,21 @@ const HomePage = () => {
           <h1 id="announce">
             Find mental health professionals of colour in Tiotia:ke (Montreal)
           </h1>
-          <a
-            href="seeking-services.html"
+          <Link
+            to="/seeking-services"
             className="button purple clear-style"
             id="seek"
           >
             Seeking Services
-          </a>
-          <a
-            href="offering-services.html"
+          </Link>
+          <Link
+            to="/offering-services"
             className="button purple clear-style"
             id="offer"
           >
             Offering Services
-          </a>
-          <a
-            href="offering-services.html"
-            className="button yellow clear-style"
-            id="newsletter"
-          >
+          </Link>
+          <a href="" className="button yellow clear-style" id="newsletter">
             Join Our Newsletter
           </a>
         </div>
