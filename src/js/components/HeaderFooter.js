@@ -2,9 +2,9 @@ import React from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
-const HeaderFooter = ({ classes, children }) => {
+const HeaderFooter = ({ className, children }) => {
   return (
-    <div className={classes}>
+    <div className={className}>
       <Nav />
       {children}
       <Footer />
