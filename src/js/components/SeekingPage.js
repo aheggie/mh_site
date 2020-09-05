@@ -3,7 +3,7 @@ import HeaderFooter from "./HeaderFooter";
 
 const SeekingPage = () => {
   return (
-    <HeaderFooter className="wrapper services main-wrapper">
+    <HeaderFooter className="services">
       <article className="content">
         <div className="professional-filter inner">
           <div className="page-intro">

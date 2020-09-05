@@ -3,7 +3,7 @@ import HeaderFooter from "./HeaderFooter";
 
 const OfferingPage = () => {
   return (
-    <HeaderFooter className="wrapper services main-wrapper">
+    <HeaderFooter className="services">
       <article className="content">
         <div className="offering inner">
           <div className="page-intro">

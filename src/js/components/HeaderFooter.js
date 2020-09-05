@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const HeaderFooter = ({ className, children }) => {
   return (
-    <div className={className}>
+    <div className={`wrapper ${className} main-wrapper`}>
       <Nav />
       {children}
       <Footer />

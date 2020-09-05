@@ -3,7 +3,7 @@ import HeaderFooter from "./HeaderFooter";
 
 const HomePage = () => {
   return (
-    <HeaderFooter className="wrapper homepage main-wrapper">
+    <HeaderFooter className="homepage">
       <header className="main-head">
         <div className="inner home">
           <h1 id="announce">
