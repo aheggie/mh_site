@@ -1,5 +1,15 @@
 import React from "react";
 
+const NavLink = ({ href, text }) => {
+  return (
+    <li>
+      <a href={href} className="clear-style">
+        {text}
+      </a>
+    </li>
+  );
+};
+
 const Nav = () => {
   return (
     <>
@@ -12,36 +22,12 @@ const Nav = () => {
           id="logo"
         />
         <ul id="nav-links">
-          <li>
-            <a href="index.html" className="clear-style">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="seeking-services.html" className="clear-style">
-              Seeking Services
-            </a>
-          </li>
-          <li>
-            <a href="offering-services.html" className="clear-style">
-              Offering Services
-            </a>
-          </li>
-          <li>
-            <a href="" className="clear-style">
-              Why Does This Exist?
-            </a>
-          </li>
-          <li>
-            <a href="" className="clear-style">
-              About Us
-            </a>
-          </li>
-          <li>
-            <a href="" className="clear-style">
-              Resources
-            </a>
-          </li>
+          <NavLink href="index.html" text="Home" />
+          <NavLink href="seeking-services.html" text="Seeking Services" />
+          <NavLink href="offering-services.html" text="Offering Services" />
+          <NavLink href="" text="Why Does This Exist?" />
+          <NavLink href="" text="About Us" />
+          <NavLink href="" text="Resources" />
           <li id="nav-lang">
             <a href="" className="clear-style">
               FR
