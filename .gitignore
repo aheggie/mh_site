@@ -6,6 +6,8 @@ node_modules/
 
 #this is to selectively ignore folders of working notes etc
 scratch/
+#this is to selectively ignore any file
+*.scratch
 
 #I'm not sure what these two are
 coverage/
