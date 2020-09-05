@@ -1,4 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+const FooterNavLink = ({ to, linkText }) => {
+  return (
+    <li>
+      <Link to={to}>{linkText}</Link>
+    </li>
+  );
+};
 
 const Footer = () => {
   return (
@@ -17,9 +26,7 @@ const Footer = () => {
           </li>
         </ul>
         <ul className="footer-nav">
-          <li>
-            <a href="seeking-services">Seeking Services</a>
-          </li>
+          <FooterNavLink to="seeking-services" linkText="Seeking Services" />
           <li>
             <a href="offering-services">Offering Services</a>
           </li>
