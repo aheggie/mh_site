@@ -1,11 +1,9 @@
 import React from "react";
-import Nav from "./Nav";
-import Footer from "./Footer";
+import HeaderFooter from "./HeaderFooter";
 
 const Offering = () => {
   return (
-    <div className="wrapper services main-wrapper">
-      <Nav />
+    <HeaderFooter classes="wrapper services main-wrapper">
       <article className="content">
         <div className="offering inner">
           <div className="page-intro">
@@ -30,8 +28,7 @@ const Offering = () => {
           </a>
         </div>
       </article>
-      <Footer />
-    </div>
+    </HeaderFooter>
   );
 };
 
