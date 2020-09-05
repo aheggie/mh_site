@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavLink = ({ href, text }) => {
+const NavLink = ({ to, text }) => {
   return (
     <li>
-      <Link to={href} className="clear-style">
+      <Link to={to} className="clear-style">
         {text}
       </Link>
     </li>
@@ -23,12 +23,12 @@ const Nav = () => {
           id="logo"
         />
         <ul id="nav-links">
-          <NavLink href="/" text="Home" />
-          <NavLink href="/seeking-services" text="Seeking Services" />
-          <NavLink href="/offering-services" text="Offering Services" />
-          <NavLink href="/why-does-this-exist" text="Why Does This Exist?" />
-          <NavLink href="/about-us" text="About Us" />
-          <NavLink href="/resources" text="Resources" />
+          <NavLink to="/" text="Home" />
+          <NavLink to="/seeking-services" text="Seeking Services" />
+          <NavLink to="/offering-services" text="Offering Services" />
+          <NavLink to="/why" text="Why Does This Exist?" />
+          <NavLink to="/about" text="About Us" />
+          <NavLink to="/resources" text="Resources" />
           <li id="nav-lang">
             <a href="" className="clear-style">
               FR
