@@ -4,6 +4,9 @@ dist/
 .cache/
 node_modules/
 
+#this is to selectively ignore folders of working notes etc
+scratch/
+
 #I'm not sure what these two are
 coverage/
 .vscode/
