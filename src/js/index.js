@@ -1,6 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
-import HomePage from "./components/HomePage";
-import OfferingPage from "./components/OfferingPage";
+import { BrowserRouter as Router } from "react-router-dom";
+import EntryPoint from "./components/EntryPoint";
 
-render(<OfferingPage />, document.getElementById("root"));
+render(
+  <Router>
+    <EntryPoint />
+  </Router>,
+  document.getElementById("root")
+);

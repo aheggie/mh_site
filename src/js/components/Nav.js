@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const NavLink = ({ href, text }) => {
   return (
     <li>
-      <a href={href} className="clear-style">
+      <Link to={href} className="clear-style">
         {text}
-      </a>
+      </Link>
     </li>
   );
 };
@@ -22,12 +23,12 @@ const Nav = () => {
           id="logo"
         />
         <ul id="nav-links">
-          <NavLink href="index.html" text="Home" />
-          <NavLink href="seeking-services.html" text="Seeking Services" />
-          <NavLink href="offering-services.html" text="Offering Services" />
-          <NavLink href="" text="Why Does This Exist?" />
-          <NavLink href="" text="About Us" />
-          <NavLink href="" text="Resources" />
+          <NavLink href="/" text="Home" />
+          <NavLink href="/seeking-services" text="Seeking Services" />
+          <NavLink href="/offering-services" text="Offering Services" />
+          <NavLink href="/why-does-this-exist" text="Why Does This Exist?" />
+          <NavLink href="/about-us" text="About Us" />
+          <NavLink href="/resources" text="Resources" />
           <li id="nav-lang">
             <a href="" className="clear-style">
               FR
