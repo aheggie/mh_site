@@ -2,6 +2,7 @@ import React from "react";
 import HeaderFooter from "./HeaderFooter";
 import { Link } from "react-router-dom";
 import routes from "../routes";
+import { appendTitle } from "../utilities";
 
 const { filterRoute } = routes;
 
@@ -31,6 +32,7 @@ imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
 malesuada tortor nisi, id mollis ligula dapibus.`;
 
 const SeekingPage = () => {
+  appendTitle("Seeking Services");
   return (
     <HeaderFooter className="services">
       <article className="content">

@@ -1,7 +1,10 @@
 import React from "react";
 import HeaderFooter from "./HeaderFooter";
 
+import { appendTitle } from "../utilities";
+
 const OfferingPage = () => {
+  appendTitle("Offering Services");
   return (
     <HeaderFooter className="services">
       <article className="content">

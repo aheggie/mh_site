@@ -3,9 +3,11 @@ import HeaderFooter from "./HeaderFooter";
 import { Link } from "react-router-dom";
 
 import routes from "../routes";
+import { appendTitle } from "../utilities";
 const { seekingRoute, offeringRoute } = routes;
 
 const HomePage = () => {
+  appendTitle();
   return (
     <HeaderFooter className="homepage">
       <header className="main-head">
