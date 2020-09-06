@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import routes from "../routes";
+
 const FooterNavLink = ({ to, linkText }) => {
   return (
     <li>
@@ -26,19 +28,20 @@ const Footer = () => {
           </li>
         </ul>
         <ul className="footer-nav">
-          <FooterNavLink to="seeking-services" linkText="Seeking Services" />
-          <li>
-            <a href="offering-services">Offering Services</a>
-          </li>
-          <li>
-            <a href="">Why Does This Exist?</a>
-          </li>
-          <li>
-            <a href="">About Us</a>
-          </li>
-          <li>
-            <a href="">Resources</a>
-          </li>
+          <FooterNavLink
+            to={routes.seekingRoute()}
+            linkText="Seeking Services"
+          />
+          <FooterNavLink
+            to={routes.offeringRoute()}
+            linkText="Offering Services"
+          />
+          <FooterNavLink
+            to={routes.whyRoute()}
+            linkText="Why Does This Exist?"
+          />
+          <FooterNavLink to={routes.aboutRoute()} linkText="About Us" />
+          <FooterNavLink to={routes.resourcesRoute()} linkText="Resources" />
         </ul>
       </div>
       <div className="copyright">
