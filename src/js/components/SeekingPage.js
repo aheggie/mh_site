@@ -3,12 +3,13 @@ import HeaderFooter from "./HeaderFooter";
 import { Link } from "react-router-dom";
 import routes from "../routes";
 import { appendTitle } from "../utilities";
+import professionCodes, { toSentenceCase } from "../professionCodes";
 
 const { filterRoute, offeringRoute } = routes;
 
-const toUrlCase = (title) => title.toLowerCase().split(" ").join("-");
+const ProfessionCard = ({ id, professionCode, descriptionText }) => {
+  const title = toSentenceCase(professionCode);
 
-const ProfessionCard = ({ id, title, descriptionText }) => {
   return (
     <div className="seek-category" id={id}>
       <div className="category-description">
@@ -16,7 +17,7 @@ const ProfessionCard = ({ id, title, descriptionText }) => {
         <p>{descriptionText}</p>
       </div>
       <div className="search-category">
-        <Link to={filterRoute(toUrlCase(title))} className="clear-style">
+        <Link to={filterRoute(professionCode)} className="clear-style">
           <h5 className="search-link">{`SEARCH FOR ${title.toUpperCase()}`}</h5>
           <i className="fas fa-arrow-right"></i>
         </Link>
@@ -55,42 +56,37 @@ const SeekingPage = () => {
           <div className="category-container">
             <ProfessionCard
               id="couple-family"
-              title="Couple and family therapists"
+              professionCode={professionCodes.couple}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
               id="social-workers"
-              title="Social workers"
+              professionCode={professionCodes.social}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
               id="sexologists"
-              title="Sexologists"
+              professionCode={professionCodes.sexologist}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
               id="psychologists"
-              title="Psychologists"
+              professionCode={professionCodes.psychologist}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
               id="indigenous"
-              title="Indigenous elders and healers"
+              professionCode={professionCodes.indigenous}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
               id="psychotherapists"
-              title="Psychotherapists"
+              professionCode={professionCodes.psychotherapist}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
               id="other"
-              title="Other mental health professionals"
-              descriptionText={loremIpsum}
-            />
-            <ProfessionCard
-              id="placeholder"
-              title="Placeholder"
+              professionCode={professionCodes.other}
               descriptionText={loremIpsum}
             />
           </div>
