@@ -9,6 +9,7 @@ const PractitionerPreviewCard = ({
   nameAndTitle,
   selfIdentity,
   languages,
+  practitionerId,
 }) => {
   return (
     <div className="bio-snippet">
@@ -23,7 +24,7 @@ const PractitionerPreviewCard = ({
         <i className="fas fa-plus-square"></i>
       </div>
       <div className="view-profile">
-        <Link to="/practitioner/default" className="clear-style">
+        <Link to={`/practitioner/${practitionerId}`} className="clear-style">
           <h6 className="profile-link">VIEW PROFILE</h6>
           <i className="fas fa-arrow-right"></i>
         </Link>
@@ -67,55 +68,64 @@ const FilterPage = ({ match }) => {
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Céole"
+              languages="Speaks English, French and Haitian Créole"
+              practitionerId="default"
             />
             <PractitionerPreviewCard
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Céole"
+              languages="Speaks English, French and Haitian Créole"
+              practitionerId="default"
             />
             <PractitionerPreviewCard
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Céole"
+              languages="Speaks English, French and Haitian Créole"
+              practitionerId="default"
             />
             <PractitionerPreviewCard
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Céole"
+              languages="Speaks English, French and Haitian Créole"
+              practitionerId="default"
             />
             <PractitionerPreviewCard
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Céole"
+              languages="Speaks English, French and Haitian Créole"
+              practitionerId="default"
             />
             <PractitionerPreviewCard
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Céole"
+              languages="Speaks English, French and Haitian Créole"
+              practitionerId="default"
             />
             <PractitionerPreviewCard
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Céole"
+              languages="Speaks English, French and Haitian Créole"
+              practitionerId="default"
             />
             <PractitionerPreviewCard
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Céole"
+              languages="Speaks English, French and Haitian Créole"
+              practitionerId="default"
             />
             <PractitionerPreviewCard
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Céole"
+              languages="Speaks English, French and Haitian Créole"
+              practitionerId="default"
             />
           </div>
         </div>
