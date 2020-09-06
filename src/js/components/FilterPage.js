@@ -2,7 +2,7 @@ import React from "react";
 import HeaderFooter from "./HeaderFooter";
 import { appendTitle } from "../utilities";
 import { Link } from "react-router-dom";
-import { titleCase } from "../../professionCodes";
+import { titleCase } from "../professionCodes";
 
 const PractitionerPreviewCard = ({
   photoUrl,
