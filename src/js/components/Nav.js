@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import routes from "../routes";
+
 const NavLink = ({ to, text }) => {
   return (
     <li>
@@ -23,12 +25,12 @@ const Nav = () => {
           id="logo"
         />
         <ul id="nav-links">
-          <NavLink to="/" text="Home" />
-          <NavLink to="/seeking-services" text="Seeking Services" />
-          <NavLink to="/offering-services" text="Offering Services" />
-          <NavLink to="/why" text="Why Does This Exist?" />
-          <NavLink to="/about" text="About Us" />
-          <NavLink to="/resources" text="Resources" />
+          <NavLink to={routes.homeRoute()} text="Home" />
+          <NavLink to={routes.seekingRoute()} text="Seeking Services" />
+          <NavLink to={routes.offeringRoute()} text="Offering Services" />
+          <NavLink to={routes.whyRoute()} text="Why Does This Exist?" />
+          <NavLink to={routes.aboutRoute()} text="About Us" />
+          <NavLink to={routes.resourcesRoute()} text="Resources" />
           <li id="nav-lang">
             <a href="" className="clear-style">
               FR
