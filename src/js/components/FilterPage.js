@@ -2,7 +2,7 @@ import React from "react";
 import HeaderFooter from "./HeaderFooter";
 import { appendTitle } from "../utilities";
 import { Link } from "react-router-dom";
-import { titleCase } from "../professionCodes";
+import { toPageTitleCase } from "../professionCodes";
 
 const PractitionerPreviewCard = ({
   photoUrl,
@@ -57,7 +57,7 @@ const ProfessionSelector = () => {
 const FilterPage = ({ match }) => {
   //this works!
   const { providerType } = match.params;
-  appendTitle(titleCase(providerType));
+  appendTitle(toPageTitleCase(providerType));
   return (
     <HeaderFooter className="services">
       <article className="content">
