@@ -2,7 +2,7 @@ import React from "react";
 import HeaderFooter from "./HeaderFooter";
 import { appendTitle } from "../utilities";
 import { Link } from "react-router-dom";
-import { toPageTitleCase } from "../professionCodes";
+import professionCodes, { toPageTitleCase } from "../professionCodes";
 
 const PractitionerPreviewCard = ({
   photoUrl,
@@ -33,21 +33,29 @@ const PractitionerPreviewCard = ({
   );
 };
 
-const ProfessionSelector = () => {
+const ProfessionSelector = ({ providerType }) => {
   return (
     <div className="page-intro">
       <h1 className="page-title filter">You are looking for</h1>
       <div className="filter">
-        <select id="professional-dropdown">
-          <option value="">Select:</option>
-          <option value="couple">Couple and family therapists</option>
-          <option value="social-workers">Social workers</option>
-          <option value="psychologists">Psychologists</option>
-          <option value="sexologists">Sexologists</option>
-          <option value="indigenous">Indigenous elders and healers</option>
-          <option value="psychotherapists">Psychotherapists</option>
-          <option value="other">Other mental health professionals</option>
-          <option value="placeholder">Placeholder</option>
+        {/* note: providerType is a professionCode passed by a previous link - thus we can be confident it matches the drop-down */}
+        <select id="professional-dropdown" value={providerType}>
+          {/* <option value="">Select:</option> */}
+          <option value={professionCodes.couple}>
+            Couple and family therapists
+          </option>
+          <option value={professionCodes.social}>Social workers</option>
+          <option value={professionCodes.psychologist}>Psychologists</option>
+          <option value={professionCodes.sexologist}>Sexologists</option>
+          <option value={professionCodes.indigenous}>
+            Indigenous elders and healers
+          </option>
+          <option value={professionCodes.psychotherapist}>
+            Psychotherapists
+          </option>
+          <option value={professionCodes.other}>
+            Other mental health professionals
+          </option>
         </select>
       </div>
     </div>
@@ -62,7 +70,7 @@ const FilterPage = ({ match }) => {
     <HeaderFooter className="services">
       <article className="content">
         <div className="wrapper professional-filter inner">
-          <ProfessionSelector />
+          <ProfessionSelector providerType={providerType} />
           <div className="category-container">
             <PractitionerPreviewCard
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
