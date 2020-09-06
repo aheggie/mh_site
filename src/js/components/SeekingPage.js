@@ -1,6 +1,9 @@
 import React from "react";
 import HeaderFooter from "./HeaderFooter";
 import { Link } from "react-router-dom";
+import routes from "../routes";
+
+const { filterRoute } = routes;
 
 const toUrlCase = (title) => title.toLowerCase().split(" ").join("-");
 
@@ -12,7 +15,7 @@ const ProfessionCard = ({ id, title, descriptionText }) => {
         <p>{descriptionText}</p>
       </div>
       <div className="search-category">
-        <Link to={`filter-by/${toUrlCase(title)}`} className="clear-style">
+        <Link to={filterRoute(toUrlCase(title))} className="clear-style">
           <h5 className="search-link">{`SEARCH FOR ${title.toUpperCase()}`}</h5>
           <i className="fas fa-arrow-right"></i>
         </Link>
