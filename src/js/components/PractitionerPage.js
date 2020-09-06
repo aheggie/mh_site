@@ -1,8 +1,8 @@
 import React from "react";
 import HeaderFooter from "./HeaderFooter";
 
-const BioPage = () => {
+const PractitionerPage = () => {
   return <HeaderFooter className="services"></HeaderFooter>;
 };
 
-export default BioPage;
+export default PractitionerPage;

@@ -10,7 +10,7 @@ import WhyPage from "./WhyPage";
 import AboutPage from "./AboutPage";
 import ResourcesPage from "./ResourcesPage";
 import FilterPage from "./FilterPage";
-import BioPage from "./BioPage";
+import PractitionerPage from "./PractitionerPage";
 
 const EntryPoint = () => {
   return (
@@ -37,7 +37,7 @@ const EntryPoint = () => {
       <Route
         exact
         path={routes.practitionerRoute(":practitionerId")}
-        component={BioPage}
+        component={PractitionerPage}
       />
     </Switch>
   );
