@@ -39,6 +39,27 @@ const PractitionerPreviewCard = ({
   );
 };
 
+const ProfessionSelector = () => {
+  return (
+    <div className="page-intro">
+      <h1 className="page-title filter">You are looking for</h1>
+      <div className="filter">
+        <select id="professional-dropdown">
+          <option value="">Select:</option>
+          <option value="couple">Couple and family therapists</option>
+          <option value="social-workers">Social workers</option>
+          <option value="psychologists">Psychologists</option>
+          <option value="sexologists">Sexologists</option>
+          <option value="indigenous">Indigenous elders and healers</option>
+          <option value="psychotherapists">Psychotherapists</option>
+          <option value="other">Other mental health professionals</option>
+          <option value="placeholder">Placeholder</option>
+        </select>
+      </div>
+    </div>
+  );
+};
+
 const FilterPage = ({ match }) => {
   //this works!
   const { providerType } = match.params;
@@ -47,24 +68,7 @@ const FilterPage = ({ match }) => {
     <HeaderFooter className="services">
       <article className="content">
         <div className="wrapper professional-filter inner">
-          <div className="page-intro">
-            <h1 className="page-title filter">You are looking for</h1>
-            <div className="filter">
-              <select id="professional-dropdown">
-                <option value="">Select:</option>
-                <option value="couple">Couple and family therapists</option>
-                <option value="social-workers">Social workers</option>
-                <option value="psychologists">Psychologists</option>
-                <option value="sexologists">Sexologists</option>
-                <option value="indigenous">
-                  Indigenous elders and healers
-                </option>
-                <option value="psychotherapists">Psychotherapists</option>
-                <option value="other">Other mental health professionals</option>
-                <option value="placeholder">Placeholder</option>
-              </select>
-            </div>
-          </div>
+          <ProfessionSelector />
           <div className="category-container">
             <PractitionerPreviewCard
               photoUrl="../../static/img/bio-image-thumbnail.jpg"
