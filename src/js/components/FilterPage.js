@@ -2,14 +2,7 @@ import React from "react";
 import HeaderFooter from "./HeaderFooter";
 import { appendTitle } from "../utilities";
 import { Link } from "react-router-dom";
-
-//providerType is of format "type-of-profession"
-//for page title we want "Type Of Profession"
-const titleCase = (providerType) =>
-  providerType
-    .split("-")
-    .map((word) => `${word[0].toUpperCase()}${word.slice(1)}`)
-    .join(" ");
+import { titleCase } from "../../professionCodes";
 
 const PractitionerPreviewCard = ({
   photoUrl,
