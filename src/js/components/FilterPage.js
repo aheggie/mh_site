@@ -11,19 +11,19 @@ const titleCase = (providerType) =>
     .map((word) => `${word[0].toUpperCase()}${word.slice(1)}`)
     .join(" ");
 
-const ProviderPreviewCard = () => {
+const PractitionerPreviewCard = ({
+  photoUrl,
+  nameAndTitle,
+  selfIdentity,
+  languages,
+}) => {
   return (
     <div className="bio-snippet">
-      <img
-        src="../../static/img/bio-image-thumbnail.jpg"
-        className="snippet-thumbnail"
-      />
-      <h2 className="snippet-name">Dr. Jane Doe, PhD, OPQ</h2>
+      <img src={photoUrl} className="snippet-thumbnail" alt={nameAndTitle} />
+      <h2 className="snippet-name">{nameAndTitle}</h2>
       <div className="snippet-details">
-        <p className="snippet-details">Haitian Créole</p>
-        <p className="snippet-details">
-          Speaks English, Fench and Haitian Créole
-        </p>
+        <p className="snippet-details">{selfIdentity}</p>
+        <p className="snippet-details">{languages}</p>
       </div>
       <div className="unclear-icons">
         <i className="fas fa-plus-square"></i>
@@ -66,209 +66,60 @@ const FilterPage = ({ match }) => {
             </div>
           </div>
           <div className="category-container">
-            <div className="bio-snippet">
-              <img
-                src="img/bio-image-thumbnail.jpg"
-                className="snippet-thumbnail"
-              />
-              <h2 className="snippet-name">Dr. Jane Doe, PhD, OPQ</h2>
-              <div className="snippet-details">
-                <p className="snippet-details">Haitian Créole</p>
-                <p className="snippet-details">
-                  Speaks English, French and Haitian Créole
-                </p>
-              </div>
-              <div className="unclear-icons">
-                <i className="fas fa-plus-square"></i>
-                <i className="fas fa-plus-square"></i>
-              </div>
-              <div className="view-profile">
-                <a href="bio-page.html" className="clear-style">
-                  <h6 className="profile-link">VIEW PROFILE</h6>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="bio-snippet">
-              <img
-                src="img/bio-image-thumbnail.jpg"
-                className="snippet-thumbnail"
-              />
-              <h2 className="snippet-name">Dr. Jane Doe, PhD, OPQ</h2>
-              <div className="snippet-details">
-                <p className="snippet-details">Haitian Créole</p>
-                <p className="snippet-details">
-                  Speaks English, French and Haitian Créole
-                </p>
-              </div>
-              <div className="unclear-icons">
-                <i className="fas fa-plus-square"></i>
-                <i className="fas fa-plus-square"></i>
-              </div>
-              <div className="view-profile">
-                <a href="bio-page.html" className="clear-style">
-                  <h6 className="profile-link">VIEW PROFILE</h6>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="bio-snippet">
-              <img
-                src="img/bio-image-thumbnail.jpg"
-                className="snippet-thumbnail"
-              />
-              <h2 className="snippet-name">Dr. Jane Doe, PhD, OPQ</h2>
-              <div className="snippet-details">
-                <p className="snippet-details">Haitian Créole</p>
-                <p className="snippet-details">
-                  Speaks English, French and Haitian Créole
-                </p>
-              </div>
-              <div className="unclear-icons">
-                <i className="fas fa-plus-square"></i>
-                <i className="fas fa-plus-square"></i>
-              </div>
-              <div className="view-profile">
-                <a href="bio-page.html" className="clear-style">
-                  <h6 className="profile-link">VIEW PROFILE</h6>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="bio-snippet">
-              <img
-                src="img/bio-image-thumbnail.jpg"
-                className="snippet-thumbnail"
-              />
-              <h2 className="snippet-name">Dr. Jane Doe, PhD, OPQ</h2>
-              <div className="snippet-details">
-                <p className="snippet-details">Haitian Créole</p>
-                <p className="snippet-details">
-                  Speaks English, French and Haitian Créole
-                </p>
-              </div>
-              <div className="view-profile">
-                <a href="bio-page.html" className="clear-style">
-                  <h6 className="profile-link">VIEW PROFILE</h6>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="bio-snippet">
-              <img
-                src="img/bio-image-thumbnail.jpg"
-                className="snippet-thumbnail"
-              />
-              <h2 className="snippet-name">Dr. Jane Doe, PhD, OPQ</h2>
-              <div className="snippet-details">
-                <p className="snippet-details">Haitian Créole</p>
-                <p className="snippet-details">
-                  Speaks English, French and Haitian Créole
-                </p>
-              </div>
-              <div className="unclear-icons">
-                <i className="fas fa-plus-square"></i>
-                <i className="fas fa-plus-square"></i>
-              </div>
-              <div className="view-profile">
-                <a href="bio-page.html" className="clear-style">
-                  <h6 className="profile-link">VIEW PROFILE</h6>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="bio-snippet">
-              <img
-                src="img/bio-image-thumbnail.jpg"
-                className="snippet-thumbnail"
-              />
-              <h2 className="snippet-name">Dr. Jane Doe, PhD, OPQ</h2>
-              <div className="snippet-details">
-                <p className="snippet-details">Haitian Créole</p>
-                <p className="snippet-details">
-                  Speaks English, French and Haitian Créole
-                </p>
-              </div>
-              <div className="unclear-icons">
-                <i className="fas fa-plus-square"></i>
-                <i className="fas fa-plus-square"></i>
-              </div>
-              <div className="view-profile">
-                <a href="bio-page.html" className="clear-style">
-                  <h6 className="profile-link">VIEW PROFILE</h6>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="bio-snippet">
-              <img
-                src="img/bio-image-thumbnail.jpg"
-                className="snippet-thumbnail"
-              />
-              <h2 className="snippet-name">Dr. Jane Doe, PhD, OPQ</h2>
-              <div className="snippet-details">
-                <p className="snippet-details">Haitian Créole</p>
-                <p className="snippet-details">
-                  Speaks English, French and Haitian Créole
-                </p>
-              </div>
-              <div className="unclear-icons">
-                <i className="fas fa-plus-square"></i>
-                <i className="fas fa-plus-square"></i>
-              </div>
-              <div className="view-profile">
-                <a href="bio-page.html" className="clear-style">
-                  <h6 className="profile-link">VIEW PROFILE</h6>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="bio-snippet">
-              <img
-                src="img/bio-image-thumbnail.jpg"
-                className="snippet-thumbnail"
-              />
-              <h2 className="snippet-name">Dr. Jane Doe, PhD, OPQ</h2>
-              <div className="snippet-details">
-                <p className="snippet-details">Haitian Créole</p>
-                <p className="snippet-details">
-                  Speaks English, French and Haitian Créole
-                </p>
-              </div>
-              <div className="unclear-icons">
-                <i className="fas fa-plus-square"></i>
-                <i className="fas fa-plus-square"></i>
-              </div>
-              <div className="view-profile">
-                <a href="bio-page.html" className="clear-style">
-                  <h6 className="profile-link">VIEW PROFILE</h6>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div className="bio-snippet">
-              <img
-                src="img/bio-image-thumbnail.jpg"
-                className="snippet-thumbnail"
-              />
-              <h2 className="snippet-name">Dr. Jane Doe, PhD, OPQ</h2>
-              <div className="snippet-details">
-                <p className="snippet-details">Haitian Créole</p>
-                <p className="snippet-details">
-                  Speaks English, French and Haitian Créole
-                </p>
-              </div>
-              <div className="unclear-icons">
-                <i className="fas fa-plus-square"></i>
-                <i className="fas fa-plus-square"></i>
-              </div>
-              <div className="view-profile">
-                <a href="bio-page.html" className="clear-style">
-                  <h6 className="profile-link">VIEW PROFILE</h6>
-                  <i className="fas fa-arrow-right"></i>
-                </a>
-              </div>
-            </div>
+            <PractitionerPreviewCard
+              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
+              selfIdentity="Haitian Créole"
+              languages="Speaks English, French and Haitian Céole"
+            />
+            <PractitionerPreviewCard
+              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
+              selfIdentity="Haitian Créole"
+              languages="Speaks English, French and Haitian Céole"
+            />
+            <PractitionerPreviewCard
+              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
+              selfIdentity="Haitian Créole"
+              languages="Speaks English, French and Haitian Céole"
+            />
+            <PractitionerPreviewCard
+              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
+              selfIdentity="Haitian Créole"
+              languages="Speaks English, French and Haitian Céole"
+            />
+            <PractitionerPreviewCard
+              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
+              selfIdentity="Haitian Créole"
+              languages="Speaks English, French and Haitian Céole"
+            />
+            <PractitionerPreviewCard
+              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
+              selfIdentity="Haitian Créole"
+              languages="Speaks English, French and Haitian Céole"
+            />
+            <PractitionerPreviewCard
+              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
+              selfIdentity="Haitian Créole"
+              languages="Speaks English, French and Haitian Céole"
+            />
+            <PractitionerPreviewCard
+              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
+              selfIdentity="Haitian Créole"
+              languages="Speaks English, French and Haitian Céole"
+            />
+            <PractitionerPreviewCard
+              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
+              selfIdentity="Haitian Créole"
+              languages="Speaks English, French and Haitian Céole"
+            />
           </div>
         </div>
       </article>
