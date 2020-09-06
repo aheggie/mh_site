@@ -2,6 +2,9 @@ import React from "react";
 import HeaderFooter from "./HeaderFooter";
 import { Link } from "react-router-dom";
 
+import routes from "../routes";
+const { seekingRoute, offeringRoute } = routes;
+
 const HomePage = () => {
   return (
     <HeaderFooter className="homepage">
@@ -11,14 +14,14 @@ const HomePage = () => {
             Find mental health professionals of colour in Tiotia:ke (Montreal)
           </h1>
           <Link
-            to="/seeking-services"
+            to={seekingRoute()}
             className="button purple clear-style"
             id="seek"
           >
             Seeking Services
           </Link>
           <Link
-            to="/offering-services"
+            to={offeringRoute()}
             className="button purple clear-style"
             id="offer"
           >
