@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import routes from "../routes";
 import { appendTitle } from "../utilities";
 
-const { filterRoute } = routes;
+const { filterRoute, offeringRoute } = routes;
 
 const toUrlCase = (title) => title.toLowerCase().split(" ").join("-");
 
@@ -43,7 +43,7 @@ const SeekingPage = () => {
             </h1>
             <p>
               EXPLANATION TEXT +{" "}
-              <a href="offering-services.html">LINK TO OFFERING SERVICES</a>.{" "}
+              <Link to={offeringRoute()}>LINK TO OFFERING SERVICES</Link>.{" "}
               <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
               Aliquam in sollicitudin magna. Vivamus vel aliquet metus.
