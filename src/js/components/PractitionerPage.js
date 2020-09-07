@@ -8,12 +8,14 @@ const PractitionerPage = () => {
     <HeaderFooter className="services">
       <article className="content">
         <div className="bio-page inner">
-          {/* <div className="bio-head">
+          {/* 1 */}
+          <div className="bio-head">
             <h1 className="bio-name">Dr. Jane Doe</h1>
             <h2 className="bio-title">Psychologist, PhD, OPQ</h2>
-          </div> */}
+          </div>
 
-          {/* <div className="bio-photo">
+          {/* 2 */}
+          <div className="bio-photo">
             <img src="img/bio-image-thumbnail.jpg" className="bio-thumbnail" />
             <ul className="bio-icons">
               <li>
@@ -26,9 +28,10 @@ const PractitionerPage = () => {
                 <i className="fas bio fa-check-circle"></i>
               </li>
             </ul>
-          </div> */}
+          </div>
 
-          {/* <div className="bio about">
+          {/* 3 */}
+          <div className="bio about">
             <h2>About me</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id
@@ -60,11 +63,13 @@ const PractitionerPage = () => {
               ornare at consectetur eget, commodo in sapien. Nullam vulputate
               laoreet consequat.
             </p>
-          </div> */}
+          </div>
 
-          {/* <div className="bio-icons"></div> */}
+          {/* 4 */}
+          <div className="bio-icons"></div>
 
-          {/* <div className="bio contact">
+          {/* 5 */}
+          <div className="bio contact">
             <h2 className="bio full-width-contact-title">
               Contact Dr. Jane Doe now
             </h2>
@@ -81,9 +86,10 @@ const PractitionerPage = () => {
                 </li>
               </ul>
             </div>
-          </div> */}
+          </div>
 
-          {/* <div className="bio-sidebar">
+          {/* 6 */}
+          <div className="bio-sidebar">
             <div className="bio specializations">
               <h3>Specializations</h3>
               <div className="bio-box sidebar-box">
@@ -140,9 +146,10 @@ const PractitionerPage = () => {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
 
-          {/* <div className="bio payment bio-box">
+          {/* 7 */}
+          <div className="bio payment bio-box">
             <h2>Payment</h2>
             <ul className="payment-rates">
               <li>Individual sessions: 100$ per hour</li>
@@ -166,10 +173,12 @@ const PractitionerPage = () => {
                 <i className="access-icon fas fa-balance-scale"></i>
               </li>
             </ul>
-          </div> */}
+          </div>
 
+          {/* 8 - this breaks render for some reason */}
           {/* <div className="bio map">
             <iframe
+              title="map to provider office"
               width="100%"
               height="100%"
               frameBorder="0"
@@ -179,7 +188,8 @@ const PractitionerPage = () => {
             ></iframe>
           </div> */}
 
-          {/* <div className="bio qualifications bio-box">
+          {/* 9 */}
+          <div className="bio qualifications bio-box">
             <h2>Qualifications</h2>
             <ul>
               <li>Order: Order of Psychologists of Quebec (OPQ)</li>
@@ -190,7 +200,7 @@ const PractitionerPage = () => {
             </ul>
             <h2>Extra credentials</h2>
             <p>Phasellus sagittis, risus id gravida feugiat.</p>
-          </div> */}
+          </div>
         </div>
       </article>
     </HeaderFooter>
