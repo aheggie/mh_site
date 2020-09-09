@@ -14,7 +14,7 @@ import BioQualifications from "./BioQualifications";
 import placeholderPhoto from "../../../static/img/bio-image.jpg";
 import placeholderData from "../../placeholderData";
 
-const { name, title, photo } = placeholderData[0];
+const { name, title, photo, aboutText } = placeholderData[0];
 
 const PractitionerPage = () => {
   appendTitle();
@@ -29,7 +29,7 @@ const PractitionerPage = () => {
           <BioPhoto photo={photo} alt={`${name} - ${title}`} />
 
           {/* 3 */}
-          <BioAbout />
+          <BioAbout aboutText={aboutText} />
 
           {/* 4 */}
           {/* what does this DO ??? div is empty */}
