@@ -5,7 +5,6 @@ import { toPageTitleCase } from "../professionCodes";
 import FilterPractitionerPreviewCard from "./FilterPractitionerPreviewCard";
 import FilterProfessionSelector from "./FilterProfessionSelector";
 
-// import { placeholderThumbnailPhoto } from "../imgImport";
 import placeholderThumbnailPhoto from "../../static/img/bio-image-thumbnail.jpg";
 
 const FilterPage = ({ match }) => {
