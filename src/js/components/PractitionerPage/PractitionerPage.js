@@ -12,6 +12,9 @@ import BioMap from "./BioMap";
 import BioQualifications from "./BioQualifications";
 
 import placeholderPhoto from "../../../static/img/bio-image.jpg";
+import placeholderData from "../../placeholderData";
+
+const { name, title, photo } = placeholderData[0];
 
 const PractitionerPage = () => {
   appendTitle();
@@ -20,10 +23,10 @@ const PractitionerPage = () => {
       <article className="content">
         <div className="bio-page inner">
           {/* 1 */}
-          <BioHead />
+          <BioHead name={name} title={title} />
 
           {/* 2 */}
-          <BioPhoto photo={placeholderPhoto} />
+          <BioPhoto photo={photo} alt={`${name} - ${title}`} />
 
           {/* 3 */}
           <BioAbout />
