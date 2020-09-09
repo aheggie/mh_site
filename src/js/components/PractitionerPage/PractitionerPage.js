@@ -1,8 +1,8 @@
 import React from "react";
-import HeaderFooter from "./HeaderFooter";
-import { appendTitle } from "../utilities";
+import HeaderFooter from "../HeaderFooter";
+import { appendTitle } from "../../utilities";
 
-import practitionerBioPhoto from "../../static/img/bio-image.jpg";
+import practitionerBioPhoto from "../../../static/img/bio-image.jpg";
 
 const BioHead = () => {
   return (
@@ -183,6 +183,22 @@ const BioPayment = () => {
   );
 };
 
+const BioMap = () => {
+  return (
+    <div className="bio map">
+      <iframe
+        title="map to provider office"
+        width="100%"
+        height="100%"
+        frameBorder="0"
+        style={{ border: 0 }}
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAT91kn6MetYtlU-KDzLSuPdvjTHill_Ps&q=1455+de+maisonneuve+west"
+        allowFullScreen
+      ></iframe>
+    </div>
+  );
+};
+
 const BioQualifications = () => {
   return (
     <div className="bio qualifications bio-box">
@@ -229,17 +245,7 @@ const PractitionerPage = () => {
           <BioPayment />
 
           {/* 8 - this breaks render for some reason */}
-          {/* <div className="bio map">
-            <iframe
-              title="map to provider office"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              style="border:0"
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAT91kn6MetYtlU-KDzLSuPdvjTHill_Ps&q=Montreal+Quebec"
-              allowFullScreen
-            ></iframe>
-          </div> */}
+          <BioMap />
 
           {/* 9 */}
           <BioQualifications />
