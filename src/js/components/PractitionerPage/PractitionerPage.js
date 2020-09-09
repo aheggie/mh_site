@@ -60,7 +60,7 @@ const PractitionerPage = () => {
           <BioPayment />
 
           {/* 8 - this breaks render for some reason */}
-          <BioMap />
+          <BioMap address={address} />
 
           {/* 9 */}
           <BioQualifications />

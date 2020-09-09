@@ -37,7 +37,7 @@ const placeholderData = [
   </p>`,
     email: "janedoe@psychologist.ca",
     phone: "514-000-0000",
-    address: "1234 Happy Street A1D 2G5",
+    address: "1455 de Maisonneuve Blvd West H3G 1M8",
     //also not sure how this will actually load in from db
     languages: ["English", "French", "Haitian Créole"],
   },
