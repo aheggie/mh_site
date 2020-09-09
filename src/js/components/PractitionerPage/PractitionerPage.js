@@ -14,7 +14,16 @@ import BioQualifications from "./BioQualifications";
 import placeholderPhoto from "../../../static/img/bio-image.jpg";
 import placeholderData from "../../placeholderData";
 
-const { name, title, photo, aboutText } = placeholderData[0];
+const {
+  name,
+  title,
+  photo,
+  aboutText,
+  email,
+  phone,
+  address,
+  languages,
+} = placeholderData[0];
 
 const PractitionerPage = () => {
   appendTitle();
@@ -36,7 +45,13 @@ const PractitionerPage = () => {
           <BioIcons />
 
           {/* 5 */}
-          <BioContact />
+          <BioContact
+            name={name}
+            email={email}
+            phone={phone}
+            address={address}
+            languages={languages}
+          />
 
           {/* 6 */}
           <BioSidebar />
