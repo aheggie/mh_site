@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// import { cureLogo } from "../imgImport";
+import cureLogo from "../../static/img/cure-logo.png";
+
 import routes from "../routes";
 
 const NavLink = ({ to, text }) => {
@@ -20,7 +23,7 @@ const Nav = () => {
       <nav className="main-nav sticky">
         <img
           // what is up here?? why won't this image load
-          src="../../static/img/cure-logo.png"
+          src={cureLogo}
           alt="Cure Concordia Logo"
           id="logo"
         />

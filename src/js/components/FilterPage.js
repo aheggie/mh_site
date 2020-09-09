@@ -5,6 +5,9 @@ import { toPageTitleCase } from "../professionCodes";
 import FilterPractitionerPreviewCard from "./FilterPractitionerPreviewCard";
 import FilterProfessionSelector from "./FilterProfessionSelector";
 
+// import { placeholderThumbnailPhoto } from "../imgImport";
+import placeholderThumbnailPhoto from "../../static/img/bio-image-thumbnail.jpg";
+
 const FilterPage = ({ match }) => {
   const { providerType } = match.params;
   appendTitle(toPageTitleCase(providerType));
@@ -15,63 +18,63 @@ const FilterPage = ({ match }) => {
           <FilterProfessionSelector providerType={providerType} />
           <div className="category-container">
             <FilterPractitionerPreviewCard
-              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              photoUrl={placeholderThumbnailPhoto}
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
               languages="Speaks English, French and Haitian Créole"
               practitionerId="default"
             />
             <FilterPractitionerPreviewCard
-              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              photoUrl={placeholderThumbnailPhoto}
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
               languages="Speaks English, French and Haitian Créole"
               practitionerId="default"
             />
             <FilterPractitionerPreviewCard
-              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              photoUrl={placeholderThumbnailPhoto}
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
               languages="Speaks English, French and Haitian Créole"
               practitionerId="default"
             />
             <FilterPractitionerPreviewCard
-              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              photoUrl={placeholderThumbnailPhoto}
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
               languages="Speaks English, French and Haitian Créole"
               practitionerId="default"
             />
             <FilterPractitionerPreviewCard
-              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              photoUrl={placeholderThumbnailPhoto}
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
               languages="Speaks English, French and Haitian Créole"
               practitionerId="default"
             />
             <FilterPractitionerPreviewCard
-              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              photoUrl={placeholderThumbnailPhoto}
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
               languages="Speaks English, French and Haitian Créole"
               practitionerId="default"
             />
             <FilterPractitionerPreviewCard
-              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              photoUrl={placeholderThumbnailPhoto}
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
               languages="Speaks English, French and Haitian Créole"
               practitionerId="default"
             />
             <FilterPractitionerPreviewCard
-              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              photoUrl={placeholderThumbnailPhoto}
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
               languages="Speaks English, French and Haitian Créole"
               practitionerId="default"
             />
             <FilterPractitionerPreviewCard
-              photoUrl="../../static/img/bio-image-thumbnail.jpg"
+              photoUrl={placeholderThumbnailPhoto}
               nameAndTitle="Dr. Jane Doe, PhD, OPQ"
               selfIdentity="Haitian Créole"
               languages="Speaks English, French and Haitian Créole"

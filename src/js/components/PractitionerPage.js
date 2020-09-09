@@ -2,6 +2,8 @@ import React from "react";
 import HeaderFooter from "./HeaderFooter";
 import { appendTitle } from "../utilities";
 
+import practitionerBioPhoto from "../../static/img/bio-image.jpg";
+
 const PractitionerPage = () => {
   appendTitle();
   return (
@@ -16,7 +18,7 @@ const PractitionerPage = () => {
 
           {/* 2 */}
           <div className="bio-photo">
-            <img src="img/bio-image-thumbnail.jpg" className="bio-thumbnail" />
+            <img src={practitionerBioPhoto} className="bio-thumbnail" />
             <ul className="bio-icons">
               <li>
                 <i className="fas bio fa-plus-square"></i>
