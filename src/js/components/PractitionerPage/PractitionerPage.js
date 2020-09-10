@@ -11,7 +11,7 @@ import BioPayment from "./BioPayment";
 import BioMap from "./BioMap";
 import BioQualifications from "./BioQualifications";
 
-import placeholderPhoto from "../../../static/img/bio-image.jpg";
+// import placeholderPhoto from "../../../static/img/bio-image.jpg";
 import placeholderData from "../../placeholderData";
 
 const {
@@ -30,6 +30,12 @@ const {
   paymentMethods,
   insuranceAccepted,
   accessibilityBooleans,
+  orderAffiliation,
+  licenseNumber,
+  schooling,
+  yearGraduated,
+  yearsInPractice,
+  extraCredentials,
 } = placeholderData[0];
 
 const PractitionerPage = () => {
@@ -79,7 +85,14 @@ const PractitionerPage = () => {
           <BioMap address={address} />
 
           {/* 9 */}
-          <BioQualifications />
+          <BioQualifications
+            orderAffiliation={orderAffiliation}
+            licenseNumber={licenseNumber}
+            schooling={schooling}
+            yearGraduated={yearGraduated}
+            yearsInPractice={yearsInPractice}
+            extraCredentials={extraCredentials}
+          />
         </div>
       </article>
     </HeaderFooter>

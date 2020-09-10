@@ -51,6 +51,7 @@ const placeholderData = [
     specialisationsItems: placeholderItems,
     issuesItems: placeholderItems,
     approachItems: placeholderItems,
+    //these hydrate the BioPayment component
     paymentRates: {
       individual: 100,
       studentIndividual: 75,
@@ -64,6 +65,12 @@ const placeholderData = [
       trans: true,
       slidingScale: true,
     },
+    orderAffiliation: "Order of Psychologists of Quebec (OPQ)",
+    licenseNumber: "1280058",
+    schooling: "McGill University Post-Doc - Clinical Psychology",
+    yearGraduated: "2015",
+    yearsInPractice: 5,
+    extraCredentials: `Phasellus sagittis, risus id gravida feugiat.`,
   },
 ];
 
