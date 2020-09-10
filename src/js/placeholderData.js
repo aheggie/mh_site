@@ -51,6 +51,19 @@ const placeholderData = [
     specialisationsItems: placeholderItems,
     issuesItems: placeholderItems,
     approachItems: placeholderItems,
+    paymentRates: {
+      individual: 100,
+      studentIndividual: 75,
+      coupleFamily: 125,
+      studentCoupleFamily: 100,
+    },
+    paymentMethods: ["Cash", "etransfer", "cheque"],
+    insuranceAccepted: ["PlanGreen", "PlanYellow"],
+    accessibilityBooleans: {
+      wheelchair: true,
+      trans: true,
+      slidingScale: true,
+    },
   },
 ];
 

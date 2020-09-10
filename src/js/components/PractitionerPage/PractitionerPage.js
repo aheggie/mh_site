@@ -26,6 +26,10 @@ const {
   specialisationsItems,
   issuesItems,
   approachItems,
+  paymentRates,
+  paymentMethods,
+  insuranceAccepted,
+  accessibilityBooleans,
 } = placeholderData[0];
 
 const PractitionerPage = () => {
@@ -64,7 +68,12 @@ const PractitionerPage = () => {
           />
 
           {/* 7 */}
-          <BioPayment />
+          <BioPayment
+            paymentRates={paymentRates}
+            paymentMethods={paymentMethods}
+            insuranceAccepted={insuranceAccepted}
+            accessibilityBooleans={accessibilityBooleans}
+          />
 
           {/* 8 - this breaks render for some reason */}
           <BioMap address={address} />

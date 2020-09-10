@@ -1,31 +1,58 @@
 import React from "react";
+import { capitaliseFirstLetter } from "../../professionCodes";
 
-const BioPayment = () => {
+const AccessibilityIcon = ({ fasClass }) => {
+  return (
+    <li key={fasClass}>
+      <i className={`access-icon fas ${fasClass}`}></i>
+    </li>
+  );
+};
+
+const AccessibilityIcons = ({ accessibilityBooleans }) => {
+  const iconFasClasses = {
+    wheelchair: "fa-wheelchair",
+    trans: "fa-transgender-alt",
+    slidingScale: "fa-balance-scale",
+  };
+  return (
+    <ul className="accessibility-icons">
+      {Object.keys(accessibilityBooleans).map((iconType) =>
+        accessibilityBooleans[iconType] ? (
+          <AccessibilityIcon fasClass={iconFasClasses[iconType]} />
+        ) : null
+      )}
+    </ul>
+  );
+};
+
+const BioPayment = ({
+  paymentRates,
+  paymentMethods,
+  insuranceAccepted,
+  accessibilityBooleans,
+}) => {
+  const paymentMethodsString = paymentMethods
+    .map(capitaliseFirstLetter)
+    .join(", ");
+  const insuranceAcceptedString = insuranceAccepted
+    .map(capitaliseFirstLetter)
+    .join(", ");
   return (
     <div className="bio payment bio-box">
       <h2>Payment</h2>
       <ul className="payment-rates">
-        <li>Individual sessions: 100$ per hour</li>
-        <li>Student individual rate: 75$ per hour</li>
-        <li>Couple / Family: 125$ per hour</li>
-        <li>Student couple / family rate: 100$ per hour</li>
+        <li>{`Individual sessions: ${paymentRates.individual}$ per hour`}</li>
+        <li>{`Student individual rate: ${paymentRates.studentIndividual}$ per hour`}</li>
+        <li>{`Couple / Family: ${paymentRates.coupleFamily}$ per hour`}</li>
+        <li>{`Student couple / family rate: ${paymentRates.studentCoupleFamily}$ per hour`}</li>
       </ul>
       <ul className="payment-methods">
-        <li>Pay by: Cash, etransfer, cheque</li>
-        <li>Insurance plans accepted: PlanGreen, PlanYellow</li>
+        <li>{`Pay by: ${paymentMethodsString}`}</li>
+        <li>{`Insurance plans accepted: ${insuranceAcceptedString}`}</li>
       </ul>
       <h2>Accessibility information</h2>
-      <ul className="accessibility-icons">
-        <li>
-          <i className="access-icon fas fa-wheelchair"></i>
-        </li>
-        <li>
-          <i className="access-icon fas fa-transgender-alt"></i>
-        </li>
-        <li>
-          <i className="access-icon fas fa-balance-scale"></i>
-        </li>
-      </ul>
+      <AccessibilityIcons accessibilityBooleans={accessibilityBooleans} />
     </div>
   );
 };
