@@ -3,7 +3,7 @@ import { capitaliseFirstLetter } from "../../professionCodes";
 
 const AccessibilityIcon = ({ fasClass }) => {
   return (
-    <li key={fasClass}>
+    <li>
       <i className={`access-icon fas ${fasClass}`}></i>
     </li>
   );
@@ -19,7 +19,10 @@ const AccessibilityIcons = ({ accessibilityBooleans }) => {
     <ul className="accessibility-icons">
       {Object.keys(accessibilityBooleans).map((iconType) =>
         accessibilityBooleans[iconType] ? (
-          <AccessibilityIcon fasClass={iconFasClasses[iconType]} />
+          <AccessibilityIcon
+            key={iconFasClasses[iconType]}
+            fasClass={iconFasClasses[iconType]}
+          />
         ) : null
       )}
     </ul>
