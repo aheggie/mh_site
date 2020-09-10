@@ -23,6 +23,9 @@ const {
   phone,
   address,
   languages,
+  specialisationsItems,
+  issuesItems,
+  approachItems,
 } = placeholderData[0];
 
 const PractitionerPage = () => {
@@ -54,7 +57,11 @@ const PractitionerPage = () => {
           />
 
           {/* 6 */}
-          <BioSidebar />
+          <BioSidebar
+            specialisationsItems={specialisationsItems}
+            issuesItems={issuesItems}
+            approachItems={approachItems}
+          />
 
           {/* 7 */}
           <BioPayment />

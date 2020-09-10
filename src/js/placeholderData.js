@@ -1,5 +1,12 @@
 import placeholderPhoto from "../static/img/bio-image.jpg";
 
+const placeholderItems = [
+  "Lorem ipsum dolor sit amet, consectetur.",
+  "Lorem ipsum dolor sit amet, consectetur.",
+  "Lorem ipsum dolor sit amet, consectetur.",
+  "Lorem ipsum dolor sit amet, consectetur.",
+];
+
 const placeholderData = [
   {
     id: 1,
@@ -40,6 +47,10 @@ const placeholderData = [
     address: "1455 de Maisonneuve Blvd West H3G 1M8",
     //also not sure how this will actually load in from db
     languages: ["English", "French", "Haitian Créole"],
+    // these hydrate the sidebar in PractitionerPage
+    specialisationsItems: placeholderItems,
+    issuesItems: placeholderItems,
+    approachItems: placeholderItems,
   },
 ];
 

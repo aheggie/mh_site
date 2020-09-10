@@ -1,12 +1,5 @@
 import React from "react";
 
-const placeholderItems = [
-  "Lorem ipsum dolor sit amet, consectetur.",
-  "Lorem ipsum dolor sit amet, consectetur.",
-  "Lorem ipsum dolor sit amet, consectetur.",
-  "Lorem ipsum dolor sit amet, consectetur.",
-];
-
 const BioSideBarBox = ({ className, title, items }) => {
   return (
     <div className={`bio ${className}`}>
@@ -29,23 +22,23 @@ const BioSideBarBox = ({ className, title, items }) => {
   );
 };
 
-const BioSidebar = () => {
+const BioSidebar = ({ specialisationsItems, issuesItems, approachItems }) => {
   return (
     <div className="bio-sidebar">
       <BioSideBarBox
         className="specializations"
         title="Specializations"
-        items={placeholderItems}
+        items={specialisationsItems}
       />
       <BioSideBarBox
         className="issues"
         title="Issues I can support you with"
-        items={placeholderItems}
+        items={issuesItems}
       />
       <BioSideBarBox
         className="approach"
         title="Helping approach"
-        items={placeholderItems}
+        items={approachItems}
       />
     </div>
   );
