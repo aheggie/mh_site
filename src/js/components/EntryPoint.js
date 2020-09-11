@@ -9,7 +9,7 @@ import OfferingPage from "./OfferingPage";
 import WhyPage from "./WhyPage";
 import AboutPage from "./AboutPage";
 import ResourcesPage from "./ResourcesPage";
-import FilterPage from "./FilterPage";
+import FilterPage from "./FilterPage/FilterPage";
 import PractitionerPage from "./PractitionerPage/PractitionerPage";
 
 const EntryPoint = () => {

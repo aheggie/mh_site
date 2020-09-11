@@ -1,11 +1,11 @@
 import React from "react";
-import HeaderFooter from "./HeaderFooter";
-import { appendTitle } from "../utilities";
-import { toPageTitleCase } from "../professionCodes";
+import HeaderFooter from "../HeaderFooter";
+import { appendTitle } from "../../utilities";
+import { toPageTitleCase } from "../../professionCodes";
 import FilterPractitionerPreviewCard from "./FilterPractitionerPreviewCard";
 import FilterProfessionSelector from "./FilterProfessionSelector";
 
-import placeholderThumbnailPhoto from "../../static/img/bio-image-thumbnail.jpg";
+import placeholderThumbnailPhoto from "../../../static/img/bio-image-thumbnail.jpg";
 
 const FilterPage = ({ match }) => {
   const { providerType } = match.params;

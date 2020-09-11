@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import routes from "../routes";
-import professionCodes from "../professionCodes";
+import routes from "../../routes";
+import professionCodes from "../../professionCodes";
 
 const { filterRoute } = routes;
 
