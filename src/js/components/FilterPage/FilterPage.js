@@ -1,11 +1,12 @@
 import React from "react";
 import HeaderFooter from "../HeaderFooter";
 import { appendTitle } from "../../utilities";
-import { toPageTitleCase } from "../../professionCodes";
+import { toPageTitleCase, capitaliseFirstLetter } from "../../professionCodes";
 import FilterPractitionerPreviewCard from "./FilterPractitionerPreviewCard";
 import FilterProfessionSelector from "./FilterProfessionSelector";
 
-import placeholderThumbnailPhoto from "../../../static/img/bio-image-thumbnail.jpg";
+// import placeholderThumbnailPhoto from "../../../static/img/bio-image-thumbnail.jpg";
+import placeholderData from "../../placeholderData";
 
 const FilterPage = ({ match }) => {
   const { providerType } = match.params;
@@ -16,69 +17,24 @@ const FilterPage = ({ match }) => {
         <div className="wrapper professional-filter inner">
           <FilterProfessionSelector providerType={providerType} />
           <div className="category-container">
-            <FilterPractitionerPreviewCard
-              photoUrl={placeholderThumbnailPhoto}
-              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
-              selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Créole"
-              practitionerId="default"
-            />
-            <FilterPractitionerPreviewCard
-              photoUrl={placeholderThumbnailPhoto}
-              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
-              selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Créole"
-              practitionerId="default"
-            />
-            <FilterPractitionerPreviewCard
-              photoUrl={placeholderThumbnailPhoto}
-              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
-              selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Créole"
-              practitionerId="default"
-            />
-            <FilterPractitionerPreviewCard
-              photoUrl={placeholderThumbnailPhoto}
-              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
-              selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Créole"
-              practitionerId="default"
-            />
-            <FilterPractitionerPreviewCard
-              photoUrl={placeholderThumbnailPhoto}
-              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
-              selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Créole"
-              practitionerId="default"
-            />
-            <FilterPractitionerPreviewCard
-              photoUrl={placeholderThumbnailPhoto}
-              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
-              selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Créole"
-              practitionerId="default"
-            />
-            <FilterPractitionerPreviewCard
-              photoUrl={placeholderThumbnailPhoto}
-              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
-              selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Créole"
-              practitionerId="default"
-            />
-            <FilterPractitionerPreviewCard
-              photoUrl={placeholderThumbnailPhoto}
-              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
-              selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Créole"
-              practitionerId="default"
-            />
-            <FilterPractitionerPreviewCard
-              photoUrl={placeholderThumbnailPhoto}
-              nameAndTitle="Dr. Jane Doe, PhD, OPQ"
-              selfIdentity="Haitian Créole"
-              languages="Speaks English, French and Haitian Créole"
-              practitionerId="default"
-            />
+            {placeholderData.map(
+              ({ thumbnailPhoto, name, title, selfIdentity, languages }, i) => {
+                const nameAndTitleString = `${name} - ${title}`;
+                const languagesString = languages
+                  .map(capitaliseFirstLetter)
+                  .join(", ");
+                return (
+                  <FilterPractitionerPreviewCard
+                    key={i}
+                    photoUrl={thumbnailPhoto}
+                    nameAndTitle={nameAndTitleString}
+                    selfIdentity={selfIdentity}
+                    languages={`Speaks ${languagesString}`}
+                    practitionerId={i}
+                  />
+                );
+              }
+            )}
           </div>
         </div>
       </article>

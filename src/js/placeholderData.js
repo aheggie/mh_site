@@ -1,4 +1,5 @@
 import placeholderPhoto from "../static/img/bio-image.jpg";
+import placeholderThumbnailPhoto from "../static/img/bio-image-thumbnail.jpg";
 
 const placeholderItems = [
   "Lorem ipsum dolor sit amet, consectetur.",
@@ -12,6 +13,11 @@ const placeholderPractitionerOne = {
   name: "Dr. Jane Doe",
   title: "Psychologist, PhD, OPQ",
   photo: placeholderPhoto,
+  thumbnailPhoto: placeholderThumbnailPhoto,
+  //there is a data discrepancy in the front end design
+  //this ethnic self-identity appears in the FilterPage Preview cards
+  //but not in the PractitionerPage
+  selfIdentity: "Haitian Créole",
   //note: this is probably the most divergent from what firebase db will send?
   aboutText: `<p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id velit
