@@ -12,34 +12,33 @@ import BioMap from "./BioMap";
 import BioQualifications from "./BioQualifications";
 
 // import placeholderPhoto from "../../../static/img/bio-image.jpg";
-import placeholderData from "../../placeholderData";
+import { getPlaceHolderPractitioner } from "../../placeholderData";
 
-const {
-  name,
-  title,
-  photo,
-  aboutText,
-  email,
-  phone,
-  address,
-  languages,
-  specialisationsItems,
-  issuesItems,
-  approachItems,
-  paymentRates,
-  paymentMethods,
-  insuranceAccepted,
-  accessibilityBooleans,
-  orderAffiliation,
-  licenseNumber,
-  schooling,
-  yearGraduated,
-  yearsInPractice,
-  extraCredentials,
-} = placeholderData[0];
-
-const PractitionerPage = () => {
-  appendTitle();
+const PractitionerPage = ({ match }) => {
+  const {
+    name,
+    title,
+    photo,
+    aboutText,
+    email,
+    phone,
+    address,
+    languages,
+    specialisationsItems,
+    issuesItems,
+    approachItems,
+    paymentRates,
+    paymentMethods,
+    insuranceAccepted,
+    accessibilityBooleans,
+    orderAffiliation,
+    licenseNumber,
+    schooling,
+    yearGraduated,
+    yearsInPractice,
+    extraCredentials,
+  } = getPlaceHolderPractitioner(match.params.practitionerId);
+  appendTitle(name);
   return (
     <HeaderFooter className="services">
       <article className="content">
