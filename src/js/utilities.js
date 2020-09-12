@@ -6,4 +6,15 @@ const appendTitle = (toAppend) => {
   document.title = toAppend ? `${FIXED} - ${toAppend}` : FIXED;
 };
 
-export { appendTitle };
+//this takes an english content and a french content and returns an object with the contents keyed to the languages
+//this is to build out the StaticText object at the root of each component in a dry way
+
+const enAndFrContent = (enContent, frContent) => ({
+  en: enContent,
+  fr: frContent,
+});
+
+const curriedFillInStaticTextByLang = (lang) => (textObjectPath) =>
+  textObjectPath[lang];
+
+export { enAndFrContent, appendTitle, curriedFillInStaticTextByLang };
