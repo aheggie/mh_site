@@ -23,10 +23,11 @@ const staticText = {
   ),
 };
 
-const HomePage = ({ lang = "en" }) => {
-  appendTitle();
+const HomePage = ({ match }) => {
+  const lang = match.params.lang || "fr";
   //this returns a function that selects the language correctly from the given route
   const fillInText = curriedFillInStaticTextByLang(lang);
+  appendTitle();
   return (
     <HeaderFooter className="homepage">
       <header className="main-head">
