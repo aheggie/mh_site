@@ -29,7 +29,7 @@ const HomePage = ({ match }) => {
   const fillInText = curriedFillInStaticTextByLang(lang);
   appendTitle();
   return (
-    <HeaderFooter className="homepage">
+    <HeaderFooter lang={lang} className="homepage">
       <header className="main-head">
         <div className="inner home">
           <h1 id="announce">{fillInText(staticText.announce)}</h1>

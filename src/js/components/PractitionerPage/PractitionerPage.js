@@ -38,9 +38,10 @@ const PractitionerPage = ({ match }) => {
     yearsInPractice,
     extraCredentials,
   } = getPlaceHolderPractitioner(match.params.practitionerId);
+  const lang = match.params.lang || "fr";
   appendTitle(name);
   return (
-    <HeaderFooter className="services">
+    <HeaderFooter lang={lang} className="services">
       <article className="content">
         <div className="bio-page inner">
           {/* 1 */}

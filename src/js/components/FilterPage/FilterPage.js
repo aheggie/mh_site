@@ -10,9 +10,10 @@ import placeholderData from "../../placeholderData";
 
 const FilterPage = ({ match }) => {
   const { providerType } = match.params;
+  const lang = match.params.lang || "fr";
   appendTitle(toPageTitleCase(providerType));
   return (
-    <HeaderFooter className="services">
+    <HeaderFooter lang={lang} className="services">
       <article className="content">
         <div className="wrapper professional-filter inner">
           <FilterProfessionSelector providerType={providerType} />

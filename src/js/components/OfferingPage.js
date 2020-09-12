@@ -41,7 +41,7 @@ const OfferingPage = ({ match }) => {
   const fillInText = curriedFillInStaticTextByLang(lang);
   appendTitle(fillInText(staticText.offeringPageTitle));
   return (
-    <HeaderFooter className="services">
+    <HeaderFooter lang={lang} className="services">
       <article className="content">
         <div className="offering inner">
           <div className="page-intro">

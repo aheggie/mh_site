@@ -30,10 +30,10 @@ import { appendTitle } from "../utilities";
 //2. WhyPage
 //3. ResourcesPage
 
-const GenericContentPage = ({ title, children }) => {
+const GenericContentPage = ({ lang, title, children }) => {
   appendTitle(title);
   return (
-    <HeaderFooter className="services">
+    <HeaderFooter lang={lang} className="services">
       <article className="content">
         <div className="offering inner">
           <div className="page-intro">

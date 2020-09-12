@@ -42,10 +42,11 @@ Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
 imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
 malesuada tortor nisi, id mollis ligula dapibus.`;
 
-const SeekingPage = () => {
+const SeekingPage = ({ match }) => {
+  const lang = match.params.lang || "fr";
   appendTitle("Seeking Services");
   return (
-    <HeaderFooter className="services">
+    <HeaderFooter lang={lang} className="services">
       <article className="content">
         <div className="professional-filter inner">
           <div className="page-intro">

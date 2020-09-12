@@ -69,7 +69,7 @@ const WhyPage = ({ match }) => {
   const lang = match.params.lang || "fr";
   const fillText = curriedFillInStaticTextByLang(lang);
   return (
-    <GenericContentPage title={fillText(staticText.WhyPageTitle)}>
+    <GenericContentPage lang={lang} title={fillText(staticText.WhyPageTitle)}>
       {parse(fillText(staticText.WhyPageContent))}{" "}
     </GenericContentPage>
   );

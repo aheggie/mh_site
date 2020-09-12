@@ -150,7 +150,10 @@ const ResourcesPage = ({ match }) => {
   const lang = match.params.lang || "fr";
   const fillText = curriedFillInStaticTextByLang(lang);
   return (
-    <GenericContentPage title={fillText(staticText.ResourcesPageTitle)}>
+    <GenericContentPage
+      lang={lang}
+      title={fillText(staticText.ResourcesPageTitle)}
+    >
       {parse(fillText(staticText.ResourcesPageContent))}
     </GenericContentPage>
   );

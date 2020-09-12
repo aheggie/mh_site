@@ -15,7 +15,7 @@ const NavLink = ({ to, text }) => {
   );
 };
 
-const Nav = () => {
+const Nav = ({ lang }) => {
   return (
     <>
       {/* <!-- Navbar --> */}

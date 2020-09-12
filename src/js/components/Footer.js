@@ -11,7 +11,7 @@ const FooterNavLink = ({ to, linkText }) => {
   );
 };
 
-const Footer = () => {
+const Footer = ({ lang }) => {
   return (
     <footer className="main-foot">
       <div className="wrapper footer">
