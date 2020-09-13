@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import routes from "../routes";
 
 import HomePage from "./HomePage";
-import SeekingPage from "./SeekingPage";
+import SeekingPage from "./SeekingPage/SeekingPage";
 import OfferingPage from "./OfferingPage";
 import WhyPage from "./WhyPage";
 import AboutPage from "./AboutPage";

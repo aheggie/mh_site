@@ -1,49 +1,30 @@
 import React from "react";
-import HeaderFooter from "./HeaderFooter";
+import HeaderFooter from "../HeaderFooter";
+import ProfessionCard from "./ProfessionCard";
 import { Link } from "react-router-dom";
-import routes from "../routes";
-import { appendTitle } from "../utilities";
-import professionCodes, { toSentenceCase } from "../professionCodes";
+import routes from "../../routes";
+import {
+  appendTitle,
+  curriedFillInStaticTextByLang,
+  enAndFrContent,
+} from "../../utilities";
+import professionCodes from "../../professionCodes";
 
-const { filterRoute, offeringRoute } = routes;
+const { offeringRoute } = routes;
 
-const ProfessionCard = ({ professionCode, descriptionText }) => {
-  const title = toSentenceCase(professionCode);
-
-  return (
-    // note - the id used for each card in the static legacy code
-    //differs from the professionCode syntax in various ways
-    //
-    // however I checked the style.css and none of the ids were called
-    //so it is an unused property and safe to change without affecting css
-    // since it doesn't trigger any css at all it could perhaps be removed
-    //entirely but i am trying to operate on the principal of making the
-    //least possible changes to Cassie's good original
-    //html layout and css styling choices from the legacy code
-    // - Alex
-    <div className="seek-category" id={professionCode}>
-      <div className="category-description">
-        <h3>{title}</h3>
-        <p>{descriptionText}</p>
-      </div>
-      <div className="search-category">
-        <Link to={filterRoute(professionCode)} className="clear-style">
-          <h5 className="search-link">{`SEARCH FOR ${title.toUpperCase()}`}</h5>
-          <i className="fas fa-arrow-right"></i>
-        </Link>
-      </div>
-    </div>
-  );
+const staticText = {
+  seekingPageTitle: enAndFrContent(
+    "Find mental health support for yourself and others",
+    "Find mental health support for yourself and others"
+  ),
 };
 
-const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed
-imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed
-malesuada tortor nisi, id mollis ligula dapibus.`;
+const loremIpsum =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed malesuada tortor nisi, id mollis ligula dapibus.";
 
 const SeekingPage = ({ match }) => {
   const lang = match.params.lang || "fr";
+  const fillText = curriedFillInStaticTextByLang(lang);
   appendTitle("Seeking Services");
   return (
     <HeaderFooter lang={lang} className="services">
@@ -51,7 +32,7 @@ const SeekingPage = ({ match }) => {
         <div className="professional-filter inner">
           <div className="page-intro">
             <h1 className="page-title">
-              Find mental health support for yourself and others
+              {fillText(staticText.seekingPageTitle)}
             </h1>
             <p>
               EXPLANATION TEXT +{" "}
