@@ -17,6 +17,28 @@ const staticText = {
     "Find mental health support for yourself and others",
     "Find mental health support for yourself and others"
   ),
+  explanationLinkNotClickableText: enAndFrContent(
+    "EXPLANATION TEXT +",
+    "EXPLANATION TEXT +"
+  ),
+  explanationLinkClickableText: enAndFrContent(
+    "LINK TO OFFERING SERVICES",
+    "LINK TO OFFERING SERVICES"
+  ),
+  explanationPara: enAndFrContent(
+    ` Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
+  Aliquam in sollicitudin magna. Vivamus vel aliquet metus.
+  Vestibulum justo arcu, pretium a vulputate eget, dapibus vitae
+  risus. Sed imperdiet erat a fringilla aliquam. Etiam at accumsan.
+  Sed malesuada tortor nisi, id mollis ligula dapibus.`,
+    ` Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
+  Aliquam in sollicitudin magna. Vivamus vel aliquet metus.
+  Vestibulum justo arcu, pretium a vulputate eget, dapibus vitae
+  risus. Sed imperdiet erat a fringilla aliquam. Etiam at accumsan.
+  Sed malesuada tortor nisi, id mollis ligula dapibus.`
+  ),
 };
 
 const loremIpsum =
@@ -35,14 +57,12 @@ const SeekingPage = ({ match }) => {
               {fillText(staticText.seekingPageTitle)}
             </h1>
             <p>
-              EXPLANATION TEXT +{" "}
-              <Link to={offeringRoute()}>LINK TO OFFERING SERVICES</Link>.{" "}
-              <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-              Aliquam in sollicitudin magna. Vivamus vel aliquet metus.
-              Vestibulum justo arcu, pretium a vulputate eget, dapibus vitae
-              risus. Sed imperdiet erat a fringilla aliquam. Etiam at accumsan.
-              Sed malesuada tortor nisi, id mollis ligula dapibus.
+              {fillText(staticText.explanationLinkNotClickableText)}{" "}
+              <Link to={offeringRoute()}>
+                {fillText(staticText.explanationLinkClickableText)}
+              </Link>
+              . <br />
+              {fillText(staticText.explanationPara)}
             </p>
           </div>
           <div className="category-container">
