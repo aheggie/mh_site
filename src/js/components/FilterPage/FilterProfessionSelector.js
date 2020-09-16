@@ -1,18 +1,31 @@
 import React, { useState } from "react";
+
 import { Redirect } from "react-router-dom";
 import routes from "../../routes";
 import professionCodes from "../../professionCodes";
+import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
+import ProfessionOption from "./ProfessionOption";
 
 const { filterRoute } = routes;
 
-const FilterProfessionSelector = ({ providerType }) => {
+const staticText = {
+  lookingForHeader: enAndFrContent(
+    "You are looking for",
+    "You are looking for"
+  ),
+};
+
+const FilterProfessionSelector = ({ lang, providerType }) => {
+  const fillText = curriedFillInStaticTextByLang(lang);
   const [intendedTarget, setIntendedTarget] = useState(providerType);
   return (
     <div className="page-intro">
       {intendedTarget !== providerType ? (
         <Redirect to={filterRoute(intendedTarget)} />
       ) : null}
-      <h1 className="page-title filter">You are looking for</h1>
+      <h1 className="page-title filter">
+        {fillText(staticText.lookingForHeader)}
+      </h1>
       <div className="filter">
         {/* note: providerType is a professionCode passed by a previous link - thus we can be confident it matches the drop-down */}
         <select
@@ -22,21 +35,15 @@ const FilterProfessionSelector = ({ providerType }) => {
           onChange={(event) => setIntendedTarget(event.target.value)}
           onBlur={(event) => setIntendedTarget(event.target.value)}
         >
-          <option value={professionCodes.couple}>
-            Couple and family therapists
-          </option>
-          <option value={professionCodes.social}>Social workers</option>
-          <option value={professionCodes.psychologist}>Psychologists</option>
-          <option value={professionCodes.sexologist}>Sexologists</option>
-          <option value={professionCodes.indigenous}>
-            Indigenous elders and healers
-          </option>
-          <option value={professionCodes.psychotherapist}>
-            Psychotherapists
-          </option>
-          <option value={professionCodes.other}>
-            Other mental health professionals
-          </option>
+          {Object.values(professionCodes).map((professionCode) => {
+            return (
+              <ProfessionOption
+                key={professionCode}
+                lang={lang}
+                professionCode={professionCode}
+              />
+            );
+          })}
         </select>
       </div>
     </div>

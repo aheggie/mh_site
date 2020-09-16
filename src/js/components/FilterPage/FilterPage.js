@@ -16,7 +16,7 @@ const FilterPage = ({ match }) => {
     <HeaderFooter lang={lang} className="services">
       <article className="content">
         <div className="wrapper professional-filter inner">
-          <FilterProfessionSelector providerType={providerType} />
+          <FilterProfessionSelector lang={lang} providerType={providerType} />
           <div className="category-container">
             {placeholderData.map(
               ({ thumbnailPhoto, name, title, selfIdentity, languages }, i) => {
