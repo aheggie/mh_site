@@ -1,5 +1,6 @@
 import React from "react";
 import { capitaliseFirstLetter } from "../../professionCodes";
+import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 
 const AccessibilityIcon = ({ fasClass }) => {
   return (
@@ -29,12 +30,28 @@ const AccessibilityIcons = ({ accessibilityBooleans }) => {
   );
 };
 
+const staticText = {
+  paymentTitle: enAndFrContent("Payment", "Payment"),
+  // individualSessions,
+  // studentIndividualRate,
+  // coupleFamilyRate,
+  // coupleFamilyStudentRate,
+  // payBy,
+  // insuranceAccepted,
+  accessibilityTitle: enAndFrContent(
+    "Accessibility information",
+    "Accessibility information"
+  ),
+};
+
 const BioPayment = ({
+  lang,
   paymentRates,
   paymentMethods,
   insuranceAccepted,
   accessibilityBooleans,
 }) => {
+  const fillText = curriedFillInStaticTextByLang(lang);
   const paymentMethodsString = paymentMethods
     .map(capitaliseFirstLetter)
     .join(", ");
@@ -43,7 +60,7 @@ const BioPayment = ({
     .join(", ");
   return (
     <div className="bio payment bio-box">
-      <h2>Payment</h2>
+      <h2>{fillText(staticText.paymentTitle)}</h2>
       <ul className="payment-rates">
         <li>{`Individual sessions: ${paymentRates.individual}$ per hour`}</li>
         <li>{`Student individual rate: ${paymentRates.studentIndividual}$ per hour`}</li>
@@ -54,7 +71,7 @@ const BioPayment = ({
         <li>{`Pay by: ${paymentMethodsString}`}</li>
         <li>{`Insurance plans accepted: ${insuranceAcceptedString}`}</li>
       </ul>
-      <h2>Accessibility information</h2>
+      <h2>{fillText(staticText.accessibilityTitle)}</h2>
       <AccessibilityIcons accessibilityBooleans={accessibilityBooleans} />
     </div>
   );

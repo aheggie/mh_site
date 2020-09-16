@@ -79,6 +79,7 @@ const PractitionerPage = ({ match }) => {
 
           {/* 7 */}
           <BioPayment
+            lang={lang}
             paymentRates={paymentRates}
             paymentMethods={paymentMethods}
             insuranceAccepted={insuranceAccepted}
@@ -90,6 +91,7 @@ const PractitionerPage = ({ match }) => {
 
           {/* 9 */}
           <BioQualifications
+            lang={lang}
             orderAffiliation={orderAffiliation}
             licenseNumber={licenseNumber}
             schooling={schooling}

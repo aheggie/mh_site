@@ -1,6 +1,18 @@
 import React from "react";
+import { curriedFillInStaticTextByLang } from "../../utilities";
+
+const staticText = {
+  // qualificationsTitle,
+  // orderHeading,
+  // licenseNumberHeading,
+  // schoolHeading,
+  // yearGraduatedHeading,
+  // yearsInPracticeHeading,
+  // extraCredentialsTitle,
+};
 
 const BioQualifications = ({
+  lang,
   orderAffiliation,
   licenseNumber,
   schooling,
@@ -8,6 +20,7 @@ const BioQualifications = ({
   yearsInPractice,
   extraCredentials,
 }) => {
+  const fillText = curriedFillInStaticTextByLang(lang);
   return (
     <div className="bio qualifications bio-box">
       <h2>Qualifications</h2>
