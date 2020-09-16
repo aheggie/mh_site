@@ -27,10 +27,15 @@ const FilterPage = ({ match }) => {
                 return (
                   <FilterPractitionerPreviewCard
                     key={i}
+                    // this is the site-wide lang prop that says if the site should render in
+                    // English or French
+                    // NOT the languages the practitioner speaks
+                    lang={lang}
                     photoUrl={thumbnailPhoto}
                     nameAndTitle={nameAndTitleString}
                     selfIdentity={selfIdentity}
-                    languages={`Speaks ${languagesString}`}
+                    //THIS is the languages the practitioner speaks
+                    languages={languagesString}
                     practitionerId={i}
                   />
                 );
