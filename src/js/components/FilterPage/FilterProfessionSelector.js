@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Redirect } from "react-router-dom";
 import routes from "../../routes";
-import professionCodes from "../../professionCodes";
+import { professionCodes } from "../../professionCodes";
 import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 import ProfessionOption from "./ProfessionOption";
 

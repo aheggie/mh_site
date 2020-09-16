@@ -60,8 +60,8 @@ const toPageTitleCase = (providerType) =>
 const capitaliseFirstLetter = (inputString) =>
   `${inputString[0].toUpperCase()}${inputString.slice(1)}`;
 
-export default professionCodes;
 export {
+  professionCodes,
   staticProfessionTitle,
   toSentenceCase,
   toPageTitleCase,

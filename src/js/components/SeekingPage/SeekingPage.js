@@ -8,7 +8,7 @@ import {
   curriedFillInStaticTextByLang,
   enAndFrContent,
 } from "../../utilities";
-import professionCodes from "../../professionCodes";
+import { professionCodes } from "../../professionCodes";
 
 const { offeringRoute } = routes;
 

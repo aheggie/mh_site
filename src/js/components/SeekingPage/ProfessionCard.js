@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import professionCodes, { staticProfessionTitle } from "../../professionCodes";
+import { professionCodes, staticProfessionTitle } from "../../professionCodes";
 import routes from "../../routes";
 import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 
