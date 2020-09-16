@@ -4,11 +4,17 @@ import React from "react";
 //
 //for current placeholder text see placeholderData.js
 import parse from "html-react-parser";
+import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 
-const BioAbout = ({ aboutText }) => {
+const staticText = {
+  aboutMeTitle: enAndFrContent("About me", "About me"),
+};
+
+const BioAbout = ({ lang, aboutText }) => {
+  const fillText = curriedFillInStaticTextByLang(lang);
   return (
     <div className="bio about">
-      <h2>About me</h2>
+      <h2>{fillText(staticText.aboutMeTitle)}</h2>
       {/* probably this will not be part of displaying db data, see note above */}
       {parse(aboutText)}
     </div>

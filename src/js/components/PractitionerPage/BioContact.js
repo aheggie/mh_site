@@ -1,7 +1,20 @@
 import React from "react";
+import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 
-const BioContact = ({ name, email, phone, address, languages }) => {
-  const contactString = `Contact ${name} now`;
+//everywhere else staticText is just strings
+//having it functions feels wrong but its just in this
+//single subcomponent?
+//could be handled in some other way here though
+const staticText = {
+  contactStringFunc: enAndFrContent(
+    (name) => `Contact ${name} now`,
+    (name) => `Contact ${name} now`
+  ),
+};
+
+const BioContact = ({ lang, name, email, phone, address, languages }) => {
+  const fillText = curriedFillInStaticTextByLang(lang);
+  const contactString = fillText(staticText.contactStringFunc)(name);
   //right now placeholder data (see placeholderData.js) is an array of string language names
   //not sure if db will ultimately produce similar data structure
   const languagesString = languages.join(", ");

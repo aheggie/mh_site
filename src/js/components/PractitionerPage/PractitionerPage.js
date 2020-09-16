@@ -38,6 +38,8 @@ const PractitionerPage = ({ match }) => {
     yearsInPractice,
     extraCredentials,
   } = getPlaceHolderPractitioner(match.params.practitionerId);
+  //note: lang will only hydrate down to components that will make use of it
+  //with static or db-drawn bilingual text
   const lang = match.params.lang || "fr";
   appendTitle(name);
   return (
@@ -51,7 +53,7 @@ const PractitionerPage = ({ match }) => {
           <BioPhoto photo={photo} alt={`${name} - ${title}`} />
 
           {/* 3 */}
-          <BioAbout aboutText={aboutText} />
+          <BioAbout lang={lang} aboutText={aboutText} />
 
           {/* 4 */}
           {/* what does this DO ??? div is empty */}
@@ -59,6 +61,7 @@ const PractitionerPage = ({ match }) => {
 
           {/* 5 */}
           <BioContact
+            lang={lang}
             name={name}
             email={email}
             phone={phone}
