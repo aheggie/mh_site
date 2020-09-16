@@ -71,6 +71,7 @@ const PractitionerPage = ({ match }) => {
 
           {/* 6 */}
           <BioSidebar
+            lang={lang}
             specialisationsItems={specialisationsItems}
             issuesItems={issuesItems}
             approachItems={approachItems}

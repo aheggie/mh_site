@@ -1,43 +1,38 @@
 import React from "react";
+import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
+import BioSideBarBox from "./BioSidebarBox";
 
-const BioSideBarBox = ({ className, title, items }) => {
-  return (
-    <div className={`bio ${className}`}>
-      <h3>{title}</h3>
-      <div className="bio-box sidebar-box">
-        <ul className="bio-sidebar-list">
-          {items.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-        <div className="expand">
-          <span className="see-more">
-            <a href="" className="clear-style">
-              SEE MORE
-            </a>
-          </span>
-        </div>
-      </div>
-    </div>
-  );
+const staticText = {
+  specializationsTitle: enAndFrContent("Specializations", "Specializations"),
+  issuesTitle: enAndFrContent(
+    "Issues I can support you with",
+    "Issues I can support you with"
+  ),
+  approachTitle: enAndFrContent("Helping approach", "Helping approach"),
 };
 
-const BioSidebar = ({ specialisationsItems, issuesItems, approachItems }) => {
+const BioSidebar = ({
+  lang,
+  specialisationsItems,
+  issuesItems,
+  approachItems,
+}) => {
+  const fillText = curriedFillInStaticTextByLang(lang);
   return (
     <div className="bio-sidebar">
       <BioSideBarBox
         className="specializations"
-        title="Specializations"
+        title={fillText(staticText.specializationsTitle)}
         items={specialisationsItems}
       />
       <BioSideBarBox
         className="issues"
-        title="Issues I can support you with"
+        title={fillText(staticText.issuesTitle)}
         items={issuesItems}
       />
       <BioSideBarBox
         className="approach"
-        title="Helping approach"
+        title={fillText(staticText.approachTitle)}
         items={approachItems}
       />
     </div>
