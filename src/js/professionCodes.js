@@ -2,6 +2,8 @@
 //primarily to have easy consistency with any database writes and reads on the backend
 //and also to have consistent naming practices in the front-en UI
 
+import { enAndFrContent } from "./utilities";
+
 const professionCodes = {
   couple: "couple-and-family-therapists",
   social: "social-workers",
@@ -10,6 +12,34 @@ const professionCodes = {
   indigenous: "indigenous-elders-and-healers",
   psychotherapist: "psychotherapists",
   other: "other-mental-health-professionals",
+};
+
+//this is to consistently pull titles in each language based on the professionCode encoded in the route
+//most Static text is held at the root of the component that it is used in
+//but this static text is used in at least two pages, the SeekingPage's ProfessionCard subcomponent and the FilterPage
+const professionStaticTitle = {
+  [professionCodes.couple]: enAndFrContent(
+    "Couple and family therapists",
+    "Couple and family therapists"
+  ),
+  [professionCodes.social]: enAndFrContent("Social workers", "Social workers"),
+  [professionCodes.psychologist]: enAndFrContent(
+    "Psychologists",
+    "Psychologists"
+  ),
+  [professionCodes.sexologist]: enAndFrContent("Sexologists", "Sexologists"),
+  [professionCodes.indigenous]: enAndFrContent(
+    "Indigenous elders and healers",
+    "Indigenous elders and healers"
+  ),
+  [professionCodes.psychotherapist]: enAndFrContent(
+    "Psychotherapists",
+    "Psychotherapists"
+  ),
+  [professionCodes.other]: enAndFrContent(
+    "Other mental health professionals",
+    "Other mental health professionals"
+  ),
 };
 
 //these are utilities to use the codes to generate titles etc
@@ -31,4 +61,9 @@ const capitaliseFirstLetter = (inputString) =>
   `${inputString[0].toUpperCase()}${inputString.slice(1)}`;
 
 export default professionCodes;
-export { toSentenceCase, toPageTitleCase, capitaliseFirstLetter };
+export {
+  professionStaticTitle,
+  toSentenceCase,
+  toPageTitleCase,
+  capitaliseFirstLetter,
+};

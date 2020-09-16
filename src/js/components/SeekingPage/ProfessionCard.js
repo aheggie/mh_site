@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { toSentenceCase } from "../../professionCodes";
+import { professionStaticTitle } from "../../professionCodes";
 import routes from "../../routes";
+import { curriedFillInStaticTextByLang } from "../../utilities";
 
 const { filterRoute } = routes;
 
-const ProfessionCard = ({ professionCode, descriptionText }) => {
-  const title = toSentenceCase(professionCode);
+const ProfessionCard = ({ lang, professionCode, descriptionText }) => {
+  const fillText = curriedFillInStaticTextByLang(lang);
+  const professionTitle = fillText(professionStaticTitle[professionCode]);
 
   return (
     // note - the id used for each card in the static legacy code
@@ -21,12 +23,12 @@ const ProfessionCard = ({ professionCode, descriptionText }) => {
     // - Alex
     <div className="seek-category" id={professionCode}>
       <div className="category-description">
-        <h3>{title}</h3>
+        <h3>{professionTitle}</h3>
         <p>{descriptionText}</p>
       </div>
       <div className="search-category">
         <Link to={filterRoute(professionCode)} className="clear-style">
-          <h5 className="search-link">{`SEARCH FOR ${title.toUpperCase()}`}</h5>
+          <h5 className="search-link">{`SEARCH FOR ${professionTitle.toUpperCase()}`}</h5>
           <i className="fas fa-arrow-right"></i>
         </Link>
       </div>

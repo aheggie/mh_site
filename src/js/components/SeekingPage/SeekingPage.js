@@ -67,30 +67,37 @@ const SeekingPage = ({ match }) => {
           </div>
           <div className="category-container">
             <ProfessionCard
+              lang={lang}
               professionCode={professionCodes.couple}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
+              lang={lang}
               professionCode={professionCodes.social}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
+              lang={lang}
               professionCode={professionCodes.sexologist}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
+              lang={lang}
               professionCode={professionCodes.psychologist}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
+              lang={lang}
               professionCode={professionCodes.indigenous}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
+              lang={lang}
               professionCode={professionCodes.psychotherapist}
               descriptionText={loremIpsum}
             />
             <ProfessionCard
+              lang={lang}
               professionCode={professionCodes.other}
               descriptionText={loremIpsum}
             />
