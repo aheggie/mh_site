@@ -25,7 +25,7 @@ const staticText = {
     "LINK TO OFFERING SERVICES",
     "LINK TO OFFERING SERVICES"
   ),
-  explanationPara: enAndFrContent(
+  explanationParagraph: enAndFrContent(
     ` Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
   Aliquam in sollicitudin magna. Vivamus vel aliquet metus.
@@ -40,9 +40,6 @@ const staticText = {
   Sed malesuada tortor nisi, id mollis ligula dapibus.`
   ),
 };
-
-const loremIpsum =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed malesuada tortor nisi, id mollis ligula dapibus.";
 
 const SeekingPage = ({ match }) => {
   const lang = match.params.lang || "fr";
@@ -62,44 +59,37 @@ const SeekingPage = ({ match }) => {
                 {fillText(staticText.explanationLinkClickableText)}
               </Link>
               . <br />
-              {fillText(staticText.explanationPara)}
+              {fillText(staticText.explanationParagraph)}
             </p>
           </div>
           <div className="category-container">
             <ProfessionCard
               lang={lang}
               professionCode={professionCodes.couple}
-              descriptionText={loremIpsum}
             />
             <ProfessionCard
               lang={lang}
               professionCode={professionCodes.social}
-              descriptionText={loremIpsum}
             />
             <ProfessionCard
               lang={lang}
               professionCode={professionCodes.sexologist}
-              descriptionText={loremIpsum}
             />
             <ProfessionCard
               lang={lang}
               professionCode={professionCodes.psychologist}
-              descriptionText={loremIpsum}
             />
             <ProfessionCard
               lang={lang}
               professionCode={professionCodes.indigenous}
-              descriptionText={loremIpsum}
             />
             <ProfessionCard
               lang={lang}
               professionCode={professionCodes.psychotherapist}
-              descriptionText={loremIpsum}
             />
             <ProfessionCard
               lang={lang}
               professionCode={professionCodes.other}
-              descriptionText={loremIpsum}
             />
           </div>
         </div>

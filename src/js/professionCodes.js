@@ -17,7 +17,7 @@ const professionCodes = {
 //this is to consistently pull titles in each language based on the professionCode encoded in the route
 //most Static text is held at the root of the component that it is used in
 //but this static text is used in at least two pages, the SeekingPage's ProfessionCard subcomponent and the FilterPage
-const professionStaticTitle = {
+const staticProfessionTitle = {
   [professionCodes.couple]: enAndFrContent(
     "Couple and family therapists",
     "Couple and family therapists"
@@ -62,7 +62,7 @@ const capitaliseFirstLetter = (inputString) =>
 
 export default professionCodes;
 export {
-  professionStaticTitle,
+  staticProfessionTitle,
   toSentenceCase,
   toPageTitleCase,
   capitaliseFirstLetter,
