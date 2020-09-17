@@ -12,6 +12,9 @@ const professionCodes = {
   indigenous: "indigenous-elders-and-healers",
   psychotherapist: "psychotherapists",
   other: "other-mental-health-professionals",
+  //note: these are new in the site text,
+  psychoeducator: "psychoeducators",
+  creative: "creative-arts-therapists",
 };
 
 //this is to consistently pull titles in each language based on the professionCode encoded in the route
@@ -20,25 +23,37 @@ const professionCodes = {
 const staticProfessionTitle = {
   [professionCodes.couple]: enAndFrContent(
     "Couple and family therapists",
-    "Couple and family therapists"
+    "Thérapeutes de couple / de mariage et de famille"
   ),
-  [professionCodes.social]: enAndFrContent("Social workers", "Social workers"),
+  [professionCodes.social]: enAndFrContent(
+    "Social workers",
+    "Travailleurs sociaux"
+  ),
   [professionCodes.psychologist]: enAndFrContent(
     "Psychologists",
-    "Psychologists"
+    "Psychologues"
   ),
-  [professionCodes.sexologist]: enAndFrContent("Sexologists", "Sexologists"),
+  [professionCodes.sexologist]: enAndFrContent("Sexologists", "Sexologues"),
   [professionCodes.indigenous]: enAndFrContent(
     "Indigenous elders and healers",
-    "Indigenous elders and healers"
+    "Aînés et guérisseurs autochtones "
   ),
   [professionCodes.psychotherapist]: enAndFrContent(
-    "Psychotherapists",
-    "Psychotherapists"
+    "Psychotherapists and others with psychotherapy permit",
+    "Psychothérapeutes et titulaires de permis en psychothérapie"
   ),
   [professionCodes.other]: enAndFrContent(
     "Other mental health professionals",
-    "Other mental health professionals"
+    "D’autres professionnels de la santé mentale"
+  ),
+  //note: these are new in the site text,
+  [professionCodes.psychoeducator]: enAndFrContent(
+    "Psychoeducators",
+    "Psychoéducateurs"
+  ),
+  [professionCodes.creative]: enAndFrContent(
+    "Creative arts therapies",
+    "Thérapies par les arts créatifs"
   ),
 };
 
