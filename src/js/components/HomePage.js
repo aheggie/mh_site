@@ -13,13 +13,13 @@ const { seekingRoute, offeringRoute } = routes;
 const staticText = {
   announce: enAndFrContent(
     "Find mental health professionals of colour in Tiotia:ke (Montreal)",
-    "Find mental health professionals of colour in Tiotia:ke (Montreal)"
+    "Trouver des professionnels racisés de la santé mentale à Tio’tia:ke (Montréal.)"
   ),
-  seekingButton: enAndFrContent("Seeking Services", "Seeking Services"),
-  offeringButton: enAndFrContent("Offering Services", "Offering Services"),
+  seekingButton: enAndFrContent("Seeking Services", "Recherche de services"),
+  offeringButton: enAndFrContent("Offering Services", "Offrez vos services"),
   newsletterButton: enAndFrContent(
-    "Join Our Newsletter",
-    "Join Our Newsletter"
+    "Join Our Newsletter!",
+    "Inscrivez vous à notre infolettre!"
   ),
 };
 
