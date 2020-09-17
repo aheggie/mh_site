@@ -5,9 +5,13 @@ import {
   staticProfessionTitle,
 } from "../../professionCodes";
 import routes from "../../routes";
-import { curriedFillInStaticTextByLang } from "../../utilities";
+import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 
 const { filterRoute } = routes;
+
+const staticText = {
+  searchForHeading: enAndFrContent("SEARCH FOR", "RECHERCHER"),
+};
 
 const ProfessionCard = ({ lang, professionCode }) => {
   const fillText = curriedFillInStaticTextByLang(lang);
@@ -31,7 +35,9 @@ const ProfessionCard = ({ lang, professionCode }) => {
       </div>
       <div className="search-category">
         <Link to={filterRoute(professionCode)} className="clear-style">
-          <h5 className="search-link">{`SEARCH FOR ${professionTitle.toUpperCase()}`}</h5>
+          <h5 className="search-link">{`${fillText(
+            staticText.searchForHeading
+          )} ${professionTitle.toUpperCase()}`}</h5>
           <i className="fas fa-arrow-right"></i>
         </Link>
       </div>
