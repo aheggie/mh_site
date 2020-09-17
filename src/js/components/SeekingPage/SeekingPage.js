@@ -49,9 +49,9 @@ const SeekingPage = ({ match }) => {
               <Link to={offeringRoute()}>
                 {fillText(staticText.explanationLinkClickableText)}
               </Link>
-              . <br />
-              {fillText(staticText.explanationParagraph)}
+              .
             </p>
+            <p>{fillText(staticText.explanationParagraph)}</p>
           </div>
           <div className="category-container">
             {Object.values(professionCodes).map((professionCode) => (

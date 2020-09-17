@@ -2,7 +2,6 @@ import React from "react";
 import HeaderFooter from "../HeaderFooter";
 import { appendTitle, curriedFillInStaticTextByLang } from "../../utilities";
 import {
-  toPageTitleCase,
   capitaliseFirstLetter,
   staticProfessionTitle,
 } from "../../professionCodes";
