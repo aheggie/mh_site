@@ -1,7 +1,11 @@
 import React from "react";
 import HeaderFooter from "../HeaderFooter";
-import { appendTitle } from "../../utilities";
-import { toPageTitleCase, capitaliseFirstLetter } from "../../professionCodes";
+import { appendTitle, curriedFillInStaticTextByLang } from "../../utilities";
+import {
+  toPageTitleCase,
+  capitaliseFirstLetter,
+  staticProfessionTitle,
+} from "../../professionCodes";
 import FilterPractitionerPreviewCard from "./FilterPractitionerPreviewCard";
 import FilterProfessionSelector from "./FilterProfessionSelector";
 
@@ -11,7 +15,8 @@ import placeholderData from "../../placeholderData";
 const FilterPage = ({ match }) => {
   const { providerType } = match.params;
   const lang = match.params.lang || "fr";
-  appendTitle(toPageTitleCase(providerType));
+  const fillText = curriedFillInStaticTextByLang(lang);
+  appendTitle(fillText(staticProfessionTitle[providerType]));
   return (
     <HeaderFooter lang={lang} className="services">
       <article className="content">

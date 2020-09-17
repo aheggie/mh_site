@@ -13,7 +13,8 @@ import { professionCodes } from "../../professionCodes";
 const { offeringRoute } = routes;
 
 const staticText = {
-  seekingPageTitle: enAndFrContent(
+  seekingPageTitle: enAndFrContent("Seeking services", "Recherche de services"),
+  seekingContentTitle: enAndFrContent(
     "Find mental health support for yourself and others",
     "Trouvez du soutien en santé mentale pour vous ou une autre personne"
   ),
@@ -34,14 +35,14 @@ const staticText = {
 const SeekingPage = ({ match }) => {
   const lang = match.params.lang || "fr";
   const fillText = curriedFillInStaticTextByLang(lang);
-  appendTitle("Seeking Services");
+  appendTitle(fillText(staticText.seekingPageTitle));
   return (
     <HeaderFooter lang={lang} className="services">
       <article className="content">
         <div className="professional-filter inner">
           <div className="page-intro">
             <h1 className="page-title">
-              {fillText(staticText.seekingPageTitle)}
+              {fillText(staticText.seekingContentTitle)}
             </h1>
             <p>
               {fillText(staticText.explanationLinkNotClickableText)}{" "}
