@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 
 const staticText = {
-  speaks: enAndFrContent("Speaks", "Speaks"),
-  viewProfile: enAndFrContent("VIEW PROFILE", "VIEW PROFILE"),
+  //note these weren't in site text doc - these are both free translations and could be replaced!
+  speaks: enAndFrContent("Speaks", "Parle"),
+  viewProfile: enAndFrContent("VIEW PROFILE", "VOIR PLUS"),
 };
 
 const FilterPractitionerPreviewCard = ({

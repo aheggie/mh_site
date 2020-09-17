@@ -10,8 +10,8 @@ const { filterRoute } = routes;
 
 const staticText = {
   lookingForHeader: enAndFrContent(
-    "You are looking for",
-    "You are looking for"
+    "You are searching for: ",
+    "Cherchez vous: "
   ),
 };
 
