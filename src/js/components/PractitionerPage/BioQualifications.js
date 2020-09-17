@@ -4,11 +4,17 @@ import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 const staticText = {
   qualificationsTitle: enAndFrContent("Qualifications", "Qualifications"),
   orderHeading: enAndFrContent("Order", "Order"),
-  // licenseNumberHeading,
-  // schoolHeading,
-  // yearGraduatedHeading,
-  // yearsInPracticeHeading,
-  // extraCredentialsTitle,
+  licenseNumberHeading: enAndFrContent("License number", "License number"),
+  schoolHeading: enAndFrContent("School", "School"),
+  yearGraduatedHeading: enAndFrContent("Year graduated", "Year graduated"),
+  yearsInPracticeHeading: enAndFrContent(
+    "Years in practice",
+    "Years in practice"
+  ),
+  extraCredentialsTitle: enAndFrContent(
+    "Extra credentials",
+    "Extra credentials"
+  ),
 };
 
 const BioQualifications = ({
@@ -26,12 +32,18 @@ const BioQualifications = ({
       <h2>{fillText(staticText.qualificationsTitle)}</h2>
       <ul>
         <li>{`${fillText(staticText.orderHeading)}: ${orderAffiliation}`}</li>
-        <li>{`License number: #${licenseNumber}`}</li>
-        <li>{`School: ${schooling}`}</li>
-        <li>{`Year graduated: ${yearGraduated}`}</li>
-        <li>{`Years in practice: ${yearsInPractice} years`}</li>
+        <li>{`${fillText(
+          staticText.licenseNumberHeading
+        )}: #${licenseNumber}`}</li>
+        <li>{`${fillText(staticText.schoolHeading)}: ${schooling}`}</li>
+        <li>{`${fillText(
+          staticText.yearGraduatedHeading
+        )}: ${yearGraduated}`}</li>
+        <li>{`${fillText(
+          staticText.yearsInPracticeHeading
+        )}: ${yearsInPractice} years`}</li>
       </ul>
-      <h2>Extra credentials</h2>
+      <h2>{fillText(staticText.extraCredentialsTitle)}</h2>
       <p>{extraCredentials}</p>
     </div>
   );
