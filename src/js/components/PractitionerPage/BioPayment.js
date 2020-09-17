@@ -32,12 +32,24 @@ const AccessibilityIcons = ({ accessibilityBooleans }) => {
 
 const staticText = {
   paymentTitle: enAndFrContent("Payment", "Payment"),
-  // individualSessions,
-  // studentIndividualRate,
-  // coupleFamilyRate,
-  // coupleFamilyStudentRate,
-  // payBy,
-  // insuranceAccepted,
+  individualSessionsHeading: enAndFrContent(
+    "Individual sessions",
+    "Individual sessions"
+  ),
+  studentIndividualRateHeading: enAndFrContent(
+    "Student individual rate",
+    "Student individual rate"
+  ),
+  coupleFamilyRateHeading: enAndFrContent("Couple / Family", "Couple / Family"),
+  coupleFamilyStudentRateHeading: enAndFrContent(
+    "Student couple / family rate",
+    "Student couple / family rate"
+  ),
+  payByHeading: enAndFrContent("Pay by", "Pay by"),
+  insuranceAcceptedHeading: enAndFrContent(
+    "Insurance plans accepted",
+    "Insurance plans accepted"
+  ),
   accessibilityTitle: enAndFrContent(
     "Accessibility information",
     "Accessibility information"
@@ -62,14 +74,26 @@ const BioPayment = ({
     <div className="bio payment bio-box">
       <h2>{fillText(staticText.paymentTitle)}</h2>
       <ul className="payment-rates">
-        <li>{`Individual sessions: ${paymentRates.individual}$ per hour`}</li>
-        <li>{`Student individual rate: ${paymentRates.studentIndividual}$ per hour`}</li>
-        <li>{`Couple / Family: ${paymentRates.coupleFamily}$ per hour`}</li>
-        <li>{`Student couple / family rate: ${paymentRates.studentCoupleFamily}$ per hour`}</li>
+        <li>{`${fillText(staticText.individualSessionsHeading)}: ${
+          paymentRates.individual
+        }$/hr`}</li>
+        <li>{`${fillText(staticText.studentIndividualRateHeading)}: ${
+          paymentRates.studentIndividual
+        }$/hr`}</li>
+        <li>{`${fillText(staticText.coupleFamilyRateHeading)}: ${
+          paymentRates.coupleFamily
+        }$/hr`}</li>
+        <li>{`${fillText(staticText.coupleFamilyStudentRateHeading)}: ${
+          paymentRates.studentCoupleFamily
+        }$/hr`}</li>
       </ul>
       <ul className="payment-methods">
-        <li>{`Pay by: ${paymentMethodsString}`}</li>
-        <li>{`Insurance plans accepted: ${insuranceAcceptedString}`}</li>
+        <li>{`${fillText(
+          staticText.payByHeading
+        )}: ${paymentMethodsString}`}</li>
+        <li>{`${fillText(
+          staticText.insuranceAcceptedHeading
+        )}: ${insuranceAcceptedString}`}</li>
       </ul>
       <h2>{fillText(staticText.accessibilityTitle)}</h2>
       <AccessibilityIcons accessibilityBooleans={accessibilityBooleans} />
