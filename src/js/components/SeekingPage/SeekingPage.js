@@ -15,29 +15,19 @@ const { offeringRoute } = routes;
 const staticText = {
   seekingPageTitle: enAndFrContent(
     "Find mental health support for yourself and others",
-    "Find mental health support for yourself and others"
+    "Trouvez du soutien en santé mentale pour vous ou une autre personne"
   ),
   explanationLinkNotClickableText: enAndFrContent(
-    "EXPLANATION TEXT +",
-    "EXPLANATION TEXT +"
+    "Looking to offer professional mental health services? ",
+    "Cherchez-vous à offrir des services de santé mentale professionnels? "
   ),
   explanationLinkClickableText: enAndFrContent(
-    "LINK TO OFFERING SERVICES",
-    "LINK TO OFFERING SERVICES"
+    "Go here instead",
+    "Cliquez ici"
   ),
   explanationParagraph: enAndFrContent(
-    ` Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-  Aliquam in sollicitudin magna. Vivamus vel aliquet metus.
-  Vestibulum justo arcu, pretium a vulputate eget, dapibus vitae
-  risus. Sed imperdiet erat a fringilla aliquam. Etiam at accumsan.
-  Sed malesuada tortor nisi, id mollis ligula dapibus.`,
-    ` Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus.
-  Aliquam in sollicitudin magna. Vivamus vel aliquet metus.
-  Vestibulum justo arcu, pretium a vulputate eget, dapibus vitae
-  risus. Sed imperdiet erat a fringilla aliquam. Etiam at accumsan.
-  Sed malesuada tortor nisi, id mollis ligula dapibus.`
+    ` Mental health work is a large field and there are many kinds of professionals to explore! Not sure who to reach out to? Read through the explanations below and see what best matches up with your needs. If you or someone else you know are currently in danger of hurting yourself or others, please call 911 or quickly check out the resource page for other options. `,
+    ` Le secteur de santé mentale est un domaine très vaste et il existe de nombreux types de professionnels à découvrir! Vous ne savez pas lequel contacter? Lisez les descriptions ci-dessous et voyez ce qui correspond le mieux à vos besoins. Si vous êtes présentement en danger de vous blesser ou de blesser d’autres personnes ou quelqu’un que vous connaissez est à risque, veuillez appeler le 911 ou consulter rapidement la page des ressources disponible pour trouver d’autres options.`
   ),
 };
 
