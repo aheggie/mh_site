@@ -7,16 +7,19 @@ import { curriedFillInStaticTextByLang, enAndFrContent } from "../utilities";
 const staticText = {
   EmailSignUpText: enAndFrContent(
     "Sign up for email updates",
-    "Sign up for email updates"
+    "S'abonner aux courriels mise à jour "
   ),
-  SeekingText: enAndFrContent("Seeking Services", "Seeking Services"),
-  OfferingText: enAndFrContent("Offering Services", "Offering Services"),
-  WhyText: enAndFrContent("Why Does This Exist?", "Why Does This Exist?"),
-  AboutText: enAndFrContent("About Us", "About Us"),
-  ResourcesText: enAndFrContent("Resources", "Resources"),
+  SeekingText: enAndFrContent("Seeking Services", "Recherche de Services"),
+  OfferingText: enAndFrContent("Offering Services", "Offrez Vos Services"),
+  WhyText: enAndFrContent(
+    "Why Does This Exist?",
+    "Pourquoi cette ressource existe-t-elle?"
+  ),
+  AboutText: enAndFrContent("About Us", "À propos"),
+  ResourcesText: enAndFrContent("Resources", "Ressources"),
   CopyrightText: enAndFrContent(
-    "Copyright © CURE Concordia 2019, Inc. All rights reserved.",
-    "Copyright © CURE Concordia 2019, Inc. All rights reserved."
+    "Copyright © CURE Concordia 2020, Inc. All rights reserved.",
+    "Droit d'auteur © CURE Concordia 2020, Inc. Tous droits réservés."
   ),
 };
 
@@ -52,7 +55,7 @@ const Footer = ({ lang }) => {
           />
           <FooterNavLink
             to={routes.offeringRoute()}
-            linkText={fillText(staticText.SeekingText)}
+            linkText={fillText(staticText.OfferingText)}
           />
           <FooterNavLink
             to={routes.whyRoute()}

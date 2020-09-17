@@ -7,12 +7,15 @@ import routes from "../routes";
 import { curriedFillInStaticTextByLang, enAndFrContent } from "../utilities";
 
 const staticText = {
-  HomeLinkText: enAndFrContent("Home", "Home"),
-  SeekingLinkText: enAndFrContent("Seeking Services", "Seeking Services"),
-  OfferingLinkText: enAndFrContent("Offering Services", "Offering Services,"),
-  WhyLinkText: enAndFrContent("Why Does This Exist?", "Why Does This Exist?"),
-  AboutLinkText: enAndFrContent("About Us", "About Us"),
-  ResourcesLinkText: enAndFrContent("Resources", "Resources"),
+  HomeLinkText: enAndFrContent("Home", "Accueil"),
+  SeekingLinkText: enAndFrContent("Seeking Services", "Recherche de Services"),
+  OfferingLinkText: enAndFrContent("Offering Services", "Offrez Vos Services"),
+  WhyLinkText: enAndFrContent(
+    "Why Does This Exist?",
+    "Pourquoi cette ressource existe-t-elle?"
+  ),
+  AboutLinkText: enAndFrContent("About Us", "À propos"),
+  ResourcesLinkText: enAndFrContent("Resources", "Ressources"),
   //this is reversed on purpose BECAUSE this is the language switcher button
   //i.e.- FR should show up during English site and EN should show up during French site
   SwitcherButtonText: enAndFrContent("FR", "EN"),
