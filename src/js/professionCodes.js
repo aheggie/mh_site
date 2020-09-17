@@ -57,6 +57,23 @@ const staticProfessionTitle = {
   ),
 };
 
+const loremIpsum =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed malesuada tortor nisi, id mollis ligula dapibus.";
+
+//this is sort of deep in for this data to sit but it is only used in this component
+//and it makes this component a simple finite state machine based only on lang and professionCode
+const staticProfessionDescription = {
+  [professionCodes.couple]: enAndFrContent(loremIpsum, loremIpsum),
+  [professionCodes.social]: enAndFrContent(loremIpsum, loremIpsum),
+  [professionCodes.psychologist]: enAndFrContent(loremIpsum, loremIpsum),
+  [professionCodes.sexologist]: enAndFrContent(loremIpsum, loremIpsum),
+  [professionCodes.indigenous]: enAndFrContent(loremIpsum, loremIpsum),
+  [professionCodes.psychotherapist]: enAndFrContent(loremIpsum, loremIpsum),
+  [professionCodes.other]: enAndFrContent(loremIpsum, loremIpsum),
+  [professionCodes.psychoeducator]: enAndFrContent(loremIpsum, loremIpsum),
+  [professionCodes.creative]: enAndFrContent(loremIpsum, loremIpsum),
+};
+
 //these are utilities to use the codes to generate titles etc
 
 //this replaces dashes with spaces, and capitalises just the first letter of the first word
@@ -78,6 +95,7 @@ const capitaliseFirstLetter = (inputString) =>
 export {
   professionCodes,
   staticProfessionTitle,
+  staticProfessionDescription,
   toSentenceCase,
   toPageTitleCase,
   capitaliseFirstLetter,

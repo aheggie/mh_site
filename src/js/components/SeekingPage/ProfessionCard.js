@@ -1,25 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { professionCodes, staticProfessionTitle } from "../../professionCodes";
+import {
+  staticProfessionDescription,
+  staticProfessionTitle,
+} from "../../professionCodes";
 import routes from "../../routes";
-import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
+import { curriedFillInStaticTextByLang } from "../../utilities";
 
 const { filterRoute } = routes;
-
-const loremIpsum =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in sollicitudin magna. Vivamus vel aliquet metus. Sed imperdiet erat a fringilla aliquam. Etiam at accumsan. Sed malesuada tortor nisi, id mollis ligula dapibus.";
-
-//this is sort of deep in for this data to sit but it is only used in this component
-//and it makes this component a simple finite state machine based only on lang and professionCode
-const staticProfessionDescription = {
-  [professionCodes.couple]: enAndFrContent(loremIpsum, loremIpsum),
-  [professionCodes.social]: enAndFrContent(loremIpsum, loremIpsum),
-  [professionCodes.psychologist]: enAndFrContent(loremIpsum, loremIpsum),
-  [professionCodes.sexologist]: enAndFrContent(loremIpsum, loremIpsum),
-  [professionCodes.indigenous]: enAndFrContent(loremIpsum, loremIpsum),
-  [professionCodes.psychotherapist]: enAndFrContent(loremIpsum, loremIpsum),
-  [professionCodes.other]: enAndFrContent(loremIpsum, loremIpsum),
-};
 
 const ProfessionCard = ({ lang, professionCode }) => {
   const fillText = curriedFillInStaticTextByLang(lang);

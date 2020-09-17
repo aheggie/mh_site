@@ -53,34 +53,13 @@ const SeekingPage = ({ match }) => {
             </p>
           </div>
           <div className="category-container">
-            <ProfessionCard
-              lang={lang}
-              professionCode={professionCodes.couple}
-            />
-            <ProfessionCard
-              lang={lang}
-              professionCode={professionCodes.social}
-            />
-            <ProfessionCard
-              lang={lang}
-              professionCode={professionCodes.sexologist}
-            />
-            <ProfessionCard
-              lang={lang}
-              professionCode={professionCodes.psychologist}
-            />
-            <ProfessionCard
-              lang={lang}
-              professionCode={professionCodes.indigenous}
-            />
-            <ProfessionCard
-              lang={lang}
-              professionCode={professionCodes.psychotherapist}
-            />
-            <ProfessionCard
-              lang={lang}
-              professionCode={professionCodes.other}
-            />
+            {Object.values(professionCodes).map((professionCode) => (
+              <ProfessionCard
+                key={professionCode}
+                lang={lang}
+                professionCode={professionCode}
+              />
+            ))}
           </div>
         </div>
       </article>
