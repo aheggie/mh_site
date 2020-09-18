@@ -3,12 +3,12 @@ import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 import BioSideBarBox from "./BioSidebarBox";
 
 const staticText = {
-  specializationsTitle: enAndFrContent("Specializations", "Specializations"),
+  specializationsTitle: enAndFrContent("Clientele", "Clientèle"),
   issuesTitle: enAndFrContent(
     "Issues I can support you with",
-    "Issues I can support you with"
+    "Problèmes avec lesquels je peux vous aider"
   ),
-  approachTitle: enAndFrContent("Helping approach", "Helping approach"),
+  approachTitle: enAndFrContent("Helping approach", "Ma démarche"),
 };
 
 const BioSidebar = ({

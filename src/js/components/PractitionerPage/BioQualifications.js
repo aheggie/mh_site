@@ -2,7 +2,9 @@ import React from "react";
 import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 
 const staticText = {
+  //note word is same in en and fr
   qualificationsTitle: enAndFrContent("Qualifications", "Qualifications"),
+  // note: these are not given in the document
   orderHeading: enAndFrContent("Order", "Order"),
   licenseNumberHeading: enAndFrContent("License number", "License number"),
   schoolHeading: enAndFrContent("School", "School"),
@@ -13,7 +15,7 @@ const staticText = {
   ),
   extraCredentialsTitle: enAndFrContent(
     "Extra credentials",
-    "Extra credentials"
+    "Qualifications supplémentaires"
   ),
 };
 

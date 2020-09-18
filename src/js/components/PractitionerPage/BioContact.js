@@ -8,7 +8,7 @@ import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 const staticText = {
   contactStringFunc: enAndFrContent(
     (name) => `Contact ${name} now`,
-    (name) => `Contact ${name} now`
+    (name) => `Contactez ${name} dès maintenant`
   ),
 };
 

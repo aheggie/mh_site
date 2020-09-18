@@ -31,7 +31,7 @@ const AccessibilityIcons = ({ accessibilityBooleans }) => {
 };
 
 const staticText = {
-  paymentTitle: enAndFrContent("Payment", "Payment"),
+  paymentTitle: enAndFrContent("Payment", "Paiement"),
   individualSessionsHeading: enAndFrContent(
     "Individual sessions",
     "Individual sessions"
@@ -52,7 +52,7 @@ const staticText = {
   ),
   accessibilityTitle: enAndFrContent(
     "Accessibility information",
-    "Accessibility information"
+    "Info d'accessibilité"
   ),
 };
 
