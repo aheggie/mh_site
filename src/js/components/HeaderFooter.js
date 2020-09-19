@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
-const HeaderFooter = ({ lang, className, children }) => {
+const HeaderFooter = ({ url, lang, className, children }) => {
   //because we are not actually loading new .html pages when sent
   //to new routes by <Link /> (from React Router DOM)
   //the page stays scrolled to its previous scroll point
@@ -11,7 +11,7 @@ const HeaderFooter = ({ lang, className, children }) => {
   window.scrollTo(0, 0);
   return (
     <div className={`wrapper ${className} main-wrapper`}>
-      <Nav lang={lang} />
+      <Nav url={url} lang={lang} />
       {children}
       <Footer lang={lang} />
     </div>

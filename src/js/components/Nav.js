@@ -29,6 +29,20 @@ const staticText = {
   SwitcherButtonText: enAndFrContent("FR", "EN"),
 };
 
+//this is based on the "url" property of match object sent by React Route
+//this strips the base off the url and give the complete route
+//i.e. www.example.com/fr/subroute would give match = {url: "/fr/subroute" ... }
+const urlLangSwitcher = (lang, matchUrl) =>
+  `/${switchLang(lang)}${matchUrl.slice(3)}`;
+const switchLang = (lang) => {
+  switch (lang) {
+    case "en":
+      return "fr";
+    case "fr":
+      return "en";
+  }
+};
+
 const NavLink = ({ to, text }) => {
   return (
     <li>
@@ -39,7 +53,7 @@ const NavLink = ({ to, text }) => {
   );
 };
 
-const Nav = ({ lang }) => {
+const Nav = ({ url, lang }) => {
   //note: lang = match.params.lang || "fr"; is not needed here because
   //this lang is received from a higher component that always provides that
   //from its own route
@@ -80,9 +94,9 @@ const Nav = ({ lang }) => {
             text={fillText(staticText.ResourcesLinkText)}
           />
           <li id="nav-lang">
-            <a href="" className="clear-style">
+            <Link to={urlLangSwitcher(lang, url)} className="clear-style">
               {fillText(staticText.SwitcherButtonText)}
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
