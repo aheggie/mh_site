@@ -17,7 +17,7 @@ const FilterPage = ({ match }) => {
   const fillText = curriedFillInStaticTextByLang(lang);
   appendTitle(fillText(staticProfessionTitle[providerType]));
   return (
-    <HeaderFooter lang={lang} className="services">
+    <HeaderFooter url={match.url} lang={lang} className="services">
       <article className="content">
         <div className="wrapper professional-filter inner">
           <FilterProfessionSelector lang={lang} providerType={providerType} />

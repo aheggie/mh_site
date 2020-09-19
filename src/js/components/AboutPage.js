@@ -15,7 +15,7 @@ import {
 import GenericContentPage from "./GenericContentPage";
 
 const staticText = {
-  AboutPageTitle: enAndFrContent("About us", "About us"),
+  AboutPageTitle: enAndFrContent("About us", "À propos"),
   AboutPageContentWithNewlines: enAndFrContent(
     `CURE MANDATE
     CONTACT INFORMATION
@@ -32,7 +32,11 @@ const AboutPage = ({ match }) => {
   const lang = match.params.lang || "fr";
   const fillText = curriedFillInStaticTextByLang(lang);
   return (
-    <GenericContentPage lang={lang} title={fillText(staticText.AboutPageTitle)}>
+    <GenericContentPage
+      url={match.url}
+      lang={lang}
+      title={fillText(staticText.AboutPageTitle)}
+    >
       {imputeNewlinesIntoParagraphTagsAndParseAsJSX(
         fillText(staticText.AboutPageContentWithNewlines)
       )}

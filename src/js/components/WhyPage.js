@@ -15,7 +15,10 @@ import {
 //For more complex content a custom component and new css will be needed
 
 const staticText = {
-  WhyPageTitle: enAndFrContent("Why does this exist?", "Why does this exist?"),
+  WhyPageTitle: enAndFrContent(
+    "Why does this exist?",
+    "Pourquoi cette ressource existe-t-elle?"
+  ),
   WhyPageContentWithNewlines: enAndFrContent(
     `This resource exists to create space for people of colour to have access to safe(r) culturally competent healing environments. 
       SURVEY ANALYSIS
@@ -32,7 +35,11 @@ const WhyPage = ({ match }) => {
   const lang = match.params.lang || "fr";
   const fillText = curriedFillInStaticTextByLang(lang);
   return (
-    <GenericContentPage lang={lang} title={fillText(staticText.WhyPageTitle)}>
+    <GenericContentPage
+      url={match.url}
+      lang={lang}
+      title={fillText(staticText.WhyPageTitle)}
+    >
       {imputeNewlinesIntoParagraphTagsAndParseAsJSX(
         fillText(staticText.WhyPageContentWithNewlines)
       )}{" "}

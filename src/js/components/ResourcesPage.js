@@ -16,7 +16,7 @@ import {
 //For more complex content a custom component and new css will be needed
 
 const staticText = {
-  ResourcesPageTitle: enAndFrContent("Resources", "Resources"),
+  ResourcesPageTitle: enAndFrContent("Resources", "Ressources"),
   ResourcesPageContentWithNewlines: enAndFrContent(
     `Find other mental health resources to meet your needs
     Some emergency/crisis resources are listed here, however if you are in immediate danger, please call 911. 
@@ -32,6 +32,7 @@ const ResourcesPage = ({ match }) => {
   const fillText = curriedFillInStaticTextByLang(lang);
   return (
     <GenericContentPage
+      url={match.url}
       lang={lang}
       title={fillText(staticText.ResourcesPageTitle)}
     >

@@ -43,7 +43,7 @@ const PractitionerPage = ({ match }) => {
   const lang = match.params.lang || "fr";
   appendTitle(name);
   return (
-    <HeaderFooter lang={lang} className="services">
+    <HeaderFooter url={match.url} lang={lang} className="services">
       <article className="content">
         <div className="bio-page inner">
           {/* 1 */}
