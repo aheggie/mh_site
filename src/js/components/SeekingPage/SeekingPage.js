@@ -47,7 +47,7 @@ const SeekingPage = ({ match }) => {
             </h1>
             <p>
               {fillText(staticText.explanationLinkNotClickableText)}{" "}
-              <Link to={offeringRoute()}>
+              <Link to={offeringRoute(lang)}>
                 {fillText(staticText.explanationLinkClickableText)}
               </Link>
               .

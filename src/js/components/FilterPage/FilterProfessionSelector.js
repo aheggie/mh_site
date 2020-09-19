@@ -22,7 +22,7 @@ const FilterProfessionSelector = ({ lang, providerType }) => {
   return (
     <div className="page-intro">
       {intendedTarget !== providerType ? (
-        <Redirect to={filterRoute(intendedTarget)} />
+        <Redirect to={filterRoute(lang, intendedTarget)} />
       ) : null}
       <h1 className="page-title filter">
         {fillText(staticText.lookingForHeader)}

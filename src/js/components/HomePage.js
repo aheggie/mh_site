@@ -35,14 +35,14 @@ const HomePage = ({ match }) => {
         <div className="inner home">
           <h1 id="announce">{fillInText(staticText.announce)}</h1>
           <Link
-            to={seekingRoute()}
+            to={seekingRoute(lang)}
             className="button purple clear-style"
             id="seek"
           >
             {fillInText(staticText.seekingButton)}
           </Link>
           <Link
-            to={offeringRoute()}
+            to={offeringRoute(lang)}
             className="button purple clear-style"
             id="offer"
           >

@@ -55,22 +55,28 @@ const Nav = ({ lang }) => {
           id="logo"
         />
         <ul id="nav-links">
-          <NavLink to={homeRoute()} text={fillText(staticText.HomeLinkText)} />
           <NavLink
-            to={seekingRoute()}
+            to={homeRoute(lang)}
+            text={fillText(staticText.HomeLinkText)}
+          />
+          <NavLink
+            to={seekingRoute(lang)}
             text={fillText(staticText.SeekingLinkText)}
           />
           <NavLink
-            to={offeringRoute()}
+            to={offeringRoute(lang)}
             text={fillText(staticText.OfferingLinkText)}
           />
-          <NavLink to={whyRoute()} text={fillText(staticText.WhyLinkText)} />
           <NavLink
-            to={aboutRoute()}
+            to={whyRoute(lang)}
+            text={fillText(staticText.WhyLinkText)}
+          />
+          <NavLink
+            to={aboutRoute(lang)}
             text={fillText(staticText.AboutLinkText)}
           />
           <NavLink
-            to={resourcesRoute()}
+            to={resourcesRoute(lang)}
             text={fillText(staticText.ResourcesLinkText)}
           />
           <li id="nav-lang">

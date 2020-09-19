@@ -57,23 +57,23 @@ const Footer = ({ lang }) => {
         </ul>
         <ul className="footer-nav">
           <FooterNavLink
-            to={seekingRoute()}
+            to={seekingRoute(lang)}
             linkText={fillText(staticText.SeekingText)}
           />
           <FooterNavLink
-            to={offeringRoute()}
+            to={offeringRoute(lang)}
             linkText={fillText(staticText.OfferingText)}
           />
           <FooterNavLink
-            to={whyRoute()}
+            to={whyRoute(lang)}
             linkText={fillText(staticText.WhyText)}
           />
           <FooterNavLink
-            to={aboutRoute()}
+            to={aboutRoute(lang)}
             linkText={fillText(staticText.AboutText)}
           />
           <FooterNavLink
-            to={resourcesRoute()}
+            to={resourcesRoute(lang)}
             linkText={fillText(staticText.ResourcesText)}
           />
         </ul>

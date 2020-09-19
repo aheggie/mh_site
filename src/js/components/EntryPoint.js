@@ -20,7 +20,7 @@ import {
   whyRoute,
 } from "../routes";
 
-const RedirectToFr = () => <Redirect to={"/fr"} />;
+const RedirectToFr = () => <Redirect to={homeRoute("fr")} />;
 
 const EntryPoint = () => {
   return (
@@ -34,10 +34,14 @@ const EntryPoint = () => {
       <Route exact path={resourcesRoute(":lang")} component={ResourcesPage} />
       {/* these are the dynamic routes for now */}
       {/* need to figure out how to fail effectively */}
-      <Route exact path={filterRoute(":providerType")} component={FilterPage} />
       <Route
         exact
-        path={practitionerRoute(":practitionerId")}
+        path={filterRoute(":lang", ":providerType")}
+        component={FilterPage}
+      />
+      <Route
+        exact
+        path={practitionerRoute(":lang", ":practitionerId")}
         component={PractitionerPage}
       />
     </Switch>

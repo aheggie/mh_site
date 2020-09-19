@@ -41,7 +41,7 @@ const ProfessionCard = ({ lang, professionCode }) => {
         )}
       </div>
       <div className="search-category">
-        <Link to={filterRoute(professionCode)} className="clear-style">
+        <Link to={filterRoute(lang, professionCode)} className="clear-style">
           <h5 className="search-link">{`${fillText(
             staticText.searchForHeading
           )} ${professionTitle.toUpperCase()}`}</h5>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { practitionerRoute } from "../../routes";
 import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 
 const staticText = {
@@ -32,7 +33,10 @@ const FilterPractitionerPreviewCard = ({
         <i className="fas fa-plus-square"></i>
       </div>
       <div className="view-profile">
-        <Link to={`/practitioner/${practitionerId}`} className="clear-style">
+        <Link
+          to={practitionerRoute(lang, practitionerId)}
+          className="clear-style"
+        >
           <h6 className="profile-link">{fillText(staticText.viewProfile)}</h6>
           <i className="fas fa-arrow-right"></i>
         </Link>
