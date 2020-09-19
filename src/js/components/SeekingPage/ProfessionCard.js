@@ -5,7 +5,11 @@ import {
   staticProfessionTitle,
 } from "../../professionCodes";
 import routes from "../../routes";
-import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
+import {
+  curriedFillInStaticTextByLang,
+  enAndFrContent,
+  imputeNewlinesIntoParagraphTagsAndParseAsJSX,
+} from "../../utilities";
 
 const { filterRoute } = routes;
 
@@ -31,7 +35,9 @@ const ProfessionCard = ({ lang, professionCode }) => {
     <div className="seek-category" id={professionCode}>
       <div className="category-description">
         <h3>{professionTitle}</h3>
-        <p>{fillText(staticProfessionDescription[professionCode])}</p>
+        {imputeNewlinesIntoParagraphTagsAndParseAsJSX(
+          fillText(staticProfessionDescription[professionCode])
+        )}
       </div>
       <div className="search-category">
         <Link to={filterRoute(professionCode)} className="clear-style">

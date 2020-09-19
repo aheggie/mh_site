@@ -64,7 +64,8 @@ const staticProfessionDescription = {
     `Couple and family therapists practice a branch of psychotherapy that works with families and couples in intimate relationships to nurture change and development. It tends to view change in terms of the systems of interaction between family members. It emphasizes family relationships as an important factor in psychological health. 
   All couple and family therapists are part of the Quebec Order of Social Workers and Couple and Family Therapists. To verify a practitioner's registration, use their permit number found on their personal page.
   `,
-    `Les thérapeutes de couple et de famille pratiquent une forme de la psychothérapie qui cible à aider les familles et les couples dans leurs relations intimes pour favoriser des changement et un meilleur développement. Un changement en termes des différents systèmes d'interaction entre les membres de la famille. Il met l'accent sur les relations familiales comme facteur important de santé psychologique. Tous les thérapeutes de couple et de famille font partie de l'Ordre des travailleurs sociaux et des thérapeutes de couple et de famille du Québec. Pour vérifier l'inscription d'un praticien, utilisez son numéro de permis qui se trouve sur leur page personnelle.`
+    `Les thérapeutes de couple et de famille pratiquent une forme de la psychothérapie qui cible à aider les familles et les couples dans leurs relations intimes pour favoriser des changement et un meilleur développement. Un changement en termes des différents systèmes d'interaction entre les membres de la famille. Il met l'accent sur les relations familiales comme facteur important de santé psychologique.
+    Tous les thérapeutes de couple et de famille font partie de l'Ordre des travailleurs sociaux et des thérapeutes de couple et de famille du Québec. Pour vérifier l'inscription d'un praticien, utilisez son numéro de permis qui se trouve sur leur page personnelle.`
   ),
   [professionCodes.social]: enAndFrContent(
     `Social workers are concerned with helping individuals, families, groups and communities to enhance their individual and collective well-being. It aims to help people develop their skills and their ability to use their own resources and those of the community to resolve problems. Social work is concerned with individual and personal problems but also with broader social issues such as poverty, unemployment, and domestic violence.
@@ -78,14 +79,17 @@ const staticProfessionDescription = {
     `A psychologist studies how we think, feel and behave from a scientific viewpoint and applies this knowledge to help people understand, explain and change their behaviour.
   All psychologists are part of the Quebec Order of Psychologists and have a permit to practice psychotherapy. To verify a practitioner’s registration, use their permit number found on their personal page.
   `,
-    `Un psychologue étudie comment nous pensons, ressentons et nous comportons d'un point de vue scientifique et applique ces connaissances pour aider les gens à comprendre, expliquer et changer leur comportement. Tous les psychologues font partie de l'Ordre des psychologues du Québec et sont autorisés à pratiquer la psychothérapie. Pour vérifier l'inscription d'un praticien, utilisez son numéro de permis qui se trouve sur leur page personnelle.`
+    `Un psychologue étudie comment nous pensons, ressentons et nous comportons d'un point de vue scientifique et applique ces connaissances pour aider les gens à comprendre, expliquer et changer leur comportement.
+    Tous les psychologues font partie de l'Ordre des psychologues du Québec et sont autorisés à pratiquer la psychothérapie. Pour vérifier l'inscription d'un praticien, utilisez son numéro de permis qui se trouve sur leur page personnelle.`
   ),
   [professionCodes.sexologist]: enAndFrContent(
     `Sex therapists help identify, understand and interpret all aspects of sexuality. They listen and seek to clarify people’s needs and expectations, and help find ways to meet them that are fulfilling and in line with individuality and dignity, as well as personal and social responsibility.
   Sex therapists engage in the design, actualization, consultation, analysis and assessment of human sexuality. They determine and implement sexology plans for educational, preventive and counseling purposes aimed at the improvement, maintenance and restoration of sexual health.
   All sexologists are part of the Quebec Order of Sexologists. To verify a practitioner’s registration, use their permit number found on their personal page.
   `,
-    `Les sexologues aident à identifier, comprendre et à interpréter tous les aspects de la sexualité. Ils écoutent et cherchent à clarifier les besoins et les attentes des gens pour les rendrent plus accessible et qu’ils soient conformes et s'alignent à l'individualité, la dignité, ainsi qu'à la responsabilité personnelle et sociale. Les sexothérapeutes s'engagent dans la conception, l'actualisation, la consultation, l'analyse et l'évaluation de la sexualité humaine. Ils déterminent et mettent en œuvre des plans de sexologie à des fins éducatives, préventives et des conseils visant à l'amélioration, au maintien et au rétablissement de la santé sexuelle. Tous les sexologues font partie de l'Ordre des sexologues du Québec. Pour vérifier l'inscription d'un praticien, utilisez son numéro de permis qui se trouve sur leur page personnelle.`
+    `Les sexologues aident à identifier, comprendre et à interpréter tous les aspects de la sexualité. Ils écoutent et cherchent à clarifier les besoins et les attentes des gens pour les rendrent plus accessible et qu’ils soient conformes et s'alignent à l'individualité, la dignité, ainsi qu'à la responsabilité personnelle et sociale.
+    Les sexothérapeutes s'engagent dans la conception, l'actualisation, la consultation, l'analyse et l'évaluation de la sexualité humaine. Ils déterminent et mettent en œuvre des plans de sexologie à des fins éducatives, préventives et des conseils visant à l'amélioration, au maintien et au rétablissement de la santé sexuelle.
+    Tous les sexologues font partie de l'Ordre des sexologues du Québec. Pour vérifier l'inscription d'un praticien, utilisez son numéro de permis qui se trouve sur leur page personnelle.`
   ),
   [professionCodes.indigenous]: enAndFrContent(
     `Traditional healers refer to health practices, approaches, knowledge and beliefs incorporating indigenous healing and wellness while using ceremonies; plant, animal or mineral-based medicines; energetic therapies; or physical/hands on techniques.`,
@@ -93,11 +97,9 @@ const staticProfessionDescription = {
   ),
   [professionCodes.psychotherapist]: enAndFrContent(
     `Psychotherapy (psychological therapy or talking therapy) is the use of psychological methods, particularly when based on regular personal interaction, to help a person change behavior and overcome problems in desired ways. Psychotherapy aims to improve an individual's well-being and mental health, to resolve or mitigate troublesome behaviors, beliefs, compulsions, thoughts, or emotions, and to improve relationships and social skills.
-
   Different professionals can have a permit to practice psychotherapy managed by the Order of Psychologists of Quebec. To verify a practitioner’s registration, use their permit number found on their personal page.
   `,
     `La psychothérapie (thérapie psychologique ou thérapie orale) est l'utilisation de méthodes psychologiques, surtout lorsqu'elles sont basées sur une interaction personnelle régulière, pour aider une personne à changer leur comportement et à surmonter des problèmes de façon saine. La psychothérapie vise à améliorer le bien-être et la santé mentale d'un individu, à résoudre ou à atténuer des comportements, croyances, compulsions, pensées ou des émotions gênantes, et à améliorer les relations et les compétences sociales.
-
     Une variété de professionnels peuvent détenir un permis d'exercice de psychothérapie géré par l'Ordre des psychologues du Québec. Pour vérifier l'inscription d'un praticien, utilisez son numéro de permis qui se trouve sur leur page personnelle.
     `
   ),
