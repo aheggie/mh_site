@@ -27,15 +27,10 @@ const EntryPoint = () => {
     <Switch>
       <Route exact path="/" component={RedirectToFr} />
       <Route exact path={homeRoute(":lang")} component={HomePage} />
-      {/* <Route exact path="/seeking-services" component={SeekingPage} /> */}
       <Route exact path={seekingRoute(":lang")} component={SeekingPage} />
-      {/* <Route exact path="/offering-services" component={OfferingPage} /> */}
       <Route exact path={offeringRoute(":lang")} component={OfferingPage} />
-      {/* <Route exact path="/why" component={WhyPage} /> */}
       <Route exact path={whyRoute(":lang")} component={WhyPage} />
-      {/* <Route exact path="/about" component={AboutPage} /> */}
       <Route exact path={aboutRoute(":lang")} component={AboutPage} />
-      {/* <Route exact path="/resources" component={ResourcesPage} /> */}
       <Route exact path={resourcesRoute(":lang")} component={ResourcesPage} />
       {/* these are the dynamic routes for now */}
       {/* need to figure out how to fail effectively */}
