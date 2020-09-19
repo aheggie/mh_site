@@ -1,8 +1,11 @@
 import React from "react";
-import parse from "html-react-parser";
 
 import GenericContentPage from "./GenericContentPage";
-import { curriedFillInStaticTextByLang, enAndFrContent } from "../utilities";
+import {
+  curriedFillInStaticTextByLang,
+  enAndFrContent,
+  imputeNewlinesIntoParagraphTagsAndParseAsJSX,
+} from "../utilities";
 
 //see GenericContentPage.js for a longer comment about
 //the (fairly strict) limitations these generic pages can contain
@@ -14,135 +17,13 @@ import { curriedFillInStaticTextByLang, enAndFrContent } from "../utilities";
 
 const staticText = {
   ResourcesPageTitle: enAndFrContent("Resources", "Resources"),
-  ResourcesPageContent: enAndFrContent(
-    `<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>`,
-    `<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>`
+  ResourcesPageContentWithNewlines: enAndFrContent(
+    `Find other mental health resources to meet your needs
+    Some emergency/crisis resources are listed here, however if you are in immediate danger, please call 911. 
+    `,
+    `Trouvez d'autres ressources de santé mentale pour répondre à vos besoins
+    Certaines ressources d'urgence/de crise sont répertoriées ici, mais si vous êtes en danger immédiat, veuillez appeler le 911.
+    `
   ),
 };
 
@@ -154,7 +35,9 @@ const ResourcesPage = ({ match }) => {
       lang={lang}
       title={fillText(staticText.ResourcesPageTitle)}
     >
-      {parse(fillText(staticText.ResourcesPageContent))}
+      {imputeNewlinesIntoParagraphTagsAndParseAsJSX(
+        fillText(staticText.ResourcesPageContentWithNewlines)
+      )}
     </GenericContentPage>
   );
 };

@@ -1,7 +1,10 @@
 import React from "react";
-import parse from "html-react-parser";
 
-import { curriedFillInStaticTextByLang, enAndFrContent } from "../utilities";
+import {
+  curriedFillInStaticTextByLang,
+  enAndFrContent,
+  imputeNewlinesIntoParagraphTagsAndParseAsJSX,
+} from "../utilities";
 //see GenericContentPage.js for a longer comment about
 //the (fairly strict) limitations these generic pages can contain
 //
@@ -13,39 +16,15 @@ import GenericContentPage from "./GenericContentPage";
 
 const staticText = {
   AboutPageTitle: enAndFrContent("About us", "About us"),
-  AboutPageContent: enAndFrContent(
-    `<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>`,
-    `<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>`
+  AboutPageContentWithNewlines: enAndFrContent(
+    `CURE MANDATE
+    CONTACT INFORMATION
+    MINI BIOS OF JODIE-ANN,  AYAN & DORIS
+    `,
+    `MANDAT DE CURE
+    POUR NOUS CONTACTER
+    MINI BIOGRAPHIE DE JODIE-ANN, AYAN & DORIS
+    `
   ),
 };
 
@@ -54,7 +33,9 @@ const AboutPage = ({ match }) => {
   const fillText = curriedFillInStaticTextByLang(lang);
   return (
     <GenericContentPage lang={lang} title={fillText(staticText.AboutPageTitle)}>
-      {parse(fillText(staticText.AboutPageContent))}
+      {imputeNewlinesIntoParagraphTagsAndParseAsJSX(
+        fillText(staticText.AboutPageContentWithNewlines)
+      )}
     </GenericContentPage>
   );
 };

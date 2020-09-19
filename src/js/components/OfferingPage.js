@@ -1,6 +1,5 @@
 import React from "react";
 import HeaderFooter from "./HeaderFooter";
-import parse from "html-react-parser";
 import routes from "../routes";
 
 const { seekingRoute } = routes;
@@ -9,6 +8,7 @@ import {
   appendTitle,
   curriedFillInStaticTextByLang,
   enAndFrContent,
+  imputeNewlinesIntoParagraphTagsAndParseAsJSX,
 } from "../utilities";
 import { Link } from "react-router-dom";
 
@@ -26,20 +26,11 @@ const staticText = {
     "Go here instead.",
     "Cliquez ici."
   ),
-  offeringMainText: enAndFrContent(
-    //fully not sure if this should have the <p> tag embedded
-    `<p>
-    Are you a mental health practitioner of colour working in Quebec and looking to offer your services to other people of colour? Sign up here! By joining our list, you are supporting the mental health needs of many people by increasing their access to safer therapeutic spaces. Please fill in the form below and make sure you share with your colleagues! Thank you for being part of this movement!
-    </p>
-    <p>
-    Please note that the form should take approximately 15 minutes of your time.    
-    </p>`,
-    `<p>
-    Êtes-vous un professionnel de la santé mentale racisé travaillant au Québec? Désirez vous offrir vos services à d'autres personnes racisées? Inscrivez-vous ici! En vous inscrivant à notre liste, vous répondez aux besoins de santé mentale de nombreuses personnes en facilitant leur accès à des espaces thérapeutiques plus sécuritaires. Veuillez remplir le formulaire ci-dessous et assurez-vous de le partager avec vos collègues! Merci pour votre participation à ce mouvement!
-    </p>
-    <p>
-    Veuillez noter que le formulaire devrait prendre environ 15 minutes de votre temps.    
-    </p>`
+  offeringMainTextWithNewlines: enAndFrContent(
+    `Are you a mental health practitioner of colour working in Quebec and looking to offer your services to other people of colour? Sign up here! By joining our list, you are supporting the mental health needs of many people by increasing their access to safer therapeutic spaces. Please fill in the form below and make sure you share with your colleagues! Thank you for being part of this movement!
+    Please note that the form should take approximately 15 minutes of your time.`,
+    `Êtes-vous un professionnel de la santé mentale racisé travaillant au Québec? Désirez vous offrir vos services à d'autres personnes racisées? Inscrivez-vous ici! En vous inscrivant à notre liste, vous répondez aux besoins de santé mentale de nombreuses personnes en facilitant leur accès à des espaces thérapeutiques plus sécuritaires. Veuillez remplir le formulaire ci-dessous et assurez-vous de le partager avec vos collègues! Merci pour votre participation à ce mouvement!
+    Veuillez noter que le formulaire devrait prendre environ 15 minutes de votre temps.`
   ),
 };
 
@@ -63,7 +54,9 @@ const OfferingPage = ({ match }) => {
                 {fillText(staticText.explanationLinkClickableText)}
               </Link>
             </p>
-            {parse(fillText(staticText.offeringMainText))}
+            {imputeNewlinesIntoParagraphTagsAndParseAsJSX(
+              fillText(staticText.offeringMainTextWithNewlines)
+            )}
           </div>
           {/* these buttons don't chnge with language switch */}
           <a href="" className="button purple clear-style" id="eng">

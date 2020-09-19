@@ -1,3 +1,5 @@
+import parse from "html-react-parser";
+
 //this retitles the page in the browser, appending a sub-name for the route in question, if
 //any, to the fixed base name of the entire site
 
@@ -17,4 +19,18 @@ const enAndFrContent = (enContent, frContent) => ({
 const curriedFillInStaticTextByLang = (lang) => (textObjectPath) =>
   textObjectPath[lang];
 
-export { enAndFrContent, appendTitle, curriedFillInStaticTextByLang };
+//this wraps any received string in a <p> tag - if there are newlines it replaces them with new p tags
+const imputeNewlinesIntoParagraphTags = (textStringWithNewlinesBetweenParas) =>
+  `<p>${textStringWithNewlinesBetweenParas.split("\n").join("</p><p>")}</p>`;
+
+const imputeNewlinesIntoParagraphTagsAndParseAsJSX = (
+  textStringWithNewlinesBetweenParas
+) => parse(imputeNewlinesIntoParagraphTags(textStringWithNewlinesBetweenParas));
+
+export {
+  enAndFrContent,
+  appendTitle,
+  curriedFillInStaticTextByLang,
+  imputeNewlinesIntoParagraphTags,
+  imputeNewlinesIntoParagraphTagsAndParseAsJSX,
+};

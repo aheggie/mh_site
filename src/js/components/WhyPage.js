@@ -1,7 +1,10 @@
 import React from "react";
-import parse from "html-react-parser";
 import GenericContentPage from "./GenericContentPage";
-import { curriedFillInStaticTextByLang, enAndFrContent } from "../utilities";
+import {
+  curriedFillInStaticTextByLang,
+  enAndFrContent,
+  imputeNewlinesIntoParagraphTagsAndParseAsJSX,
+} from "../utilities";
 
 //see GenericContentPage.js for a longer comment about
 //the (fairly strict) limitations these generic pages can contain
@@ -13,55 +16,15 @@ import { curriedFillInStaticTextByLang, enAndFrContent } from "../utilities";
 
 const staticText = {
   WhyPageTitle: enAndFrContent("Why does this exist?", "Why does this exist?"),
-  WhyPageContent: enAndFrContent(
-    `<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-  tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-  sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-  pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-  fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-  nec sollicitudin eget, eleifend nec libero.
-</p>`,
-    `<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada
-tortor nisi, id mollis ligula sollicitudin dapibus. Aliquam in
-sollicitudin magna. Vivamus vel aliquet metus. Vestibulum justo arcu,
-pretium a vulputate eget, dapibus vitae risus. Sed imperdiet erat a
-fringilla aliquam. Etiam at accumsan tortor. Donec nulla diam, molestie
-nec sollicitudin eget, eleifend nec libero.
-</p>`
+  WhyPageContentWithNewlines: enAndFrContent(
+    `This resource exists to create space for people of colour to have access to safe(r) culturally competent healing environments. 
+      SURVEY ANALYSIS
+      OUR VALUES
+      `,
+    `Cette ressource existe pour créer un espace qui permet aux personnes racisées d'avoir accès à des environnements de guérison sains et culturellement compétents.
+      ANALYSE DU SONDAGE
+      NOS VALEURS
+      `
   ),
 };
 
@@ -70,7 +33,9 @@ const WhyPage = ({ match }) => {
   const fillText = curriedFillInStaticTextByLang(lang);
   return (
     <GenericContentPage lang={lang} title={fillText(staticText.WhyPageTitle)}>
-      {parse(fillText(staticText.WhyPageContent))}{" "}
+      {imputeNewlinesIntoParagraphTagsAndParseAsJSX(
+        fillText(staticText.WhyPageContentWithNewlines)
+      )}{" "}
     </GenericContentPage>
   );
 };
