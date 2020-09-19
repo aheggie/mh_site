@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  aboutRoute,
+  offeringRoute,
+  resourcesRoute,
+  seekingRoute,
+  whyRoute,
+} from "../routes";
 
-import routes from "../routes";
+// import routes from "../routes";
 import { curriedFillInStaticTextByLang, enAndFrContent } from "../utilities";
 
 const staticText = {
@@ -50,23 +57,23 @@ const Footer = ({ lang }) => {
         </ul>
         <ul className="footer-nav">
           <FooterNavLink
-            to={routes.seekingRoute()}
+            to={seekingRoute()}
             linkText={fillText(staticText.SeekingText)}
           />
           <FooterNavLink
-            to={routes.offeringRoute()}
+            to={offeringRoute()}
             linkText={fillText(staticText.OfferingText)}
           />
           <FooterNavLink
-            to={routes.whyRoute()}
+            to={whyRoute()}
             linkText={fillText(staticText.WhyText)}
           />
           <FooterNavLink
-            to={routes.aboutRoute()}
+            to={aboutRoute()}
             linkText={fillText(staticText.AboutText)}
           />
           <FooterNavLink
-            to={routes.resourcesRoute()}
+            to={resourcesRoute()}
             linkText={fillText(staticText.ResourcesText)}
           />
         </ul>

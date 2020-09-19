@@ -4,14 +4,15 @@ import {
   staticProfessionDescription,
   staticProfessionTitle,
 } from "../../professionCodes";
-import routes from "../../routes";
+import { filterRoute } from "../../routes";
+// import routes from "../../routes";
 import {
   curriedFillInStaticTextByLang,
   enAndFrContent,
   imputeNewlinesIntoParagraphTagsAndParseAsJSX,
 } from "../../utilities";
 
-const { filterRoute } = routes;
+// const { filterRoute } = routes;
 
 const staticText = {
   searchForHeading: enAndFrContent("SEARCH FOR", "RECHERCHER"),

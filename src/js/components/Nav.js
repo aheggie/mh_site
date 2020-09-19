@@ -2,8 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import cureLogo from "../../static/img/cure-logo.png";
+import {
+  aboutRoute,
+  homeRoute,
+  offeringRoute,
+  resourcesRoute,
+  seekingRoute,
+  whyRoute,
+} from "../routes";
 
-import routes from "../routes";
+// import routes from "../routes";
 import { curriedFillInStaticTextByLang, enAndFrContent } from "../utilities";
 
 const staticText = {
@@ -47,28 +55,22 @@ const Nav = ({ lang }) => {
           id="logo"
         />
         <ul id="nav-links">
+          <NavLink to={homeRoute()} text={fillText(staticText.HomeLinkText)} />
           <NavLink
-            to={routes.homeRoute()}
-            text={fillText(staticText.HomeLinkText)}
-          />
-          <NavLink
-            to={routes.seekingRoute()}
+            to={seekingRoute()}
             text={fillText(staticText.SeekingLinkText)}
           />
           <NavLink
-            to={routes.offeringRoute()}
+            to={offeringRoute()}
             text={fillText(staticText.OfferingLinkText)}
           />
+          <NavLink to={whyRoute()} text={fillText(staticText.WhyLinkText)} />
           <NavLink
-            to={routes.whyRoute()}
-            text={fillText(staticText.WhyLinkText)}
-          />
-          <NavLink
-            to={routes.aboutRoute()}
+            to={aboutRoute()}
             text={fillText(staticText.AboutLinkText)}
           />
           <NavLink
-            to={routes.resourcesRoute()}
+            to={resourcesRoute()}
             text={fillText(staticText.ResourcesLinkText)}
           />
           <li id="nav-lang">

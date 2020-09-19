@@ -1,8 +1,8 @@
 import React from "react";
 import HeaderFooter from "./HeaderFooter";
-import routes from "../routes";
+// import routes from "../routes";
 
-const { seekingRoute } = routes;
+// const { seekingRoute } = routes;
 
 import {
   appendTitle,
@@ -11,6 +11,7 @@ import {
   imputeNewlinesIntoParagraphTagsAndParseAsJSX,
 } from "../utilities";
 import { Link } from "react-router-dom";
+import { seekingRoute } from "../routes";
 
 const staticText = {
   offeringPageTitle: enAndFrContent("Offering services", "Offrez vos services"),

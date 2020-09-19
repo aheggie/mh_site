@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
 import { Redirect } from "react-router-dom";
-import routes from "../../routes";
+// import routes from "../../routes";
 import { professionCodes } from "../../professionCodes";
+import { filterRoute } from "../../routes";
 import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 import ProfessionOption from "./ProfessionOption";
 
-const { filterRoute } = routes;
+// const { filterRoute } = routes;
 
 const staticText = {
   lookingForHeader: enAndFrContent(

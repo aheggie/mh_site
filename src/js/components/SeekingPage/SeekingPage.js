@@ -2,15 +2,16 @@ import React from "react";
 import HeaderFooter from "../HeaderFooter";
 import ProfessionCard from "./ProfessionCard";
 import { Link } from "react-router-dom";
-import routes from "../../routes";
+// import routes from "../../routes";
 import {
   appendTitle,
   curriedFillInStaticTextByLang,
   enAndFrContent,
 } from "../../utilities";
 import { professionCodes } from "../../professionCodes";
+import { offeringRoute } from "../../routes";
 
-const { offeringRoute } = routes;
+// const { offeringRoute } = routes;
 
 const staticText = {
   seekingPageTitle: enAndFrContent("Seeking services", "Recherche de services"),

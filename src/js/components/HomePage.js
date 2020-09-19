@@ -2,13 +2,14 @@ import React from "react";
 import HeaderFooter from "./HeaderFooter";
 import { Link } from "react-router-dom";
 
-import routes from "../routes";
+// import routes from "../routes";
 import {
   appendTitle,
   enAndFrContent,
   curriedFillInStaticTextByLang,
 } from "../utilities";
-const { seekingRoute, offeringRoute } = routes;
+import { offeringRoute, seekingRoute } from "../routes";
+// const { seekingRoute, offeringRoute } = routes;
 
 const staticText = {
   announce: enAndFrContent(
