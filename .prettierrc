@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "legacy/*.*",
+      "options": {
+        "requirePragma": true
+      }
+    }
+  ]
+}
