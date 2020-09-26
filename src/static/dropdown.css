@@ -1,3 +1,5 @@
+/* switching behaviour */
+
 .mobile-nav {
   /* this means that when the links are visible
   the nav grows to accomodate them */
@@ -12,5 +14,41 @@
 }
 
 .mobile-nav-active #mobile-nav-links {
+  /*this means that when the nav is activated, the links
+  become visible*/
   display: block;
+  float: right;
+}
+
+/*text styling copied from style-css and id changed
+from #nav-links to #mobile-nav-links*/
+#mobile-nav-links a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  position: relative;
+  display: inline-block;
+  /*this is changed, to make smaller padding for mobile*/
+  /* padding: 1.7em 1em; */
+  padding: 0.4em 1.5em;
+  /*this is added to make the text wrap */
+  max-width: 25vw;
+  transition: background-color 0.7s ease;
+  -webkit-transition: all 0.7s ease;
+}
+
+#mobile-nav-links a:hover,
+#mobile-nav-links a:focus {
+  background-color: #6c4097;
+}
+
+#mobile-nav-links a:active {
+  background-color: #dec3fa;
+}
+
+/*slight fix to spacing around language button*/
+
+#mobile-nav-links #nav-lang a {
+  margin: 0.5em 0 0.25em 0.9em;
 }
