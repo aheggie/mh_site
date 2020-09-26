@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
+import { MobileNavContext } from "../../providers/MobileNavActiveStateProvider";
 import NavLinks from "./NavLinks";
 
 function MobileNav({ url, lang }) {
-  const [isActive, setIsActive] = useState(false);
-  const toggleActive = () => setIsActive(!isActive);
   return (
-    <nav className={isActive ? "mobile-nav mobile-nav-active" : "mobile-nav"}>
-      <i className="fas fa-bars" onClick={toggleActive}></i>
-      <NavLinks url={url} lang={lang} id={"mobile-nav-links"} />
-    </nav>
+    <MobileNavContext.Consumer>
+      {({ isActive, toggleActive }) => (
+        <nav
+          className={isActive ? "mobile-nav mobile-nav-active" : "mobile-nav"}
+        >
+          <i className="fas fa-bars" onClick={toggleActive}></i>
+          <NavLinks url={url} lang={lang} id={"mobile-nav-links"} />
+        </nav>
+      )}
+    </MobileNavContext.Consumer>
   );
 }
 
