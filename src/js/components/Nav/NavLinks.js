@@ -49,13 +49,13 @@ const NavLink = ({ to, text }) => {
   );
 };
 
-function NavLinks({ url, lang }) {
+function NavLinks({ url, lang, id }) {
   //note: lang = match.params.lang || "fr"; is not needed here because
   //this lang is received from a higher component that always provides that
   //from its own route
   const fillText = curriedFillInStaticTextByLang(lang);
   return (
-    <ul id="nav-links">
+    <ul id={id}>
       <NavLink to={homeRoute(lang)} text={fillText(staticText.HomeLinkText)} />
       <NavLink
         to={seekingRoute(lang)}

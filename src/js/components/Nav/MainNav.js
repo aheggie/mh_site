@@ -7,7 +7,7 @@ function MainNav({ url, lang }) {
   return (
     <nav className="main-nav sticky">
       <img src={cureLogo} alt="Cure Concordia Logo" id="logo" />
-      <NavLinks url={url} lang={lang} />
+      <NavLinks url={url} lang={lang} id={"nav-links"} />
     </nav>
   );
 }
