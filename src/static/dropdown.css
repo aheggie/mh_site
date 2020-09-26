@@ -1,0 +1,16 @@
+.mobile-nav {
+  /* this means that when the links are visible
+  the nav grows to accomodate them */
+  height: fit-content;
+  /* overflow: visible; */
+}
+
+.mobile-nav #mobile-nav-links {
+  /* this means that by default the nav links are not visible */
+  display: none;
+  clear: both;
+}
+
+.mobile-nav-active #mobile-nav-links {
+  display: block;
+}
