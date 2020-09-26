@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import cureLogo from "../../static/img/cure-logo.png";
+import cureLogo from "../../../static/img/cure-logo.png";
 import {
   aboutRoute,
   homeRoute,
@@ -9,10 +9,10 @@ import {
   resourcesRoute,
   seekingRoute,
   whyRoute,
-} from "../routes";
+} from "../../routes";
 
 // import routes from "../routes";
-import { curriedFillInStaticTextByLang, enAndFrContent } from "../utilities";
+import { curriedFillInStaticTextByLang, enAndFrContent } from "../../utilities";
 
 const staticText = {
   HomeLinkText: enAndFrContent("Home", "Accueil"),
@@ -62,12 +62,7 @@ const Nav = ({ url, lang }) => {
     <>
       {/* <!-- Navbar --> */}
       <nav className="main-nav sticky">
-        <img
-          // what is up here?? why won't this image load
-          src={cureLogo}
-          alt="Cure Concordia Logo"
-          id="logo"
-        />
+        <img src={cureLogo} alt="Cure Concordia Logo" id="logo" />
         <ul id="nav-links">
           <NavLink
             to={homeRoute(lang)}
