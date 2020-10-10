@@ -13,4 +13,8 @@ scratch/
 coverage/
 .vscode/
 
+#this is to make firebase hosting more efficient?
+#https://stackoverflow.com/questions/52130772/whats-the-purpose-of-firebase-hosting-alphanum-cache
+.firebase/
+
 *.code-workspace
