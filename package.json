@@ -8,7 +8,10 @@
     "cleardev": "npm run clear && npm run dev",
     "clearbuild": "npm run clear && npm run build",
     "dev": "parcel src/static/index.html",
-    "build": "parcel build src/static/index.html"
+    "build": "parcel build src/static/index.html",
+    "deploy:h": "firebase deploy --only hosting:htg-dev-main",
+    "cdd:h": "npm run cleardev && npm run deploy:h",
+    "cbd:h": "npm run clearbuild && npm run deploy:h"
   },
   "repository": {
     "type": "git",
