@@ -22,6 +22,10 @@ import {
 
 const RedirectToFr = () => <Redirect to={homeRoute("fr")} />;
 
+const PageNotFound = () => {
+  return <h4>404444 ... Page not found</h4>;
+};
+
 const EntryPoint = () => {
   return (
     <Switch>
@@ -44,6 +48,7 @@ const EntryPoint = () => {
         path={practitionerRoute(":lang", ":practitionerId")}
         component={PractitionerPage}
       />
+      <Route path="*" component={PageNotFound} />
     </Switch>
   );
 };
