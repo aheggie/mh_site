@@ -13,13 +13,13 @@ jobs:
       - name: setup node
         uses: actions/setup-node@main
         with:
-        node-version: 14
+          node-version: 14
       - name: install dependencies
         run: npm ci
       - name: build for production
         run: npm run build
       - name: deploy to firebase
-        uses: w9jds/firebase-action@master
+        uses: w9jds/firebase-action@main
         with:
           args: deploy --only hosting
         env:
