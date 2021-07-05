@@ -7,6 +7,7 @@ import OfferingPage from "./OfferingPage";
 import WhyPage from "./WhyPage";
 import AboutPage from "./AboutPage";
 import ResourcesPage from "./ResourcesPage";
+import PageNotFound from "./PageNotFound";
 import FilterPage from "./FilterPage/FilterPage";
 import PractitionerPage from "./PractitionerPage/PractitionerPage";
 import {
@@ -21,10 +22,6 @@ import {
 } from "../routes";
 
 const RedirectToFr = () => <Redirect to={homeRoute("fr")} />;
-
-const PageNotFound = () => {
-  return <h4>404: Page not found</h4>;
-};
 
 //the :lang becomes a .lang prop on the match object router sends along
 //the (en|fr) is and added regex that validtes if it is one of our valid languages
@@ -55,7 +52,6 @@ const EntryPoint = () => {
         component={PractitionerPage}
       />
       {/* this will match ALL incoming routes and needs to ALWAYS be the last route in the switch */}
-      <Route path="/*" component={PageNotFound} />
       <Route component={PageNotFound} />
     </Switch>
   );
