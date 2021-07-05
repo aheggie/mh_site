@@ -55,7 +55,6 @@ const EntryPoint = () => {
         component={PractitionerPage}
       />
       {/* this will match ALL incoming routes and needs to ALWAYS be the last route in the switch */}
-      <Route path="/*" component={PageNotFound} />
       <Route component={PageNotFound} />
     </Switch>
   );

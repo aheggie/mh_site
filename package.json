@@ -5,6 +5,7 @@
   "main": "src/static/index.html",
   "scripts": {
     "clear": "rm -rf dist",
+    "winclear": "rmdir /s /q dist",
     "cleardev": "npm run clear && npm run dev",
     "clearbuild": "npm run clear && npm run build",
     "dev": "parcel src/static/index.html",
