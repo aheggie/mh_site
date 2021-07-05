@@ -23,7 +23,7 @@ import {
 const RedirectToFr = () => <Redirect to={homeRoute("fr")} />;
 
 const PageNotFound = () => {
-  return <h4>404444 ... Page not found</h4>;
+  return <h4>404: Page not found</h4>;
 };
 
 //the :lang becomes a .lang prop on the match object router sends along
